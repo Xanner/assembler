@@ -1,9 +1,12 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
+import {
+  Link
+} from "react-router-dom";
 import {
   CalculatorOutlined,
   BookOutlined,
 } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -14,7 +17,6 @@ export default class SiderMenu extends React.Component {
     this.state = {
       collapsed: false,
     };
-
   }
 
   onCollapse = collapsed => {
@@ -23,7 +25,7 @@ export default class SiderMenu extends React.Component {
 
   render() {
     return (
-      <Sider style={{ minHeight: '100vh' }} collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
+      <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
           <SubMenu
@@ -31,23 +33,29 @@ export default class SiderMenu extends React.Component {
             title={
               <span>
                 <CalculatorOutlined />
-                <span>Kursy</span>
+                Kursy
               </span>
             }
           >
-            <Menu.Item key="1">Dodawanie</Menu.Item>
-            <Menu.Item key="2">Odejmowanie</Menu.Item>
+            <Menu.Item key="1">
+              <Link to="/courses/addition">Dodawanie</Link>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <Link to="/courses/subtraction">Odejmownie</Link>
+            </Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub2"
             title={
               <span>
                 <BookOutlined />
-                <span>Poradnik</span>
+                <Link to="/guide">Poradnik</Link>
               </span>
             }
           >
-            <Menu.Item key="3">Rejestry</Menu.Item>
+            <Menu.Item key="3">
+              <Link to="/guide/register">Rejestr</Link>
+            </Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
