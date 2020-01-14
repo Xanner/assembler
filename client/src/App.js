@@ -8,6 +8,9 @@ import {
 import 'antd/dist/antd.css';
 import SiderMenu from './components/SiderMenu';
 import { Layout } from 'antd';
+import AdditionPage from './pages/AdditionPage';
+import SubtractionPage from './pages/SubtractionPage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
@@ -16,18 +19,9 @@ function App() {
         <Layout style={{ minHeight: '100vh' }}>
           <SiderMenu />
           <Switch>
-            <Route path="/">
-              strona glowna
-          </Route>
-            <Route path="#/courses/addition">
-              dodawanie
-          </Route>
-            <Route path="#/courses/subtraction">
-              odejmowanie
-          </Route>
-            <Route path="#/guide">
-              poradnik
-          </Route>
+            <Route exact path='/courses/addition' component={AdditionPage} />
+            <Route exact path='/courses/subtraction' component={SubtractionPage} />
+            <Route exact path='/guide/register' component={RegisterPage} />
           </Switch>
         </Layout>
       </Router>

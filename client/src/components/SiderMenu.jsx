@@ -49,7 +49,7 @@ export default class SiderMenu extends React.Component {
             title={
               <span>
                 <BookOutlined />
-                <Link to="/guide">Poradnik</Link>
+                Poradnik
               </span>
             }
           >
