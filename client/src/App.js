@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Diagram from './components/Diagram';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
