@@ -33,15 +33,17 @@ export default class SiderMenu extends React.Component {
             title={
               <span>
                 <CalculatorOutlined />
-                Kursy
+                <span>Kursy</span>
               </span>
             }
           >
             <Menu.Item key="1">
-              <Link to="/courses/addition">Dodawanie</Link>
+              <span>Dodawanie</span>
+              <Link to="/courses/addition" />
             </Menu.Item>
             <Menu.Item key="2">
-              <Link to="/courses/subtraction">Odejmownie</Link>
+              <span>Odejmownie</span>
+              <Link to="/courses/subtraction" />
             </Menu.Item>
           </SubMenu>
           <SubMenu
@@ -49,12 +51,13 @@ export default class SiderMenu extends React.Component {
             title={
               <span>
                 <BookOutlined />
-                Poradnik
+                <span>Poradnik</span>
               </span>
             }
           >
             <Menu.Item key="3">
-              <Link to="/guide/register">Rejestr</Link>
+              <span>Rejestr</span>
+              <Link to="/guide/register" />
             </Menu.Item>
           </SubMenu>
         </Menu>
