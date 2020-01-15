@@ -68,7 +68,14 @@ export default class AdditionPage extends Component {
     console.log(
       `Sending to API values ${this.state.firstNumber} and ${this.state.secondNumber} ...`
     );
-    this.setState({ ...sampleData[0], currentLineNumber: 0, hasData: true });
+    this.setState({
+      ...sampleData[0],
+      currentLineNumber: 0,
+      currentLeftRegister: null,
+      currentRightRegister: null,
+      currentComment: null,
+      hasData: true
+    });
   };
 
   handleNextStep = () => {
