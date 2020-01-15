@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './App.scss';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,11 +19,13 @@ function App() {
       <Router>
         <Layout className="site-layout" style={{ minHeight: '100vh' }}>
           <SiderMenu />
-          <Switch>
-            <Route exact path='/courses/addition' component={AdditionPage} />
-            <Route exact path='/courses/subtraction' component={SubtractionPage} />
-            <Route exact path='/guide/register' component={RegisterPage} />
-          </Switch>
+          <Layout.Content>
+            <Switch>
+              <Route exact path='/courses/addition' component={AdditionPage} />
+              <Route exact path='/courses/subtraction' component={SubtractionPage} />
+              <Route exact path='/guide/register' component={RegisterPage} />
+            </Switch>
+          </Layout.Content>
         </Layout>
       </Router>
     </div>
