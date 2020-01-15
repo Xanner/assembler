@@ -1,0 +1,32 @@
+
+.ant-layout-content{
+  padding: 30px;
+}
+.register-page{
+  .ant-row{
+    margin-left: 20px;
+  }
+  h1{
+    font-size: 1.5rem;
+    font-weight: bolder;
+
+  }
+  .desc-title{
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+
+  .desc-sub-title{
+    font-size: 0.8rem;
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  li{
+    list-style: none; 
+  }
+  li span{
+    font-weight: 600;
+  }
+}
