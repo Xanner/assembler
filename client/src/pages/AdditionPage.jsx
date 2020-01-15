@@ -58,7 +58,7 @@ export default class AdditionPage extends Component {
                 this.state.currentLineNumber !== code.lineNumber ? "" : "red"
             }}
           >
-            {code.operation} {code.leftValue && code.leftValue.value}
+            {code.operation} {code.leftValue && code.leftValue.value}{code.rightValue.value && `,${code.rightValue.value}`}
           </span>
         </Timeline.Item>
       );
@@ -84,7 +84,7 @@ export default class AdditionPage extends Component {
       currentLeftRegister: currentCode.leftValue.value,
       currentRightRegister: currentCode.rightValue.value,
       currentComment: currentCode.comment,
-    }, () => console.log(this.state));
+    });
   }
 
   handleRestart = () => this.setState({
@@ -97,7 +97,7 @@ export default class AdditionPage extends Component {
   render() {
     const timeLineItems = this.state.hasData && this.getTimelineItems();
     return (
-      <Layout className="site-layout">
+      <>
         <Header style={{ background: "#fff" }}>
           <h2>Operacje arytmetyczne - dodawanie</h2>
         </Header>
@@ -175,7 +175,7 @@ export default class AdditionPage extends Component {
             </Row>
           </div>
         </Content>
-      </Layout>
+      </>
     );
   }
 }
