@@ -7,7 +7,6 @@ import {
   Timeline,
   Card,
   Button,
-  Collapse,
 } from "antd";
 import {
   PlusOutlined,
@@ -151,21 +150,16 @@ export default class AdditionPage extends Component {
                   </Button>
                 </Row>
                 <Row>
-                  <Card bodyStyle={{
-                    maxHeight: 400,
-                    overflow: "auto"
-                  }}>
-                    <Collapse accordion>
-                      {this.state.hasData ? (
-                        <Timeline style={{ textAlign: "left" }}>
-                          {timeLineItems}
-                        </Timeline>
-                      ) : (
-                          <p style={{ fontFamily: "Consolas" }}>
-                            Dodaj dwie liczby do siebie i naciśnij Start.
+                  <Card>
+                    {this.state.hasData ? (
+                      <Timeline style={{ textAlign: "left" }}>
+                        {timeLineItems}
+                      </Timeline>
+                    ) : (
+                        <p style={{ fontFamily: "Consolas" }}>
+                          Dodaj dwie liczby do siebie i naciśnij Start.
                       </p>
-                        )}
-                    </Collapse>
+                      )}
                   </Card>
                 </Row>
               </Col>
