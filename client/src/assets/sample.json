@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "name": "Adding Two Numbers",
+        "codes": [
+            {
+                "id": 2,
+                "lineNumber": 1,
+                "type": "Code",
+                "operation": "mov",
+                "comment": "Dodaje sobie 1",
+                "courseId": 1,
+                "leftValueId": 1,
+                "leftValue": {
+                    "id": 1,
+                    "type": "Registry",
+                    "value": "EX"
+                },
+                "rightValueId": 2,
+                "rightValue": {
+                    "id": 2,
+                    "type": "Registry ",
+                    "value": "AX"
+                }
+            },
+            {
+                "id": 4,
+                "lineNumber": 2,
+                "type": "Code",
+                "operation": "mov",
+                "comment": "Odejmuje sobie 2",
+                "courseId": 1,
+                "leftValueId": 3,
+                "leftValue": {
+                    "id": 3,
+                    "type": "Registry",
+                    "value": "DX"
+                },
+                "rightValueId": 4,
+                "rightValue": {
+                    "id": 4,
+                    "type": "ValueHex",
+                    "value": "H02"
+                }
+            }
+        ]
+    }
+]
