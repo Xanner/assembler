@@ -16,6 +16,7 @@ import {
 } from "@ant-design/icons";
 import Diagram from "../components/Diagram";
 import sampleData from "../assets/sample.json";
+import CommentView from "../components/CommentView";
 
 const { Content, Header } = Layout;
 
@@ -81,8 +82,11 @@ export default class AdditionPage extends Component {
   handleNextStep = () => {
     this.setState(prevState => ({
       currentLineNumber: prevState.currentLineNumber + 1,
+      result: prevState.currentLineNumber + 1 === 15 ? this.addition() : prevState.result,
     }), () => this.setCurrentCode());
   }
+
+  addition = () => this.state.firstNumber + this.state.secondNumber;
 
   setCurrentCode = () => {
     const currentCode = this.state.codes.find(c => c.lineNumber === this.state.currentLineNumber);
@@ -95,6 +99,7 @@ export default class AdditionPage extends Component {
 
   handleRestart = () => this.setState({
     currentLineNumber: 0,
+    result: null,
     currentLeftRegister: null,
     currentRightRegister: null,
     currentComment: null,
@@ -172,6 +177,7 @@ export default class AdditionPage extends Component {
               </Col>
               <Col span={16}>
                 <Diagram />
+                <CommentView currentComment={this.state.currentComment} />
               </Col>
             </Row>
           </div>
