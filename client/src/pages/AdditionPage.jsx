@@ -27,14 +27,16 @@ export default class AdditionPage extends Component {
       secondNumber: null,
       result: null,
       currentLineNumber: null,
+      currentLeftRegister: null,
+      currentRightRegister: null,
+      currentComment: null,
       name: null,
       codes: [],
       hasData: false,
-      hasDataChanged: false
     };
   }
 
-  handleChange = (field, value) => this.setState({ [field]: value, hasDataChanged: true });
+  handleChange = (field, value) => this.setState({ [field]: value });
 
   getTimelineItems = () => {
     return this.state.codes.map(code => {
@@ -66,12 +68,30 @@ export default class AdditionPage extends Component {
     console.log(
       `Sending to API values ${this.state.firstNumber} and ${this.state.secondNumber} ...`
     );
-    this.setState({ ...sampleData[0], currentLineNumber: 1, hasData: true });
+    this.setState({ ...sampleData[0], currentLineNumber: 0, hasData: true });
   };
 
   handleNextStep = () => {
-      this.setState(prevState => ({currentLineNumber: prevState.currentLineNumber + 1}));
+    this.setState(prevState => ({
+      currentLineNumber: prevState.currentLineNumber + 1,
+    }), () => this.setCurrentCode());
   }
+
+  setCurrentCode = () => {
+    const currentCode = this.state.codes.find(c => c.lineNumber === this.state.currentLineNumber);
+    currentCode && this.setState({
+      currentLeftRegister: currentCode.leftValue.value,
+      currentRightRegister: currentCode.rightValue.value,
+      currentComment: currentCode.comment,
+    }, () => console.log(this.state));
+  }
+
+  handleRestart = () => this.setState({
+    currentLineNumber: 0,
+    currentLeftRegister: null,
+    currentRightRegister: null,
+    currentComment: null,
+  });
 
   render() {
     const timeLineItems = this.state.hasData && this.getTimelineItems();
@@ -109,7 +129,7 @@ export default class AdditionPage extends Component {
                 <Row style={{ marginBottom: 8 }} justify="start">
                   <Button
                     disabled={
-                      !this.state.firstNumber && !this.state.secondNumber
+                      !(this.state.firstNumber && this.state.secondNumber)
                     }
                     onClick={this.handleStart}
                     type="primary"
@@ -119,13 +139,13 @@ export default class AdditionPage extends Component {
                   </Button>{" "}
                   <Button
                     onClick={this.handleNextStep}
-                    disabled={!this.state.hasData || (this.state.currentLineNumber - 1 === this.state.codes.length) }
+                    disabled={!this.state.hasData || (this.state.currentLineNumber - 1 === this.state.codes.length)}
                     type="secondary"
                   >
                     <CaretRightOutlined />
                     Następny krok
                   </Button>{" "}
-                  <Button disabled={!this.state.hasData} type="secondary">
+                  <Button onClick={this.handleRestart} disabled={!this.state.hasData} type="secondary">
                     Restart
                   </Button>
                 </Row>
@@ -136,10 +156,10 @@ export default class AdditionPage extends Component {
                         {timeLineItems}
                       </Timeline>
                     ) : (
-                      <p style={{ fontFamily: "Consolas" }}>
-                        Dodaj dwie liczby do siebie i naciśnij Start.
+                        <p style={{ fontFamily: "Consolas" }}>
+                          Dodaj dwie liczby do siebie i naciśnij Start.
                       </p>
-                    )}
+                      )}
                   </Card>
                 </Row>
               </Col>

@@ -245,7 +245,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 14,
+                "lineNumber": 13,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Dodaj 30h do rejestru ax, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
@@ -265,7 +265,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 15,
+                "lineNumber": 14,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś 02 do rejestru ah. Ozncza to, iż będziemy wypisywać znak na ekranie",
@@ -285,7 +285,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 16,
+                "lineNumber": 15,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś zawartość rejestru ax (zawierający wynik dodawania) do rejestru dx. Rejest dx może zostać użyty do wypisywania zawartości na ekranie. ",
@@ -305,7 +305,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 17,
+                "lineNumber": 16,
                 "type": "Interruption",
                 "operation": "int",
                 "comment": "Przerwanie 21h",
@@ -325,7 +325,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 18,
+                "lineNumber": 17,
                 "type": "Procedure",
                 "operation": "main endp",
                 "comment": "Zakonczenie procedury",
