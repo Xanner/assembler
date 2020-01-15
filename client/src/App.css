@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+#svg2 {
+  transform: scale(0.8);
+  margin-top: -130px;
+}
+
+.ant-timeline-item {
+  padding-bottom: 5px !important;
+}

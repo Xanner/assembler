@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Layout style={{ minHeight: '100vh' }}>
+        <Layout className="site-layout" style={{ minHeight: '100vh' }}>
           <SiderMenu />
           <Switch>
             <Route exact path='/courses/addition' component={AdditionPage} />
