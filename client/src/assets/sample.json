@@ -45,7 +45,7 @@
             },
             {
                 "id": 5,
-                "lineNumber": 4,
+                "lineNumber": 3,
                 "type": "Segment",
                 "operation": ".data",
                 "comment": "Definicja segmentu danych",
@@ -65,7 +65,7 @@
             },
             {
                 "id": 6,
-                "lineNumber": 5,
+                "lineNumber": 4,
                 "type": "Data Definition",
                 "operation": "dw",
                 "comment": "Definicja zmiennej 'a' = {wstaw liczbe}",
@@ -85,7 +85,7 @@
             },
             {
                 "id": 7,
-                "lineNumber": 6,
+                "lineNumber": 5,
                 "type": "Data Definition",
                 "operation": "dw",
                 "comment": "Definicja zmiennej 'b' = {wstaw liczbe}",
@@ -105,7 +105,7 @@
             },
             {
                 "id": 8,
-                "lineNumber": 8,
+                "lineNumber": 6,
                 "type": "Segment",
                 "operation": "dw",
                 "comment": "Definicja segmentu kodu",
@@ -125,7 +125,7 @@
             },
             {
                 "id": 8,
-                "lineNumber": 8,
+                "lineNumber": 7,
                 "type": "Procedure",
                 "operation": "MAIN PROC",
                 "comment": "Rozpoczęcie głownej procedury",
@@ -185,7 +185,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 11,
+                "lineNumber": 10,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś wartość zmienniej a do rejestru ax.",
@@ -205,7 +205,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 12,
+                "lineNumber": 11,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś wartość zmienniej b do rejestru bx.",
@@ -225,7 +225,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 14,
+                "lineNumber": 12,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "DODAJ zawartość rejestru bx do rejestru ax.",
@@ -236,7 +236,7 @@
                     "type": "Registry",
                     "value": "ax"
                 },
-                "rightValueId": 11,
+                "rightValueId": 13,
                 "rightValue": {
                     "id": 8,
                     "type": "Registry",
@@ -245,7 +245,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 15,
+                "lineNumber": 13,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Dodaj 30h do rejestru ax, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
@@ -265,7 +265,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 17,
+                "lineNumber": 14,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś 02 do rejestru ah. Ozncza to, iż będziemy wypisywać znak na ekranie",
@@ -285,7 +285,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 18,
+                "lineNumber": 15,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś zawartość rejestru ax (zawierający wynik dodawania) do rejestru dx. Rejest dx może zostać użyty do wypisywania zawartości na ekranie. ",
@@ -305,7 +305,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 19,
+                "lineNumber": 16,
                 "type": "Interruption",
                 "operation": "int",
                 "comment": "Przerwanie 21h",
@@ -325,7 +325,7 @@
             },
             {
                 "id": 10,
-                "lineNumber": 21,
+                "lineNumber": 17,
                 "type": "Procedure",
                 "operation": "main endp",
                 "comment": "Zakonczenie procedury",

@@ -42,3 +42,7 @@
 .ant-timeline-item {
   padding-bottom: 5px !important;
 }
+
+.ant-timeline-item-tail {
+  border-left: 0px !important;
+}
