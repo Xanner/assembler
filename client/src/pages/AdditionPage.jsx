@@ -101,7 +101,7 @@ export default class AdditionPage extends Component {
         <Header style={{ background: "#fff" }}>
           <h2>Operacje arytmetyczne - dodawanie</h2>
         </Header>
-        <Content style={{ background: "#fff" }}>
+        <Content>
           <div
             className="site-layout-background"
             style={{ padding: 24, minHeight: 360 }}
