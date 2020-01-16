@@ -106,9 +106,7 @@ export default class Diagram extends Component {
     render() {
         return (
             <div>
-                < DiagramCanva />
-                {this.state.activReg.currentLeftRegister}
-                {this.state.activReg.currentRightRegister}
+                <DiagramCanva />
             </div>
         )
     }

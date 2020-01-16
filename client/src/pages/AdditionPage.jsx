@@ -104,9 +104,6 @@ export default class AdditionPage extends Component {
       currentRightRegister: currentCode.rightValue.value,
       currentComment: currentCode.comment,
     });
-    console.log(currentCode.leftValue.value)
-    console.log(currentCode.rightValue.value)
-    console.log(currentCode.comment)
   }
 
   handleRestart = () => this.setState({
