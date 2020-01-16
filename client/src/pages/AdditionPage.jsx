@@ -84,6 +84,9 @@ export default class AdditionPage extends Component {
       currentRightRegister: currentCode.rightValue.value,
       currentComment: currentCode.comment,
     });
+    console.log(currentCode.leftValue.value)
+    console.log(currentCode.rightValue.value)
+    console.log(currentCode.comment)
   }
 
   handleRestart = () => this.setState({
@@ -164,7 +167,10 @@ export default class AdditionPage extends Component {
                 </Row>
               </Col>
               <Col span={16}>
-                <Diagram />
+                <Diagram activReg={{
+                  currentLeftRegister: this.state.currentLeftRegister,
+                  currentRightRegister: this.state.currentRightRegister
+                }} />
               </Col>
             </Row>
           </div>

@@ -31,53 +31,53 @@
       <path
          d="M 320.00001,470 L 310.00001,410 L 329.65626,410 L 331.56251,410 L 340.00001,430 L 390.00001,430 L 398.40626,410 L 420.00001,410 L 410.00001,470 L 320.00001,470 z "
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
-         id="path2166" />
+         id="ALU" />
       <rect
          width="99.954758"
          height="20"
          x="20.000015"
          y="190"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2168" />
+         id="reg_CS" />
       <rect
          width="99.954758"
          height="20"
          x="20.000015"
          y="210"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2170" />
+         id="reg_DS" />
       <rect
          width="99.954758"
          height="20"
          x="20.000015"
          y="230"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2172" />
+         id="reg_SS" />
       <rect
          width="99.954758"
          height="20"
          x="20.000015"
          y="250"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2174" />
+         id="reg_ES" />
       <rect
          width="99.954758"
          height="20"
          x="20.000015"
          y="270"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2176" />
+         id="reg_IP" />
       <rect
          width="99.954758"
          height="20"
          x="20.000015"
          y="490"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2186" />
+         id="reg_SP" />
       <path
          d="M 155.00001,94 L 155.00001,155 L 125.00001,155 L 125.00001,140 L 130.00001,140 L 120.00001,130 L 110.00001,140 L 115.00001,140 L 115.00001,165 L 155.00001,165 L 155.00001,340 L 20.000008,340 L 20.000008,360 L 316.00001,360 L 316.00001,399 L 311.00001,399 L 321.00001,409 L 331.00001,399 L 326.00001,399 L 326.00001,360 L 404.00001,360 L 404.00001,399 L 399.00001,399 L 409.00001,409 L 419.00001,399 L 414.00001,399 L 414.00001,360 L 510.00001,360 L 510.00001,340 L 165.00001,340 L 165.00001,104 L 270.00001,104 L 270.00001,119 L 265.00001,119 L 275.00001,129 L 285.00001,119 L 280.00001,119 L 280.00001,94 L 155.00001,94 z "
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2188" />
+         id="A-BUS" />
       <path
          d="M 20.000008,140 L 30.000008,130 L 40.000008,140 L 35.000008,140 L 35.000008,155 L 75.000008,155 L 75.000008,190 L 65.000008,190 L 65.000008,165 L 25.000008,165 L 25.000008,140 L 20.000008,140 z "
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
@@ -88,77 +88,77 @@
          x="20"
          y="410"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2178" />
+         id="reg_AH" />
       <rect
          width="50.00248"
          height="20"
          x="69.997528"
          y="410"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2192" />
+         id="reg_AL" />
       <rect
          width="49.99017"
          height="20"
          x="20"
          y="430"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2200" />
+         id="reg_BH" />
       <rect
          width="50.00248"
          height="20"
          x="69.997528"
          y="430"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2202" />
+         id="reg_BL" />
       <rect
          width="49.99017"
          height="20"
          x="20"
          y="450"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2206" />
+         id="reg_CH" />
       <rect
          width="50.00248"
          height="20"
          x="69.997528"
          y="450"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2208" />
+         id="reg_CL" />
       <rect
          width="49.99017"
          height="20"
          x="20"
          y="470"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2212" />
+         id="reg_DH" />
       <rect
          width="50.00248"
          height="20"
          x="69.997528"
          y="470"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2214" />
+         id="reg_DL" />
       <rect
          width="99.954758"
          height="20"
          x="20.000008"
          y="510"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2216" />
+         id="reg_BP" />
       <rect
          width="99.954758"
          height="20"
          x="20.000008"
          y="530"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2218" />
+         id="reg_SI" />
       <rect
          width="99.954758"
          height="20"
          x="20.045242"
          y="550"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect2220" />
+         id="reg_DI" />
       <path
          d="M 60.000008,370 L 70.000008,360 L 80.000008,370 L 75.000008,370 L 75.000008,400 L 80.000008,400 L 70.000008,410 L 60.000008,400 L 65.000008,400 L 65.000008,370 L 60.000008,370 z "
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
@@ -232,7 +232,7 @@
       <path
          d="M 490.00001,55 L 475.00001,69 L 460.00001,55 L 465.00001,55 L 465.00002,40 L 85,40 L 85,70 L 65.000008,70 L 65,20 L 485,20 L 485.00001,55 L 490.00001,55 z "
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
-         id="path2263" />
+         id="C-BUS" />
       <path
          d="M 566,79.98781 L 584.64063,100.0122 L 566,120.0366 L 566,110.0244 L 500,110.03659 L 500.64063,90.02439 L 566,90 L 566,79.98781 z "
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
