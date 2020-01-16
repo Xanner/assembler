@@ -58,12 +58,21 @@ export default class AdditionPage extends Component {
                 this.state.currentLineNumber !== code.lineNumber ? "" : "red"
             }}
           >
-            {code.operation} {code.leftValue && code.leftValue.value}{code.rightValue.value && `,${code.rightValue.value}`}
+            {
+              code.type === 'Data Definition'
+                ? `${code.leftValue && code.leftValue.value} ${code.operation} ${(code.lineNumber === 5) ? this.toHex(this.state.firstNumber) : this.toHex(this.state.secondNumber)}`
+                : `${code.operation || ''} ${code.leftValue.value || ''}${code.rightValue.value ? (',' + code.rightValue.value) : ''}`
+            }
           </span>
         </Timeline.Item>
       );
     });
   };
+
+  toHex(d) {
+    return ("0" + (Number(d).toString(16))).slice(-2).toUpperCase()
+  }
+
 
   handleStart = () => {
     console.log(
