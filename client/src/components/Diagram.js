@@ -55,44 +55,44 @@ export default class Diagram extends Component {
                 document.querySelector('#reg_DL').removeAttribute('class')
                 switch (props.activReg.currentLeftRegister) {
                     case 'ax':
-                        document.querySelector('#reg_AH').setAttribute('class', 'reg_active');
-                        document.querySelector('#reg_AL').setAttribute('class', 'reg_active');
-                        document.querySelector('#ALU').setAttribute('class', 'reg_active');
+                        document.querySelector('#reg_AH').setAttribute('class', 'reg_active_left');
+                        document.querySelector('#reg_AL').setAttribute('class', 'reg_active_left');
+                        document.querySelector('#ALU').setAttribute('class', 'reg_active_left');
                         break;
                     case 'ds':
-                        document.querySelector('#reg_DS').setAttribute('class', 'reg_active');
-                        document.querySelector('#ALU').setAttribute('class', 'reg_active');
+                        document.querySelector('#reg_DS').setAttribute('class', 'reg_active_left');
+                        document.querySelector('#ALU').setAttribute('class', 'reg_active_left');
                         break;
                     case 'bx':
-                        document.querySelector('#reg_BH').setAttribute('class', 'reg_active');
-                        document.querySelector('#reg_BL').setAttribute('class', 'reg_active');
-                        document.querySelector('#ALU').setAttribute('class', 'reg_active');
+                        document.querySelector('#reg_BH').setAttribute('class', 'reg_active_left');
+                        document.querySelector('#reg_BL').setAttribute('class', 'reg_active_left');
+                        document.querySelector('#ALU').setAttribute('class', 'reg_active_left');
                         break;
                     case 'dx':
-                        document.querySelector('#reg_DH').setAttribute('class', 'reg_active');
-                        document.querySelector('#reg_DL').setAttribute('class', 'reg_active');
-                        document.querySelector('#ALU').setAttribute('class', 'reg_active');
+                        document.querySelector('#reg_DH').setAttribute('class', 'reg_active_left');
+                        document.querySelector('#reg_DL').setAttribute('class', 'reg_active_left');
+                        document.querySelector('#ALU').setAttribute('class', 'reg_active_left');
+                        break;
+                    case 'ah':
+                        document.querySelector('#reg_AH').setAttribute('class', 'reg_active_left');
+                        document.querySelector('#ALU').setAttribute('class', 'reg_active_left');
                         break;
                 }
                 switch (props.activReg.currentRightRegister) {
                     case 'ax':
-                        document.querySelector('#reg_AH').setAttribute('class', 'reg_active');
-                        document.querySelector('#reg_AL').setAttribute('class', 'reg_active');
-                        document.querySelector('#ALU').setAttribute('class', 'reg_active');
+                        document.querySelector('#reg_AH').setAttribute('class', 'reg_active_right');
+                        document.querySelector('#reg_AL').setAttribute('class', 'reg_active_right');
                         break;
                     case 'ds':
-                        document.querySelector('#reg_DS').setAttribute('class', 'reg_active');
-                        document.querySelector('#ALU').setAttribute('class', 'reg_active');
+                        document.querySelector('#reg_DS').setAttribute('class', 'reg_active_right');
                         break;
                     case 'bx':
-                        document.querySelector('#reg_BH').setAttribute('class', 'reg_active');
-                        document.querySelector('#reg_BL').setAttribute('class', 'reg_active');
-                        document.querySelector('#ALU').setAttribute('class', 'reg_active');
+                        document.querySelector('#reg_BH').setAttribute('class', 'reg_active_right');
+                        document.querySelector('#reg_BL').setAttribute('class', 'reg_active_right');
                         break;
                     case 'dx':
-                        document.querySelector('#reg_DH').setAttribute('class', 'reg_active');
-                        document.querySelector('#reg_DL').setAttribute('class', 'reg_active');
-                        document.querySelector('#ALU').setAttribute('class', 'reg_active');
+                        document.querySelector('#reg_DH').setAttribute('class', 'reg_active_right');
+                        document.querySelector('#reg_DL').setAttribute('class', 'reg_active_right');
                         break;
                 }
             }
