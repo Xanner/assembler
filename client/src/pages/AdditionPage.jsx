@@ -82,7 +82,7 @@ export default class AdditionPage extends Component {
   handleNextStep = () => {
     this.setState(prevState => ({
       currentLineNumber: prevState.currentLineNumber + 1,
-      result: prevState.currentLineNumber + 1 === 15 ? this.addition() : prevState.result,
+      result: prevState.currentLineNumber + 1 === 20 ? this.addition() : prevState.result,
     }), () => this.setCurrentCode());
   }
 
