@@ -16,6 +16,7 @@ import {
 } from "@ant-design/icons";
 import Diagram from "../components/Diagram";
 import sampleData from "../assets/sample.json";
+import CommentView from "../components/CommentView";
 
 const { Content, Header } = Layout;
 
@@ -52,7 +53,7 @@ export default class AdditionPage extends Component {
           <span
             style={{
               textAlign: "right",
-              paddingLeft: 5,
+              paddingLeft: 15,
               color:
                 this.state.currentLineNumber !== code.lineNumber ? "" : "red"
             }}
@@ -68,14 +69,24 @@ export default class AdditionPage extends Component {
     console.log(
       `Sending to API values ${this.state.firstNumber} and ${this.state.secondNumber} ...`
     );
-    this.setState({ ...sampleData[0], currentLineNumber: 0, hasData: true });
+    this.setState({
+      ...sampleData[0],
+      currentLineNumber: 0,
+      currentLeftRegister: null,
+      currentRightRegister: null,
+      currentComment: null,
+      hasData: true
+    });
   };
 
   handleNextStep = () => {
     this.setState(prevState => ({
       currentLineNumber: prevState.currentLineNumber + 1,
+      result: prevState.currentLineNumber + 1 === 20 ? this.addition() : prevState.result,
     }), () => this.setCurrentCode());
   }
+
+  addition = () => this.state.firstNumber + this.state.secondNumber;
 
   setCurrentCode = () => {
     const currentCode = this.state.codes.find(c => c.lineNumber === this.state.currentLineNumber);
@@ -91,6 +102,7 @@ export default class AdditionPage extends Component {
 
   handleRestart = () => this.setState({
     currentLineNumber: 0,
+    result: null,
     currentLeftRegister: null,
     currentRightRegister: null,
     currentComment: null,
@@ -171,6 +183,7 @@ export default class AdditionPage extends Component {
                   currentLeftRegister: this.state.currentLeftRegister,
                   currentRightRegister: this.state.currentRightRegister
                 }} />
+                <CommentView currentComment={this.state.currentComment} />
               </Col>
             </Row>
           </div>

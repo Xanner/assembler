@@ -4,7 +4,7 @@
         "name": "Adding Two Numbers",
         "codes": [
             {
-                "id": 2,
+                "id": 1,
                 "lineNumber": 1,
                 "type": "Segment",
                 "operation": ".Model small",
@@ -24,7 +24,7 @@
                 }
             },
             {
-                "id": 4,
+                "id": 2,
                 "lineNumber": 2,
                 "type": "Segment",
                 "operation": ".stack 100h",
@@ -44,8 +44,28 @@
                 }
             },
             {
-                "id": 5,
+                "id": 3,
                 "lineNumber": 3,
+                "type": "Whitespace",
+                "operation": null,
+                "comment": null,
+                "courseId": 1,
+                "leftValueId": null,
+                "leftValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                },
+                "rightValueId": null,
+                "rightValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                }
+            },
+            {
+                "id": 4,
+                "lineNumber": 4,
                 "type": "Segment",
                 "operation": ".data",
                 "comment": "Definicja segmentu danych",
@@ -64,8 +84,8 @@
                 }
             },
             {
-                "id": 6,
-                "lineNumber": 4,
+                "id": 5,
+                "lineNumber": 5,
                 "type": "Data Definition",
                 "operation": "dw",
                 "comment": "Definicja zmiennej 'a' = {wstaw liczbe}",
@@ -84,8 +104,8 @@
                 }
             },
             {
-                "id": 7,
-                "lineNumber": 5,
+                "id": 6,
+                "lineNumber": 6,
                 "type": "Data Definition",
                 "operation": "dw",
                 "comment": "Definicja zmiennej 'b' = {wstaw liczbe}",
@@ -104,11 +124,11 @@
                 }
             },
             {
-                "id": 8,
-                "lineNumber": 6,
-                "type": "Segment",
-                "operation": "dw",
-                "comment": "Definicja segmentu kodu",
+                "id": 7,
+                "lineNumber": 7,
+                "type": "Whitespace",
+                "operation": null,
+                "comment": null,
                 "courseId": 1,
                 "leftValueId": null,
                 "leftValue": {
@@ -125,7 +145,27 @@
             },
             {
                 "id": 8,
-                "lineNumber": 7,
+                "lineNumber": 8,
+                "type": "Segment",
+                "operation": ".code",
+                "comment": "Definicja segmentu kodu",
+                "courseId": 1,
+                "leftValueId": null,
+                "leftValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                },
+                "rightValueId": null,
+                "rightValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                }
+            },
+            {
+                "id": 9,
+                "lineNumber": 9,
                 "type": "Procedure",
                 "operation": "MAIN PROC",
                 "comment": "Rozpoczęcie głownej procedury",
@@ -144,8 +184,8 @@
                 }
             },
             {
-                "id": 8,
-                "lineNumber": 8,
+                "id": 10,
+                "lineNumber": 10,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś dane z @data do rejestru ax",
@@ -164,8 +204,8 @@
                 }
             },
             {
-                "id": 9,
-                "lineNumber": 9,
+                "id": 11,
+                "lineNumber": 11,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
@@ -174,18 +214,38 @@
                 "leftValue": {
                     "id": 5,
                     "type": "Registry",
-                    "value": "ax"
+                    "value": "ds"
                 },
                 "rightValueId": 9,
                 "rightValue": {
                     "id": 6,
-                    "type": "Declared data",
-                    "value": "@data"
+                    "type": "Registry",
+                    "value": "ax"
                 }
             },
             {
-                "id": 10,
-                "lineNumber": 10,
+                "id": 12,
+                "lineNumber": 12,
+                "type": "Whitespace",
+                "operation": null,
+                "comment": null,
+                "courseId": 1,
+                "leftValueId": null,
+                "leftValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                },
+                "rightValueId": null,
+                "rightValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                }
+            },
+            {
+                "id": 13,
+                "lineNumber": 13,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś wartość zmienniej a do rejestru ax.",
@@ -204,8 +264,8 @@
                 }
             },
             {
-                "id": 10,
-                "lineNumber": 11,
+                "id": 14,
+                "lineNumber": 14,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś wartość zmienniej b do rejestru bx.",
@@ -224,10 +284,30 @@
                 }
             },
             {
-                "id": 10,
-                "lineNumber": 12,
+                "id": 15,
+                "lineNumber": 15,
+                "type": "Whitespace",
+                "operation": null,
+                "comment": null,
+                "courseId": 1,
+                "leftValueId": null,
+                "leftValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                },
+                "rightValueId": null,
+                "rightValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                }
+            },
+            {
+                "id": 16,
+                "lineNumber": 16,
                 "type": "Code",
-                "operation": "mov",
+                "operation": "add",
                 "comment": "DODAJ zawartość rejestru bx do rejestru ax.",
                 "courseId": 1,
                 "leftValueId": 10,
@@ -244,10 +324,10 @@
                 }
             },
             {
-                "id": 10,
-                "lineNumber": 13,
+                "id": 17,
+                "lineNumber": 17,
                 "type": "Code",
-                "operation": "mov",
+                "operation": "add",
                 "comment": "Dodaj 30h do rejestru ax, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
                 "courseId": 1,
                 "leftValueId": 10,
@@ -264,8 +344,28 @@
                 }
             },
             {
-                "id": 10,
-                "lineNumber": 14,
+                "id": 18,
+                "lineNumber": 18,
+                "type": "Whitespace",
+                "operation": null,
+                "comment": null,
+                "courseId": 1,
+                "leftValueId": null,
+                "leftValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                },
+                "rightValueId": null,
+                "rightValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                }
+            },
+            {
+                "id": 19,
+                "lineNumber": 19,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś 02 do rejestru ah. Ozncza to, iż będziemy wypisywać znak na ekranie",
@@ -284,8 +384,8 @@
                 }
             },
             {
-                "id": 10,
-                "lineNumber": 15,
+                "id": 20,
+                "lineNumber": 20,
                 "type": "Code",
                 "operation": "mov",
                 "comment": "Przenieś zawartość rejestru ax (zawierający wynik dodawania) do rejestru dx. Rejest dx może zostać użyty do wypisywania zawartości na ekranie. ",
@@ -304,8 +404,8 @@
                 }
             },
             {
-                "id": 10,
-                "lineNumber": 16,
+                "id": 21,
+                "lineNumber": 21,
                 "type": "Interruption",
                 "operation": "int",
                 "comment": "Przerwanie 21h",
@@ -324,8 +424,28 @@
                 }
             },
             {
-                "id": 10,
-                "lineNumber": 17,
+                "id": 22,
+                "lineNumber": 22,
+                "type": "Whitespace",
+                "operation": null,
+                "comment": null,
+                "courseId": 1,
+                "leftValueId": null,
+                "leftValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                },
+                "rightValueId": null,
+                "rightValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                }
+            },
+            {
+                "id": 23,
+                "lineNumber": 23,
                 "type": "Procedure",
                 "operation": "main endp",
                 "comment": "Zakonczenie procedury",
@@ -339,6 +459,26 @@
                 "rightValueId": 11,
                 "rightValue": {
                     "id": 8,
+                    "type": null,
+                    "value": null
+                }
+            },
+            {
+                "id": 24,
+                "lineNumber": 24,
+                "type": "Procedure",
+                "operation": "end main",
+                "comment": null,
+                "courseId": 1,
+                "leftValueId": null,
+                "leftValue": {
+                    "id": null,
+                    "type": null,
+                    "value": null
+                },
+                "rightValueId": null,
+                "rightValue": {
+                    "id": null,
                     "type": null,
                     "value": null
                 }
