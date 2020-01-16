@@ -53,7 +53,7 @@ export default class AdditionPage extends Component {
           <span
             style={{
               textAlign: "right",
-              paddingLeft: 5,
+              paddingLeft: 15,
               color:
                 this.state.currentLineNumber !== code.lineNumber ? "" : "red"
             }}
