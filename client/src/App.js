@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "antd/dist/antd.css";
 import SiderMenu from "./components/SiderMenu";
 import { Layout } from "antd";
-import AdditionPage from "./pages/AdditionPage";
-import SubtractionPage from "./pages/SubtractionPage";
+import AdditionPage from "./pages/arithmetic/AdditionPage";
+import SubtractionPage from "./pages/arithmetic/SubtractionPage";
 import RegisterPage from "./pages/RegisterPage";
 
 function App() {

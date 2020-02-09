@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import { Layout, Col, Row, InputNumber, Timeline, Card, Button } from "antd";
 import {
-  PlusOutlined,
   PauseOutlined,
   PlayCircleOutlined,
   CaretRightOutlined
 } from "@ant-design/icons";
-import Diagram from "../components/Diagram";
-import sampleData from "../assets/sample.json";
-import CommentView from "../components/CommentView";
+import Diagram from "../../components/Diagram";
+import CommentView from "../../components/CommentView";
+import { ArithmeticCodeItems } from "../../components/ArithmeticCodeItems";
 
 const { Content, Header } = Layout;
 
-export default class AdditionPage extends Component {
+export default class ArithmeticPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,50 +30,9 @@ export default class AdditionPage extends Component {
 
   handleChange = (field, value) => this.setState({ [field]: value });
 
-  getTimelineItems = () => {
-    return this.state.codes.map(code => {
-      return (
-        <Timeline.Item
-          style={{ fontFamily: "Consolas" }}
-          key={code.lineNumber + code.comment}
-          color={
-            this.state.currentLineNumber !== code.lineNumber ? "grey" : "red"
-          }
-          dot={`#${code.lineNumber}`}
-        >
-          <span
-            style={{
-              textAlign: "right",
-              paddingLeft: 15,
-              color:
-                this.state.currentLineNumber !== code.lineNumber ? "" : "red"
-            }}
-          >
-            {code.type === "Data Definition"
-              ? `${code.leftValue && code.leftValue.value} ${code.operation} ${
-                  code.lineNumber === 5
-                    ? this.toHex(this.state.firstNumber)
-                    : this.toHex(this.state.secondNumber)
-                }`
-              : `${code.operation || ""} ${code.leftValue.value || ""}${
-                  code.rightValue.value ? "," + code.rightValue.value : ""
-                }`}
-          </span>
-        </Timeline.Item>
-      );
-    });
-  };
-
-  toHex(d) {
-    return ("0" + Number(d).toString(16)).slice(-2).toUpperCase();
-  }
-
   handleStart = () => {
-    console.log(
-      `Sending to API values ${this.state.firstNumber} and ${this.state.secondNumber} ...`
-    );
     this.setState({
-      ...sampleData[0],
+      ...this.props.data,
       currentLineNumber: 0,
       currentLeftRegister: null,
       currentRightRegister: null,
@@ -89,16 +47,17 @@ export default class AdditionPage extends Component {
         currentLineNumber: prevState.currentLineNumber + 1,
         result:
           prevState.currentLineNumber + 1 === 20
-            ? this.addition()
+            ? this.props.handleArithmeticOperation(
+                this.state.firstNumber,
+                this.state.secondNumber
+              )
             : prevState.result
       }),
-      () => this.setCurrentCode()
+      () => this.setNextCodeLine()
     );
   };
 
-  addition = () => this.state.firstNumber + this.state.secondNumber;
-
-  setCurrentCode = () => {
+  setNextCodeLine = () => {
     const currentCode = this.state.codes.find(
       c => c.lineNumber === this.state.currentLineNumber
     );
@@ -120,11 +79,15 @@ export default class AdditionPage extends Component {
     });
 
   render() {
-    const timeLineItems = this.state.hasData && this.getTimelineItems();
+    const { codes, currentLineNumber, firstNumber, secondNumber } = this.state;
+    const { headerTitle, cardText, arithmeticSign } = this.props;
+    const codeLines =
+      this.state.hasData &&
+      ArithmeticCodeItems(codes, currentLineNumber, firstNumber, secondNumber);
     return (
       <>
         <Header style={{ background: "#fff" }}>
-          <h2>Operacje arytmetyczne - dodawanie</h2>
+          <h2>{headerTitle}</h2>
         </Header>
         <Content>
           <div
@@ -139,7 +102,7 @@ export default class AdditionPage extends Component {
                     size="large"
                     onChange={value => this.handleChange("firstNumber", value)}
                   />
-                  <PlusOutlined />
+                  {arithmeticSign}
                   <InputNumber
                     value={this.state.secondNumber}
                     size="large"
@@ -187,12 +150,10 @@ export default class AdditionPage extends Component {
                   <Card>
                     {this.state.hasData ? (
                       <Timeline style={{ textAlign: "left" }}>
-                        {timeLineItems}
+                        {codeLines}
                       </Timeline>
                     ) : (
-                      <p style={{ fontFamily: "Consolas" }}>
-                        Dodaj dwie liczby do siebie i naciśnij Start.
-                      </p>
+                      <p style={{ fontFamily: "Consolas" }}>{cardText}</p>
                     )}
                   </Card>
                 </Row>
