@@ -3,7 +3,13 @@ import { Link, withRouter } from "react-router-dom";
 import {
   CalculatorOutlined,
   BookOutlined,
-  ReconciliationOutlined
+  ReconciliationOutlined,
+  QuestionCircleOutlined,
+  RetweetOutlined,
+  FontSizeOutlined,
+  TableOutlined,
+  AlignCenterOutlined,
+  StockOutlined
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 
@@ -98,6 +104,60 @@ class SiderMenu extends React.Component {
                 <Link to="/courses/division" />
               </Menu.Item>
             </SubMenu>
+            <SubMenu
+              key="conditions"
+              title={
+                <span>
+                  <QuestionCircleOutlined />
+                  <span>Warunki</span>
+                </span>
+              }
+            ></SubMenu>
+            <SubMenu
+              key="loops"
+              title={
+                <span>
+                  <RetweetOutlined />
+                  <span>Pętle</span>
+                </span>
+              }
+            ></SubMenu>
+            <SubMenu
+              key="strings"
+              title={
+                <span>
+                  <FontSizeOutlined />
+                  <span>Ciągi znaków</span>
+                </span>
+              }
+            ></SubMenu>
+            <SubMenu
+              key="arrays"
+              title={
+                <span>
+                  <TableOutlined />
+                  <span>Tablice</span>
+                </span>
+              }
+            ></SubMenu>
+            <SubMenu
+              key="procedures"
+              title={
+                <span>
+                  <StockOutlined />
+                  <span>Procedury</span>
+                </span>
+              }
+            ></SubMenu>
+            <SubMenu
+              key="stack"
+              title={
+                <span>
+                  <AlignCenterOutlined />
+                  <span>Stack</span>
+                </span>
+              }
+            ></SubMenu>
           </SubMenu>
           <SubMenu
             key="guide"
