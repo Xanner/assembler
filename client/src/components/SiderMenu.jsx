@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import {
   CalculatorOutlined,
   BookOutlined,
@@ -10,16 +10,42 @@ import { Layout, Menu } from "antd";
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
-export default class SiderMenu extends React.Component {
+class SiderMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: false
+      collapsed: false,
+      currentKey: ["1"]
     };
   }
 
   onCollapse = collapsed => {
     this.setState({ collapsed });
+  };
+
+  handleChangeKey = key => this.setState({ currentKey: [key] });
+
+  componentWillMount() {
+    this.updateMenuPath(this.props.location.pathname);
+  }
+
+  updateMenuPath = path => {
+    if (path === "/courses/addition")
+      this.setState({
+        currentKey: ["addition"]
+      });
+    if (path === "/courses/subtraction")
+      this.setState({
+        currentKey: ["subtraction"]
+      });
+    if (path === "/courses/multiplication")
+      this.setState({
+        currentKey: ["multiplication"]
+      });
+    if (path === "/courses/division")
+      this.setState({
+        currentKey: ["division"]
+      });
   };
 
   render() {
@@ -30,7 +56,13 @@ export default class SiderMenu extends React.Component {
         onCollapse={this.onCollapse}
       >
         <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+        <Menu
+          theme="dark"
+          defaultSelectedKeys={["addition"]}
+          selectedKeys={this.state.currentKey}
+          onClick={e => this.handleChangeKey(e.key)}
+          mode="inline"
+        >
           <SubMenu
             key="courses"
             title={
@@ -49,19 +81,19 @@ export default class SiderMenu extends React.Component {
                 </span>
               }
             >
-              <Menu.Item key="1">
+              <Menu.Item key="addition">
                 <span>Dodawanie</span>
                 <Link to="/courses/addition" />
               </Menu.Item>
-              <Menu.Item key="2">
+              <Menu.Item key="subtraction">
                 <span>Odejmownie</span>
                 <Link to="/courses/subtraction" />
               </Menu.Item>
-              <Menu.Item key="3">
+              <Menu.Item key="multiplication">
                 <span>Mnożenie</span>
                 <Link to="/courses/multiplication" />
               </Menu.Item>
-              <Menu.Item key="4">
+              <Menu.Item key="division">
                 <span>Dzielenie</span>
                 <Link to="/courses/division" />
               </Menu.Item>
@@ -86,3 +118,5 @@ export default class SiderMenu extends React.Component {
     );
   }
 }
+
+export default withRouter(SiderMenu);

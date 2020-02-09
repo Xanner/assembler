@@ -9,10 +9,10 @@ export default class SubtractionPAge extends PureComponent {
   render() {
     return (
       <ArithmeticPage
-        headerTitle="Operacje arytmetyczne - dodawanie"
+        headerTitle="Operacje arytmetyczne - odejmowanie"
         data={subtractionExample}
         arithmeticSign={<MinusOutlined />}
-        cardText="Dodaj dwie liczby do siebie i naciśnij Start."
+        cardText="Odejmij dwie liczby od siebie i naciśnij Start."
         handleArithmeticOperation={this.subtraction}
       />
     );
