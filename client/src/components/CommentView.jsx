@@ -1,13 +1,11 @@
-import React from 'react';
-import { Comment } from 'antd';
+import React from "react";
+import { Comment } from "antd";
 
 export default function CommentView(props) {
-    return (
-        <Comment
-            style={{ backgroundColor: 'white', fontFamily: 'Consolas', marginLeft: '50px' }}
-            content={
-                `> ${props.currentComment || ''}`
-            }
-        />
-    );
+  return (
+    <Comment
+      style={{ fontFamily: "Consolas" }}
+      content={props.currentComment || ""}
+    />
+  );
 }

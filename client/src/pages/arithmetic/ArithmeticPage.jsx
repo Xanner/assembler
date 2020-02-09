@@ -1,12 +1,20 @@
 import React, { Component } from "react";
-import { Layout, Col, Row, InputNumber, Timeline, Card, Button } from "antd";
+import {
+  Layout,
+  Col,
+  Row,
+  InputNumber,
+  Timeline,
+  Card,
+  Button,
+  Icon
+} from "antd";
 import {
   PauseOutlined,
   PlayCircleOutlined,
   CaretRightOutlined
 } from "@ant-design/icons";
 import Diagram from "../../components/Diagram";
-import CommentView from "../../components/CommentView";
 import { ArithmeticCodeItems } from "../../components/ArithmeticCodeItems";
 
 const { Content, Header } = Layout;
@@ -82,7 +90,12 @@ export default class ArithmeticPage extends Component {
 
   render() {
     const { codes, currentLineNumber, firstNumber, secondNumber } = this.state;
-    const { headerTitle, cardText, arithmeticSign } = this.props;
+    const {
+      headerTitle,
+      cardText,
+      arithmeticSign,
+      beforeYouStartPath
+    } = this.props;
     const codeLines =
       this.state.hasData &&
       ArithmeticCodeItems(codes, currentLineNumber, firstNumber, secondNumber);
@@ -98,6 +111,20 @@ export default class ArithmeticPage extends Component {
           >
             <Row type="flex" justify="start">
               <Col span={8}>
+                <Row style={{ marginBottom: 16 }}>
+                  <Card
+                    title={
+                      <>
+                        <Icon type="bulb" theme="twoTone" />
+                        Zanim zaczniesz
+                      </>
+                    }
+                    extra={<a href={beforeYouStartPath}>Więcej</a>}
+                  >
+                    Przejdź do odnośnika aby dowiedzieć się więcej na dany
+                    temat.
+                  </Card>
+                </Row>
                 <Row style={{ marginBottom: 16 }}>
                   <InputNumber
                     value={this.state.firstNumber}
@@ -167,7 +194,6 @@ export default class ArithmeticPage extends Component {
                     currentRightRegister: this.state.currentRightRegister
                   }}
                 />
-                <CommentView currentComment={this.state.currentComment} />
               </Col>
             </Row>
           </div>
