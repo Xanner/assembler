@@ -1,18 +1,10 @@
 import React, { Component } from "react";
-import {
-  Layout,
-  Col,
-  Row,
-  InputNumber,
-  Timeline,
-  Card,
-  Button,
-} from "antd";
+import { Layout, Col, Row, InputNumber, Timeline, Card, Button } from "antd";
 import {
   PlusOutlined,
   PauseOutlined,
   PlayCircleOutlined,
-  CaretRightOutlined,
+  CaretRightOutlined
 } from "@ant-design/icons";
 import Diagram from "../components/Diagram";
 import sampleData from "../assets/sample.json";
@@ -33,7 +25,7 @@ export default class AdditionPage extends Component {
       currentComment: null,
       name: null,
       codes: [],
-      hasData: false,
+      hasData: false
     };
   }
 
@@ -58,11 +50,15 @@ export default class AdditionPage extends Component {
                 this.state.currentLineNumber !== code.lineNumber ? "" : "red"
             }}
           >
-            {
-              code.type === 'Data Definition'
-                ? `${code.leftValue && code.leftValue.value} ${code.operation} ${(code.lineNumber === 5) ? this.toHex(this.state.firstNumber) : this.toHex(this.state.secondNumber)}`
-                : `${code.operation || ''} ${code.leftValue.value || ''}${code.rightValue.value ? (',' + code.rightValue.value) : ''}`
-            }
+            {code.type === "Data Definition"
+              ? `${code.leftValue && code.leftValue.value} ${code.operation} ${
+                  code.lineNumber === 5
+                    ? this.toHex(this.state.firstNumber)
+                    : this.toHex(this.state.secondNumber)
+                }`
+              : `${code.operation || ""} ${code.leftValue.value || ""}${
+                  code.rightValue.value ? "," + code.rightValue.value : ""
+                }`}
           </span>
         </Timeline.Item>
       );
@@ -70,9 +66,8 @@ export default class AdditionPage extends Component {
   };
 
   toHex(d) {
-    return ("0" + (Number(d).toString(16))).slice(-2).toUpperCase()
+    return ("0" + Number(d).toString(16)).slice(-2).toUpperCase();
   }
-
 
   handleStart = () => {
     console.log(
@@ -89,30 +84,40 @@ export default class AdditionPage extends Component {
   };
 
   handleNextStep = () => {
-    this.setState(prevState => ({
-      currentLineNumber: prevState.currentLineNumber + 1,
-      result: prevState.currentLineNumber + 1 === 20 ? this.addition() : prevState.result,
-    }), () => this.setCurrentCode());
-  }
+    this.setState(
+      prevState => ({
+        currentLineNumber: prevState.currentLineNumber + 1,
+        result:
+          prevState.currentLineNumber + 1 === 20
+            ? this.addition()
+            : prevState.result
+      }),
+      () => this.setCurrentCode()
+    );
+  };
 
   addition = () => this.state.firstNumber + this.state.secondNumber;
 
   setCurrentCode = () => {
-    const currentCode = this.state.codes.find(c => c.lineNumber === this.state.currentLineNumber);
-    currentCode && this.setState({
-      currentLeftRegister: currentCode.leftValue.value,
-      currentRightRegister: currentCode.rightValue.value,
-      currentComment: currentCode.comment,
-    });
-  }
+    const currentCode = this.state.codes.find(
+      c => c.lineNumber === this.state.currentLineNumber
+    );
+    currentCode &&
+      this.setState({
+        currentLeftRegister: currentCode.leftValue.value,
+        currentRightRegister: currentCode.rightValue.value,
+        currentComment: currentCode.comment
+      });
+  };
 
-  handleRestart = () => this.setState({
-    currentLineNumber: 0,
-    result: null,
-    currentLeftRegister: null,
-    currentRightRegister: null,
-    currentComment: null,
-  });
+  handleRestart = () =>
+    this.setState({
+      currentLineNumber: 0,
+      result: null,
+      currentLeftRegister: null,
+      currentRightRegister: null,
+      currentComment: null
+    });
 
   render() {
     const timeLineItems = this.state.hasData && this.getTimelineItems();
@@ -160,13 +165,21 @@ export default class AdditionPage extends Component {
                   </Button>{" "}
                   <Button
                     onClick={this.handleNextStep}
-                    disabled={!this.state.hasData || (this.state.currentLineNumber - 1 === this.state.codes.length)}
+                    disabled={
+                      !this.state.hasData ||
+                      this.state.currentLineNumber - 1 ===
+                        this.state.codes.length
+                    }
                     type="secondary"
                   >
                     <CaretRightOutlined />
                     Następny krok
                   </Button>{" "}
-                  <Button onClick={this.handleRestart} disabled={!this.state.hasData} type="secondary">
+                  <Button
+                    onClick={this.handleRestart}
+                    disabled={!this.state.hasData}
+                    type="secondary"
+                  >
                     Restart
                   </Button>
                 </Row>
@@ -177,18 +190,20 @@ export default class AdditionPage extends Component {
                         {timeLineItems}
                       </Timeline>
                     ) : (
-                        <p style={{ fontFamily: "Consolas" }}>
-                          Dodaj dwie liczby do siebie i naciśnij Start.
+                      <p style={{ fontFamily: "Consolas" }}>
+                        Dodaj dwie liczby do siebie i naciśnij Start.
                       </p>
-                      )}
+                    )}
                   </Card>
                 </Row>
               </Col>
               <Col span={16}>
-                <Diagram activReg={{
-                  currentLeftRegister: this.state.currentLeftRegister,
-                  currentRightRegister: this.state.currentRightRegister
-                }} />
+                <Diagram
+                  activReg={{
+                    currentLeftRegister: this.state.currentLeftRegister,
+                    currentRightRegister: this.state.currentRightRegister
+                  }}
+                />
                 <CommentView currentComment={this.state.currentComment} />
               </Col>
             </Row>

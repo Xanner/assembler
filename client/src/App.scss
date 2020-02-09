@@ -1,41 +1,37 @@
-
-.ant-layout-content{
+.ant-layout-content {
   padding: 30px;
 }
-.register-page{
-  .ant-row{
+.register-page {
+  .ant-row {
     margin-left: 20px;
   }
-  h1{
+  h1 {
     font-size: 1.5rem;
     font-weight: bolder;
-
   }
-  .desc-title{
+  .desc-title {
     font-size: 1.3rem;
     margin-bottom: 0;
     font-weight: bold;
   }
 
-  .desc-sub-title{
+  .desc-sub-title {
     font-size: 0.8rem;
     margin-left: 5px;
     color: rgba(0, 0, 0, 0.5);
   }
 
-  li{
-    list-style: none; 
+  li {
+    list-style: none;
   }
-  li span{
+  li span {
     font-weight: 600;
   }
-
 }
 
 .reg_active_right {
   fill: red !important;
 }
-.reg_active_left{
+.reg_active_left {
   fill: green !important;
-  
 }

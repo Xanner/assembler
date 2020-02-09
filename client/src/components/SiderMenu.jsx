@@ -1,12 +1,7 @@
-import React from 'react';
-import {
-  Link
-} from "react-router-dom";
-import {
-  CalculatorOutlined,
-  BookOutlined,
-} from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+import React from "react";
+import { Link } from "react-router-dom";
+import { CalculatorOutlined, BookOutlined } from "@ant-design/icons";
+import { Layout, Menu } from "antd";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -15,7 +10,7 @@ export default class SiderMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: false,
+      collapsed: false
     };
   }
 
@@ -25,9 +20,13 @@ export default class SiderMenu extends React.Component {
 
   render() {
     return (
-      <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
+      <Sider
+        collapsible
+        collapsed={this.state.collapsed}
+        onCollapse={this.onCollapse}
+      >
         <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
           <SubMenu
             key="sub1"
             title={
