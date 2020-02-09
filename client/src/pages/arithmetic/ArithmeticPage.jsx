@@ -16,6 +16,7 @@ import {
 } from "@ant-design/icons";
 import Diagram from "../../components/Diagram";
 import { ArithmeticCodeItems } from "../../components/ArithmeticCodeItems";
+import MemoryTabs from "../../components/MemoryTabs";
 
 const { Content, Header } = Layout;
 
@@ -30,7 +31,6 @@ export default class ArithmeticPage extends Component {
       currentLeftRegister: null,
       currentRightRegister: null,
       currentComment: null,
-      name: null,
       codes: [],
       hasData: false
     };
@@ -194,6 +194,9 @@ export default class ArithmeticPage extends Component {
                     currentRightRegister: this.state.currentRightRegister
                   }}
                 />
+                <div style={{ marginLeft: 40 }}>
+                  <MemoryTabs />
+                </div>
               </Col>
             </Row>
           </div>

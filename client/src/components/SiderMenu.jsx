@@ -31,7 +31,7 @@ class SiderMenu extends React.Component {
 
   handleChangeKey = key => this.setState({ currentKey: [key] });
 
-  componentWillMount() {
+  componentDidMount() {
     this.updateMenuPath(this.props.location.pathname);
   }
 

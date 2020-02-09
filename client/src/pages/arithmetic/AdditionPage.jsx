@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { PlusOutlined, BulbOutlined } from "@ant-design/icons";
+import { PlusOutlined } from "@ant-design/icons";
 import additionExample from "../../dal/arithmetic/addition.json";
 import ArithmeticPage from "./ArithmeticPage";
 
