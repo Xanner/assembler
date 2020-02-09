@@ -7,6 +7,8 @@ import SiderMenu from "./components/SiderMenu";
 import { Layout } from "antd";
 import AdditionPage from "./pages/arithmetic/AdditionPage";
 import SubtractionPage from "./pages/arithmetic/SubtractionPage";
+import MultiplicationPage from "./pages/arithmetic/MultiplicationPage";
+import DivisionPage from "./pages/arithmetic/DivisionPage";
 import RegisterPage from "./pages/RegisterPage";
 
 function App() {
@@ -23,6 +25,12 @@ function App() {
                 path="/courses/subtraction"
                 component={SubtractionPage}
               />
+              <Route
+                exact
+                path="/courses/multiplication"
+                component={MultiplicationPage}
+              />
+              <Route exact path="/courses/division" component={DivisionPage} />
               <Route exact path="/guide/register" component={RegisterPage} />
             </Switch>
           </Layout.Content>

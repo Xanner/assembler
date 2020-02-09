@@ -47,10 +47,12 @@ export default class ArithmeticPage extends Component {
         currentLineNumber: prevState.currentLineNumber + 1,
         result:
           prevState.currentLineNumber + 1 === 20
-            ? this.props.handleArithmeticOperation(
-                this.state.firstNumber,
-                this.state.secondNumber
-              )
+            ? this.props
+                .handleArithmeticOperation(
+                  this.state.firstNumber,
+                  this.state.secondNumber
+                )
+                .toFixed(2)
             : prevState.result
       }),
       () => this.setNextCodeLine()
