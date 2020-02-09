@@ -127,6 +127,10 @@ const contentListNoTitle = {
     );
   }),
   registers: (
+    // TODO: poprawić paskudne inputy
+    // TODO: wrzucic rejestry i te tablice w stan, zeby latwo moc zmieniac zawartosc ramu
+    // TODO: do jsonow dodac adres, offset, content | RAM
+    // TODO: podpiac poradniki
     <>
       <div>
         AX <Input style={{ width: "30px" }} size="small" disabled />{" "}
