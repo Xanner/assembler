@@ -1,6 +1,4 @@
 {
-    "id": 1,
-    "name": "Adding Two Numbers",
     "codes": [
         {
             "id": 1,
@@ -8,16 +6,11 @@
             "type": "Segment",
             "operation": ".Model small",
             "comment": "Definicja wielkości modelu pamięci, używamy modelu małego - 1 segment kodu, 1 segmentu danych, 1 segmentu stosu.",
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -28,16 +21,11 @@
             "type": "Segment",
             "operation": ".stack 100h",
             "comment": "Definicja rozmiaru stosu",
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -48,16 +36,11 @@
             "type": "Whitespace",
             "operation": null,
             "comment": null,
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -68,16 +51,11 @@
             "type": "Segment",
             "operation": ".data",
             "comment": "Definicja segmentu danych",
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -85,19 +63,14 @@
         {
             "id": 5,
             "lineNumber": 5,
-            "type": "Data Definition",
+            "type": "DataDefinition",
             "operation": "dw",
-            "comment": "Definicja zmiennej 'a' = {wstaw liczbe}",
-            "courseId": 1,
-            "leftValueId": 3,
+            "comment": "Definicja zmiennej 'a'",
             "leftValue": {
-                "id": 1,
                 "type": "Variable",
                 "value": "a"
             },
-            "rightValueId": 4,
             "rightValue": {
-                "id": 2,
                 "type": "ValueHex",
                 "value": null
             }
@@ -105,19 +78,14 @@
         {
             "id": 6,
             "lineNumber": 6,
-            "type": "Data Definition",
+            "type": "DataDefinition",
             "operation": "dw",
-            "comment": "Definicja zmiennej 'b' = {wstaw liczbe}",
-            "courseId": 1,
-            "leftValueId": 5,
+            "comment": "Definicja zmiennej 'b'",
             "leftValue": {
-                "id": 3,
                 "type": "Variable",
                 "value": "b"
             },
-            "rightValueId": 6,
             "rightValue": {
-                "id": 4,
                 "type": "ValueHex",
                 "value": null
             }
@@ -128,16 +96,11 @@
             "type": "Whitespace",
             "operation": null,
             "comment": null,
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -148,16 +111,11 @@
             "type": "Segment",
             "operation": ".code",
             "comment": "Definicja segmentu kodu",
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -168,16 +126,11 @@
             "type": "Procedure",
             "operation": "MAIN PROC",
             "comment": "Rozpoczęcie głownej procedury",
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -188,16 +141,11 @@
             "type": "Code",
             "operation": "mov",
             "comment": "Przenieś dane z @data do rejestru ax",
-            "courseId": 1,
-            "leftValueId": 7,
             "leftValue": {
-                "id": 5,
                 "type": "Registry",
                 "value": "ax"
             },
-            "rightValueId": 8,
             "rightValue": {
-                "id": 6,
                 "type": "Declared data",
                 "value": "@data"
             }
@@ -208,16 +156,11 @@
             "type": "Code",
             "operation": "mov",
             "comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
-            "courseId": 1,
-            "leftValueId": 8,
             "leftValue": {
-                "id": 5,
                 "type": "Registry",
                 "value": "ds"
             },
-            "rightValueId": 9,
             "rightValue": {
-                "id": 6,
                 "type": "Registry",
                 "value": "ax"
             }
@@ -228,16 +171,11 @@
             "type": "Whitespace",
             "operation": null,
             "comment": null,
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -248,16 +186,11 @@
             "type": "Code",
             "operation": "mov",
             "comment": "Przenieś wartość zmienniej a do rejestru ax.",
-            "courseId": 1,
-            "leftValueId": 10,
             "leftValue": {
-                "id": 7,
                 "type": "Registry",
                 "value": "ax"
             },
-            "rightValueId": 11,
             "rightValue": {
-                "id": 8,
                 "type": "Variable",
                 "value": "a"
             }
@@ -268,16 +201,11 @@
             "type": "Code",
             "operation": "mov",
             "comment": "Przenieś wartość zmienniej b do rejestru bx.",
-            "courseId": 1,
-            "leftValueId": 10,
             "leftValue": {
-                "id": 7,
                 "type": "Registry",
                 "value": "bx"
             },
-            "rightValueId": 11,
             "rightValue": {
-                "id": 8,
                 "type": "Variable",
                 "value": "b"
             }
@@ -288,16 +216,11 @@
             "type": "Whitespace",
             "operation": null,
             "comment": null,
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -308,16 +231,11 @@
             "type": "Code",
             "operation": "add",
             "comment": "DODAJ zawartość rejestru bx do rejestru ax.",
-            "courseId": 1,
-            "leftValueId": 10,
             "leftValue": {
-                "id": 7,
                 "type": "Registry",
                 "value": "ax"
             },
-            "rightValueId": 13,
             "rightValue": {
-                "id": 8,
                 "type": "Registry",
                 "value": "bx"
             }
@@ -328,16 +246,11 @@
             "type": "Code",
             "operation": "add",
             "comment": "Dodaj 30h do rejestru ax, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
-            "courseId": 1,
-            "leftValueId": 10,
             "leftValue": {
-                "id": 7,
                 "type": "Registry",
                 "value": "ax"
             },
-            "rightValueId": 11,
             "rightValue": {
-                "id": 8,
                 "type": "_ValueHex",
                 "value": "30h"
             }
@@ -348,16 +261,11 @@
             "type": "Whitespace",
             "operation": null,
             "comment": null,
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -368,16 +276,11 @@
             "type": "Code",
             "operation": "mov",
             "comment": "Przenieś 02 do rejestru ah. Ozncza to, iż będziemy wypisywać znak na ekranie",
-            "courseId": 1,
-            "leftValueId": 10,
             "leftValue": {
-                "id": 7,
                 "type": "Registry",
                 "value": "ah"
             },
-            "rightValueId": 11,
             "rightValue": {
-                "id": 8,
                 "type": "Internal Code",
                 "value": "02"
             }
@@ -388,16 +291,11 @@
             "type": "Code",
             "operation": "mov",
             "comment": "Przenieś zawartość rejestru ax (zawierający wynik dodawania) do rejestru dx. Rejest dx może zostać użyty do wypisywania zawartości na ekranie. ",
-            "courseId": 1,
-            "leftValueId": 10,
             "leftValue": {
-                "id": 7,
                 "type": "Registry",
                 "value": "dx"
             },
-            "rightValueId": 11,
             "rightValue": {
-                "id": 8,
                 "type": "Registry",
                 "value": "ax"
             }
@@ -408,16 +306,11 @@
             "type": "Interruption",
             "operation": "int",
             "comment": "Przerwanie 21h",
-            "courseId": 1,
-            "leftValueId": 10,
             "leftValue": {
-                "id": 7,
                 "type": "_ValueHex",
                 "value": "21h"
             },
-            "rightValueId": 11,
             "rightValue": {
-                "id": 8,
                 "type": null,
                 "value": null
             }
@@ -428,16 +321,11 @@
             "type": "Whitespace",
             "operation": null,
             "comment": null,
-            "courseId": 1,
-            "leftValueId": null,
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
@@ -448,16 +336,11 @@
             "type": "Procedure",
             "operation": "main endp",
             "comment": "Zakonczenie procedury",
-            "courseId": 1,
-            "leftValueId": 10,
             "leftValue": {
-                "id": 7,
                 "type": null,
                 "value": null
             },
-            "rightValueId": 11,
             "rightValue": {
-                "id": 8,
                 "type": null,
                 "value": null
             }
@@ -467,17 +350,12 @@
             "lineNumber": 24,
             "type": "Procedure",
             "operation": "end main",
-            "comment": null,
-            "courseId": 1,
-            "leftValueId": null,
+            "comment": "Zakończenie bloku main",
             "leftValue": {
-                "id": null,
                 "type": null,
                 "value": null
             },
-            "rightValueId": null,
             "rightValue": {
-                "id": null,
                 "type": null,
                 "value": null
             }
