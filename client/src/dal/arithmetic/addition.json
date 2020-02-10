@@ -76,7 +76,7 @@
 			},
 			"address": "0720",
 			"offset": "0000",
-			"ramContent": "aConvertToHext"
+			"ramContent": "05"
 		},
 		{
 			"id": 6,
@@ -94,7 +94,7 @@
 			},
 			"address": "0720",
 			"offset": "0001",
-			"ramContent": "bConvertToHext"
+			"ramContent": "02"
 		},
 		{
 			"id": 7,
