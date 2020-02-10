@@ -12,7 +12,12 @@ for (let i = 0; i < 128; i++) {
 }
 
 class DataSegment extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataSegment: DSRAM
+    };
+  }
 
   render() {
     return DSRAM.map((item, index) => {

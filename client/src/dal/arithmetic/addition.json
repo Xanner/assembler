@@ -73,7 +73,10 @@
 			"rightValue": {
 				"type": "ValueHex",
 				"value": null
-			}
+			},
+			"address": "0720",
+			"offset": "0000",
+			"ramContent": "aConvertToHext"
 		},
 		{
 			"id": 6,
@@ -88,7 +91,10 @@
 			"rightValue": {
 				"type": "ValueHex",
 				"value": null
-			}
+			},
+			"address": "0720",
+			"offset": "0001",
+			"ramContent": "bConvertToHext"
 		},
 		{
 			"id": 7,
@@ -148,7 +154,16 @@
 			"rightValue": {
 				"type": "Declared data",
 				"value": "@data"
-			}
+			},
+			"address": "0721",
+			"offset": "0000",
+			"ramContent": [
+				"B8",
+				"20",
+				"07"
+			],
+			"AH": "00",
+			"AL": "00"
 		},
 		{
 			"id": 11,
@@ -163,7 +178,15 @@
 			"rightValue": {
 				"type": "Registry",
 				"value": "ax"
-			}
+			},
+			"address": "0721",
+			"offset": "0003",
+			"ramContent": [
+				"8E",
+				"D8"
+			],
+			"AH": "07",
+			"AL": "20"
 		},
 		{
 			"id": 12,
@@ -193,7 +216,15 @@
 			"rightValue": {
 				"type": "Variable",
 				"value": "a"
-			}
+			},
+			"address": "0721",
+			"offset": "0005",
+			"ramContent": [
+				"A0",
+				"00",
+				"00"
+			],
+			"DS": "0720"
 		},
 		{
 			"id": 14,
@@ -208,7 +239,16 @@
 			"rightValue": {
 				"type": "Variable",
 				"value": "b"
-			}
+			},
+			"address": "0721",
+			"offset": "0008",
+			"ramContent": [
+				"8A",
+				"1E",
+				"01",
+				"00"
+			],
+			"AL": "05"
 		},
 		{
 			"id": 15,
@@ -238,7 +278,14 @@
 			"rightValue": {
 				"type": "Registry",
 				"value": "bx"
-			}
+			},
+			"address": "0721",
+			"offset": "000C",
+			"ramContent": [
+				"02",
+				"C3"
+			],
+			"BX": "02"
 		},
 		{
 			"id": 17,
@@ -253,7 +300,14 @@
 			"rightValue": {
 				"type": "_ValueHex",
 				"value": "30h"
-			}
+			},
+			"address": "0721",
+			"offset": "000E",
+			"ramContent": [
+				"04",
+				"30"
+			],
+			"AL": "07"
 		},
 		{
 			"id": 18,
@@ -283,7 +337,14 @@
 			"rightValue": {
 				"type": "Internal Code",
 				"value": "02"
-			}
+			},
+			"address": "0721",
+			"offset": "0010",
+			"ramContent": [
+				"B4",
+				"02"
+			],
+			"AL": "37"
 		},
 		{
 			"id": 20,
@@ -298,7 +359,14 @@
 			"rightValue": {
 				"type": "Registry",
 				"value": "ax"
-			}
+			},
+			"address": "0721",
+			"offset": "0012",
+			"ramContent": [
+				"8A",
+				"D0"
+			],
+			"AH": "02"
 		},
 		{
 			"id": 21,
@@ -313,7 +381,14 @@
 			"rightValue": {
 				"type": null,
 				"value": null
-			}
+			},
+			"address": "0721",
+			"offset": "0014",
+			"ramContent": [
+				"CD",
+				"21"
+			],
+			"DX": "37"
 		},
 		{
 			"id": 22,
@@ -328,7 +403,10 @@
 			"rightValue": {
 				"type": null,
 				"value": null
-			}
+			},
+			"CS": "F400",
+			"IP": "0200",
+			"SP": "00FA"
 		},
 		{
 			"id": 23,

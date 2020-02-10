@@ -21,7 +21,6 @@ const tabListNoTitle = [
 ];
 
 // TODO: wrzucic rejestry i te tablice w stan, zeby latwo moc zmieniac zawartosc ramu
-// TODO: do jsonow dodac adres, offset, content | RAM
 // TODO: podpiac poradniki
 const contentListNoTitle = {
   dataSegment: <DataSegment />,
