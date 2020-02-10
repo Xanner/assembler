@@ -80,6 +80,9 @@ export default class TabsCard extends React.Component {
   }
 
   //TODO: obsluzyc zmiane danego segmentu w zaleznosci od tego co znajduje sie w this.props.currentCode
+  componentWillReceiveProps() {
+    console.log(this.props.currentCode);
+  }
 
   onTabChange = key => {
     this.setState({ selectedTab: key });
