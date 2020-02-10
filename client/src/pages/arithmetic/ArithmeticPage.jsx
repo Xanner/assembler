@@ -195,7 +195,7 @@ export default class ArithmeticPage extends Component {
                   }}
                 />
                 <div style={{ marginLeft: 40 }}>
-                  //TODO przekazac propsy dla data segment, cs ss i register
+                  {/* TODO przekazac propsy dla data segment, cs ss i register */}
                   <MemoryTabs />
                 </div>
               </Col>
