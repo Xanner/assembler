@@ -28,6 +28,7 @@ export default class ArithmeticPage extends Component {
       secondNumber: null,
       result: null,
       currentLineNumber: null,
+      currentCode: null,
       currentLeftRegister: null,
       currentRightRegister: null,
       currentComment: null,
@@ -45,6 +46,7 @@ export default class ArithmeticPage extends Component {
       currentLeftRegister: null,
       currentRightRegister: null,
       currentComment: null,
+      currentCode: null,
       hasData: true
     });
   };
@@ -75,7 +77,8 @@ export default class ArithmeticPage extends Component {
       this.setState({
         currentLeftRegister: currentCode.leftValue.value,
         currentRightRegister: currentCode.rightValue.value,
-        currentComment: currentCode.comment
+        currentComment: currentCode.comment,
+        currentCode: currentCode
       });
   };
 
@@ -85,7 +88,8 @@ export default class ArithmeticPage extends Component {
       result: null,
       currentLeftRegister: null,
       currentRightRegister: null,
-      currentComment: null
+      currentComment: null,
+      currentCode: null
     });
 
   render() {
@@ -127,21 +131,24 @@ export default class ArithmeticPage extends Component {
                 </Row>
                 <Row style={{ marginBottom: 16 }}>
                   <InputNumber
+                    style={{ width: "60px" }}
                     value={this.state.firstNumber}
-                    size="large"
+                    size="default"
                     onChange={value => this.handleChange("firstNumber", value)}
                   />
                   {arithmeticSign}
                   <InputNumber
+                    style={{ width: "60px" }}
                     value={this.state.secondNumber}
-                    size="large"
+                    size="default"
                     onChange={value => this.handleChange("secondNumber", value)}
                   />
                   <PauseOutlined rotate={90} />
                   <InputNumber
+                    style={{ width: "60px" }}
                     disabled
                     value={this.state.result}
-                    size="large"
+                    size="default"
                   />
                 </Row>
                 <Row style={{ marginBottom: 8 }} justify="start">
@@ -195,8 +202,7 @@ export default class ArithmeticPage extends Component {
                   }}
                 />
                 <div style={{ marginLeft: 40 }}>
-                  {/* TODO przekazac propsy dla data segment, cs ss i register */}
-                  <MemoryTabs />
+                  <MemoryTabs currentCode={this.state.currentCode} />
                 </div>
               </Col>
             </Row>
