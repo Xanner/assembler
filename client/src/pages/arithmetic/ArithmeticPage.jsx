@@ -33,6 +33,7 @@ export default class ArithmeticPage extends Component {
       currentRightRegister: null,
       currentComment: null,
       codes: [],
+      hasStarted: false,
       hasData: false
     };
   }
@@ -47,7 +48,8 @@ export default class ArithmeticPage extends Component {
       currentRightRegister: null,
       currentComment: null,
       currentCode: null,
-      hasData: true
+      hasData: true,
+      hasStarted: true
     });
   };
 
@@ -83,14 +85,18 @@ export default class ArithmeticPage extends Component {
   };
 
   handleRestart = () =>
-    this.setState({
-      currentLineNumber: 0,
-      result: null,
-      currentLeftRegister: null,
-      currentRightRegister: null,
-      currentComment: null,
-      currentCode: null
-    });
+    this.setState(
+      {
+        currentLineNumber: 0,
+        result: null,
+        currentLeftRegister: null,
+        currentRightRegister: null,
+        currentComment: null,
+        currentCode: null,
+        hasRestarted: true
+      },
+      () => this.setState({ hasRestarted: false, hasStarted: false })
+    );
 
   render() {
     const { codes, currentLineNumber, firstNumber, secondNumber } = this.state;
@@ -154,6 +160,7 @@ export default class ArithmeticPage extends Component {
                 <Row style={{ marginBottom: 8 }} justify="start">
                   <Button
                     disabled={
+                      this.state.hasStarted ||
                       !(this.state.firstNumber && this.state.secondNumber)
                     }
                     onClick={this.handleStart}
@@ -165,6 +172,7 @@ export default class ArithmeticPage extends Component {
                   <Button
                     onClick={this.handleNextStep}
                     disabled={
+                      !this.state.hasStarted ||
                       !this.state.hasData ||
                       this.state.currentLineNumber - 1 ===
                         this.state.codes.length
@@ -195,14 +203,18 @@ export default class ArithmeticPage extends Component {
                 </Row>
               </Col>
               <Col span={16}>
-                <Diagram
-                  activReg={{
-                    currentLeftRegister: this.state.currentLeftRegister,
-                    currentRightRegister: this.state.currentRightRegister
-                  }}
-                />
+                {!this.state.hasRestarted && (
+                  <Diagram
+                    activReg={{
+                      currentLeftRegister: this.state.currentLeftRegister,
+                      currentRightRegister: this.state.currentRightRegister
+                    }}
+                  />
+                )}
                 <div style={{ marginLeft: 40 }}>
-                  <MemoryTabs currentCode={this.state.currentCode} />
+                  {!this.state.hasRestarted && (
+                    <MemoryTabs currentCode={this.state.currentCode} />
+                  )}
                 </div>
               </Col>
             </Row>
