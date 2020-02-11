@@ -478,7 +478,9 @@
 				{
 					"DL": "37"
 				}
-			]
+			],
+			"consoleResult": "7",
+			"consoleAction": "output"
 		},
 		{
 			"id": 22,

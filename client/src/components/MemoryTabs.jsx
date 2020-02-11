@@ -121,6 +121,12 @@ export default class TabsCard extends React.Component {
     });
   };
 
+  updateConsole = consoleResult => {
+    this.setState({
+      consoleContent: consoleResult
+    });
+  };
+
   componentDidUpdate(prevProps) {
     if (prevProps === this.props) return;
     const { currentCode } = this.props;
@@ -146,6 +152,8 @@ export default class TabsCard extends React.Component {
         this.updateSegment("stackSegment", currentCode, lastOffset);
       }
     }
+    if (currentCode.type === "Interruption")
+      this.updateConsole(currentCode.consoleResult);
   }
 
   onTabChange = key => {
