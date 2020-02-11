@@ -33,6 +33,7 @@ for (let i = 0; i < 128; i++) {
   });
 }
 
+// jezeli currencode zawiera ktorys z registrow to go modyfikuj i  podstwietl
 let REGISTER = {
   AH: "00",
   AL: "00",
@@ -51,6 +52,10 @@ let REGISTER = {
   DS: "0700",
   ES: "0700"
 };
+
+const DSADDRESS = "0720";
+const CSADDRESS = "0721";
+const SSADDRESS = "0710";
 
 const tabListNoTitle = [
   {
@@ -71,7 +76,7 @@ export default class TabsCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: "codeSegment",
+      selectedTab: "dataSegment",
       dataSegment: DSRAM,
       codeSegment: CSRAM,
       stackSegment: STACKRAM,
@@ -79,9 +84,33 @@ export default class TabsCard extends React.Component {
     };
   }
 
-  //TODO: obsluzyc zmiane danego segmentu w zaleznosci od tego co znajduje sie w this.props.currentCode
+  updateSegment = (segmentKey, currentCode) => {
+    const initialAddress = currentCode.address;
+    const addressToChange = "";
+
+    this.setState({
+      [segmentKey]: this.state.dataSegment.map(ds =>
+        ds.address === addressToChange //tutaj jezeli ds.address zawiera sie w wygenerowanych powyzej to zmien
+          ? { ...ds, content: currentCode.ramContent }
+          : ds
+      )
+    });
+  };
+
   componentWillReceiveProps() {
-    console.log(this.props.currentCode);
+    const { currentCode } = this.props;
+    if (currentCode && currentCode.address) {
+      //const addressToChange = `${currentCode.address}:${currentCode.offset}`;
+      if (currentCode.address === DSADDRESS) {
+        this.updateSegment("dataSegment", currentCode);
+      }
+      if (currentCode.address === CSADDRESS) {
+        this.updateSegment("codeSegment", currentCode);
+      }
+      if (currentCode.address === SSADDRESS) {
+        this.updateSegment("stackSegment", currentCode);
+      }
+    }
   }
 
   onTabChange = key => {
@@ -89,6 +118,7 @@ export default class TabsCard extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     const contentListNoTitle = {
       dataSegment: <DataSegment data={this.state.dataSegment} />,
       codeSegment: <CodeSegment data={this.state.codeSegment} />,

@@ -74,9 +74,12 @@
 				"type": "ValueHex",
 				"value": null
 			},
-			"address": "0720",
-			"offset": "0000",
-			"ramContent": "05"
+			"memory": [
+				{
+					"address": "0720:0000",
+					"content": "05"
+				}
+			]
 		},
 		{
 			"id": 6,
@@ -92,9 +95,12 @@
 				"type": "ValueHex",
 				"value": null
 			},
-			"address": "0720",
-			"offset": "0001",
-			"ramContent": "02"
+			"memory": [
+				{
+					"address": "0720:0001",
+					"content": "02"
+				}
+			]
 		},
 		{
 			"id": 7,
@@ -155,15 +161,26 @@
 				"type": "Declared data",
 				"value": "@data"
 			},
-			"address": "0721",
-			"offset": "0000",
-			"ramContent": [
-				"B8",
-				"20",
-				"07"
+			"memory": [
+				{
+					"address": "0721:0000",
+					"content": "B8"
+				},
+				{
+					"address": "0721:0001",
+					"content": "20"
+				},
+				{
+					"address": "0721:0002",
+					"content": "07"
+				}
 			],
-			"AH": "00",
-			"AL": "00"
+			"registers": [
+				{
+					"AH": "00",
+					"AL": "00"
+				}
+			]
 		},
 		{
 			"id": 11,
@@ -179,14 +196,22 @@
 				"type": "Registry",
 				"value": "ax"
 			},
-			"address": "0721",
-			"offset": "0003",
-			"ramContent": [
-				"8E",
-				"D8"
+			"memory": [
+				{
+					"address": "0721:0003",
+					"content": "8E"
+				},
+				{
+					"address": "0721:0004",
+					"content": "D8"
+				}
 			],
-			"AH": "07",
-			"AL": "20"
+			"registers": [
+				{
+					"AH": "07",
+					"AL": "20"
+				}
+			]
 		},
 		{
 			"id": 12,
@@ -217,14 +242,25 @@
 				"type": "Variable",
 				"value": "a"
 			},
-			"address": "0721",
-			"offset": "0005",
-			"ramContent": [
-				"A0",
-				"00",
-				"00"
+			"memory": [
+				{
+					"address": "0721:0005",
+					"content": "A0"
+				},
+				{
+					"address": "0721:0006",
+					"content": "00"
+				},
+				{
+					"address": "0721:0007",
+					"content": "00"
+				}
 			],
-			"DS": "0720"
+			"registers": [
+				{
+					"DS": "0720"
+				}
+			]
 		},
 		{
 			"id": 14,
@@ -240,15 +276,29 @@
 				"type": "Variable",
 				"value": "b"
 			},
-			"address": "0721",
-			"offset": "0008",
-			"ramContent": [
-				"8A",
-				"1E",
-				"01",
-				"00"
+			"memory": [
+				{
+					"address": "0721:0008",
+					"content": "8A"
+				},
+				{
+					"address": "0721:0009",
+					"content": "1E"
+				},
+				{
+					"address": "0721:000A",
+					"content": "01"
+				},
+				{
+					"address": "0721:000B",
+					"content": "00"
+				}
 			],
-			"AL": "05"
+			"registers": [
+				{
+					"AL": "05"
+				}
+			]
 		},
 		{
 			"id": 15,
@@ -279,13 +329,21 @@
 				"type": "Registry",
 				"value": "bx"
 			},
-			"address": "0721",
-			"offset": "000C",
-			"ramContent": [
-				"02",
-				"C3"
+			"memory": [
+				{
+					"address": "0721:000C",
+					"content": "02"
+				},
+				{
+					"address": "0721:000D",
+					"content": "C3"
+				}
 			],
-			"BX": "02"
+			"registers": [
+				{
+					"BL": "02"
+				}
+			]
 		},
 		{
 			"id": 17,
@@ -301,13 +359,21 @@
 				"type": "_ValueHex",
 				"value": "30h"
 			},
-			"address": "0721",
-			"offset": "000E",
-			"ramContent": [
-				"04",
-				"30"
+			"memory": [
+				{
+					"address": "0721:000E",
+					"content": "04"
+				},
+				{
+					"address": "0721:000F",
+					"content": "30"
+				}
 			],
-			"AL": "07"
+			"registers": [
+				{
+					"AL": "07"
+				}
+			]
 		},
 		{
 			"id": 18,
@@ -338,13 +404,21 @@
 				"type": "Internal Code",
 				"value": "02"
 			},
-			"address": "0721",
-			"offset": "0010",
-			"ramContent": [
-				"B4",
-				"02"
+			"memory": [
+				{
+					"address": "0721:0010",
+					"content": "B4"
+				},
+				{
+					"address": "0721:0011",
+					"content": "02"
+				}
 			],
-			"AL": "37"
+			"registers": [
+				{
+					"AL": "37"
+				}
+			]
 		},
 		{
 			"id": 20,
@@ -360,13 +434,21 @@
 				"type": "Registry",
 				"value": "ax"
 			},
-			"address": "0721",
-			"offset": "0012",
-			"ramContent": [
-				"8A",
-				"D0"
+			"memory": [
+				{
+					"address": "0721:0012",
+					"content": "8A"
+				},
+				{
+					"address": "0721:0013",
+					"content": "D0"
+				}
 			],
-			"AH": "02"
+			"registers": [
+				{
+					"AH": "02"
+				}
+			]
 		},
 		{
 			"id": 21,
@@ -382,13 +464,21 @@
 				"type": null,
 				"value": null
 			},
-			"address": "0721",
-			"offset": "0014",
-			"ramContent": [
-				"CD",
-				"21"
+			"memory": [
+				{
+					"address": "0721:0014",
+					"content": "CD"
+				},
+				{
+					"address": "0721:0015",
+					"content": "21"
+				}
 			],
-			"DX": "37"
+			"registers": [
+				{
+					"DL": "37"
+				}
+			]
 		},
 		{
 			"id": 22,
@@ -404,9 +494,17 @@
 				"type": null,
 				"value": null
 			},
-			"CS": "F400",
-			"IP": "0200",
-			"SP": "00FA"
+			"registers": [
+				{
+					"CS": "F400"
+				},
+				{
+					"IP": "0200"
+				},
+				{
+					"SP": "00FA"
+				}
+			]
 		},
 		{
 			"id": 23,
