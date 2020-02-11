@@ -85,29 +85,29 @@ export default class TabsCard extends React.Component {
   }
 
   updateSegment = (segmentKey, currentCode) => {
-    const initialAddress = currentCode.address;
-    const addressToChange = "";
-
+    const memory = currentCode.memory;
     this.setState({
-      [segmentKey]: this.state.dataSegment.map(ds =>
-        ds.address === addressToChange //tutaj jezeli ds.address zawiera sie w wygenerowanych powyzej to zmien
-          ? { ...ds, content: currentCode.ramContent }
-          : ds
-      )
+      [segmentKey]: this.state[segmentKey].map(ds => {
+        const matchedMemory = memory.find(item => item.address === ds.address);
+        return matchedMemory || ds;
+      })
     });
   };
 
   componentWillReceiveProps() {
     const { currentCode } = this.props;
-    if (currentCode && currentCode.address) {
-      //const addressToChange = `${currentCode.address}:${currentCode.offset}`;
-      if (currentCode.address === DSADDRESS) {
+    if (!currentCode) return;
+    if (!currentCode.memory) return;
+    const initialAddress = currentCode.memory[0].address.substring(0, 4);
+
+    if (initialAddress) {
+      if (initialAddress === DSADDRESS) {
         this.updateSegment("dataSegment", currentCode);
       }
-      if (currentCode.address === CSADDRESS) {
+      if (initialAddress === CSADDRESS) {
         this.updateSegment("codeSegment", currentCode);
       }
-      if (currentCode.address === SSADDRESS) {
+      if (initialAddress === SSADDRESS) {
         this.updateSegment("stackSegment", currentCode);
       }
     }
@@ -118,12 +118,13 @@ export default class TabsCard extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     const contentListNoTitle = {
       dataSegment: <DataSegment data={this.state.dataSegment} />,
       codeSegment: <CodeSegment data={this.state.codeSegment} />,
       stackSegment: <StackSegment data={this.state.stackSegment} />
     };
+
+    console.log(this.state);
 
     return (
       <Card
