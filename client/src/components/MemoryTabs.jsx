@@ -4,6 +4,7 @@ import Register from "./Register";
 import DataSegment from "./DataSegment";
 import CodeSegment from "./CodeSegment";
 import StackSegment from "./StackSegment";
+import Console from "./Console";
 import { convertToHex } from "./ArithmeticCodeItems";
 
 let DSRAM = [];
@@ -81,7 +82,8 @@ export default class TabsCard extends React.Component {
       stackSegment: STACKRAM,
       register: REGISTER,
       currentMemoryChanges: [],
-      currentRegisterChanges: null
+      currentRegisterChanges: null,
+      consoleContent: "> zawartosc konsoli"
     };
   }
 
@@ -173,22 +175,25 @@ export default class TabsCard extends React.Component {
     };
 
     return (
-      <Card
-        style={{ width: "100%" }}
-        tabList={tabListNoTitle}
-        activeTabKey={this.state.selectedTab}
-        onTabChange={key => {
-          this.onTabChange(key);
-        }}
-      >
-        <Col xs={21}>{contentListNoTitle[this.state.selectedTab]}</Col>
-        <Col xs={3}>
-          <Register
-            data={this.state.register}
-            currentRegisterChanges={this.state.currentRegisterChanges}
-          />
-        </Col>
-      </Card>
+      <>
+        <Console consoleContent={this.state.consoleContent} />
+        <Card
+          style={{ width: "100%" }}
+          tabList={tabListNoTitle}
+          activeTabKey={this.state.selectedTab}
+          onTabChange={key => {
+            this.onTabChange(key);
+          }}
+        >
+          <Col xs={21}>{contentListNoTitle[this.state.selectedTab]}</Col>
+          <Col xs={3}>
+            <Register
+              data={this.state.register}
+              currentRegisterChanges={this.state.currentRegisterChanges}
+            />
+          </Col>
+        </Card>
+      </>
     );
   }
 }
