@@ -64,31 +64,37 @@
             "id": 5,
             "lineNumber": 5,
             "type": "DataDefinition",
-            "operation": "dw",
-            "comment": "Definicja zmiennej 'a'",
+            "operation": "db",
+            "comment": "Definicja zmiennej bajtowej 'a'",
             "leftValue": {
                 "type": "Variable",
                 "value": "a"
             },
             "rightValue": {
-                "type": "ValueHex",
+                "type": "Value",
                 "value": null
-            }
+            },
+            "address": "0720",
+            "offset": "0000",
+            "ramContent": "03"
         },
         {
             "id": 6,
             "lineNumber": 6,
             "type": "DataDefinition",
-            "operation": "dw",
-            "comment": "Definicja zmiennej 'b'",
+            "operation": "db",
+            "comment": "Definicja zmiennej bajtowej 'b'",
             "leftValue": {
                 "type": "Variable",
                 "value": "b"
             },
             "rightValue": {
-                "type": "ValueHex",
+                "type": "Value",
                 "value": null
-            }
+            },
+            "address": "0720",
+            "offset": "0001",
+            "ramContent": "03"
         },
         {
             "id": 7,
@@ -140,7 +146,7 @@
             "lineNumber": 10,
             "type": "Code",
             "operation": "mov",
-            "comment": "Przenieś dane z @data do rejestru ax",
+            "comment": "Przenieś dane z @data do rejestru AX",
             "leftValue": {
                 "type": "Registry",
                 "value": "ax"
@@ -148,14 +154,23 @@
             "rightValue": {
                 "type": "Declared data",
                 "value": "@data"
-            }
+            },
+            "address": "0721",
+            "offset": "0000",
+            "ramContent": [
+                "B8",
+                "20",
+                "07"
+            ],
+            "AH": "00",
+            "AL": "00"
         },
         {
             "id": 11,
             "lineNumber": 11,
             "type": "Code",
             "operation": "mov",
-            "comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
+            "comment": "Przenieś dane z rejestru AX do rejestru DS. Zmienne a i b gotowe do użycia.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ds"
@@ -163,7 +178,15 @@
             "rightValue": {
                 "type": "Registry",
                 "value": "ax"
-            }
+            },
+            "address": "0721",
+            "offset": "0003",
+            "ramContent": [
+                "8E",
+                "D8"
+            ],
+            "AH": "07",
+            "AL": "20"
         },
         {
             "id": 12,
@@ -185,22 +208,30 @@
             "lineNumber": 13,
             "type": "Code",
             "operation": "mov",
-            "comment": "Przenieś wartość zmienniej a do rejestru ax.",
+            "comment": "Przenieś wartość zmienniej a do rejestru AL.",
             "leftValue": {
                 "type": "Registry",
-                "value": "ax"
+                "value": "al"
             },
             "rightValue": {
                 "type": "Variable",
                 "value": "a"
-            }
+            },
+            "address": "0721",
+            "offset": "0005",
+            "ramContent": [
+                "A0",
+                "00",
+                "00"
+            ],
+            "DS": "0720"
         },
         {
             "id": 14,
             "lineNumber": 14,
             "type": "Code",
             "operation": "mov",
-            "comment": "Przenieś wartość zmienniej b do rejestru bx.",
+            "comment": "Przenieś wartość zmienniej b do rejestru BL.",
             "leftValue": {
                 "type": "Registry",
                 "value": "bx"
@@ -208,7 +239,16 @@
             "rightValue": {
                 "type": "Variable",
                 "value": "b"
-            }
+            },
+            "address": "0721",
+            "offset": "0008",
+            "ramContent": [
+                "8A",
+                "1E",
+                "01",
+                "00"
+            ],
+            "AL": "03"
         },
         {
             "id": 15,
@@ -229,32 +269,46 @@
             "id": 16,
             "lineNumber": 16,
             "type": "Code",
-            "operation": "add",
-            "comment": "DODAJ zawartość rejestru bx do rejestru ax.",
+            "operation": "mul",
+            "comment": "POMNÓŻ rejestr AL przez rejestr BL. Wynik zapisz w AX",
             "leftValue": {
                 "type": "Registry",
-                "value": "ax"
+                "value": "al"
             },
             "rightValue": {
                 "type": "Registry",
-                "value": "bx"
-            }
-        },
-        {
-            "id": 17,
-            "lineNumber": 17,
-            "type": "Code",
-            "operation": "add",
-            "comment": "Dodaj 30h do rejestru ax, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
-            "leftValue": {
-                "type": "Registry",
-                "value": "ax"
+                "value": "bl"
             },
-            "rightValue": {
-                "type": "_ValueHex",
-                "value": "30h"
-            }
+            "address": "0721",
+            "offset": "000C",
+            "ramContent": [
+                "F6",
+                "E3"
+            ],
+            "AX": "09"
         },
+		{
+			"id": 17,
+			"lineNumber": 17,
+			"type": "Code",
+			"operation": "add",
+			"comment": "Dodaj 30h do rejestru AX, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
+			"leftValue": {
+				"type": "Registry",
+				"value": "ax"
+			},
+			"rightValue": {
+				"type": "_ValueHex",
+				"value": "30h"
+			},
+			"address": "0721",
+			"offset": "000E",
+			"ramContent": [
+				"04",
+				"30"
+			],
+			"AL": "09"
+		},
         {
             "id": 18,
             "lineNumber": 18,
@@ -270,51 +324,72 @@
                 "value": null
             }
         },
+		{
+			"id": 19,
+			"lineNumber": 19,
+			"type": "Code",
+			"operation": "mov",
+			"comment": "Przenieś 02 do rejestru AH. Ozncza to, iż będziemy wypisywać znak na ekranie.",
+			"leftValue": {
+				"type": "Registry",
+				"value": "ah"
+			},
+			"rightValue": {
+				"type": "Internal Code",
+				"value": "02"
+			},
+			"address": "0721",
+			"offset": "0010",
+			"ramContent": [
+				"B4",
+				"02"
+			],
+			"AL": "39"
+		},
+		{
+			"id": 20,
+			"lineNumber": 20,
+			"type": "Code",
+			"operation": "mov",
+			"comment": "Przenieś zawartość rejestru AL (zawierający wynik dodawania) do rejestru DL. Rejest DL może zostać użyty do wypisywania zawartości na ekranie. ",
+			"leftValue": {
+				"type": "Registry",
+				"value": "dx"
+			},
+			"rightValue": {
+				"type": "Registry",
+				"value": "ax"
+			},
+			"address": "0721",
+			"offset": "0012",
+			"ramContent": [
+				"8A",
+				"D0"
+			],
+			"AH": "02"
+		},
         {
-            "id": 19,
-            "lineNumber": 19,
-            "type": "Code",
-            "operation": "mov",
-            "comment": "Przenieś 02 do rejestru ah. Ozncza to, iż będziemy wypisywać znak na ekranie",
-            "leftValue": {
-                "type": "Registry",
-                "value": "ah"
-            },
-            "rightValue": {
-                "type": "Internal Code",
-                "value": "02"
-            }
-        },
-        {
-            "id": 20,
-            "lineNumber": 20,
-            "type": "Code",
-            "operation": "mov",
-            "comment": "Przenieś zawartość rejestru ax (zawierający wynik dodawania) do rejestru dx. Rejest dx może zostać użyty do wypisywania zawartości na ekranie. ",
-            "leftValue": {
-                "type": "Registry",
-                "value": "dx"
-            },
-            "rightValue": {
-                "type": "Registry",
-                "value": "ax"
-            }
-        },
-        {
-            "id": 21,
-            "lineNumber": 21,
-            "type": "Interruption",
-            "operation": "int",
-            "comment": "Przerwanie 21h",
-            "leftValue": {
-                "type": "_ValueHex",
-                "value": "21h"
-            },
-            "rightValue": {
-                "type": null,
-                "value": null
-            }
-        },
+			"id": 21,
+			"lineNumber": 21,
+			"type": "Interruption",
+			"operation": "int",
+			"comment": "Przerwanie 21h",
+			"leftValue": {
+				"type": "_ValueHex",
+				"value": "21h"
+			},
+			"rightValue": {
+				"type": null,
+				"value": null
+			},
+			"address": "0721",
+			"offset": "0014",
+			"ramContent": [
+				"CD",
+				"21"
+			],
+			"DX": "39"
+		},
         {
             "id": 22,
             "lineNumber": 22,
@@ -328,7 +403,10 @@
             "rightValue": {
                 "type": null,
                 "value": null
-            }
+            },
+            "CS": "F400",
+			"IP": "0200",
+			"SP": "00FA"
         },
         {
             "id": 23,
