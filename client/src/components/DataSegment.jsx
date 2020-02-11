@@ -11,7 +11,13 @@ class DataSegment extends PureComponent {
               {index !== 0 && <br />}
               <b>{item.address}:</b>{" "}
               <Input
-                style={{ width: "31px" }}
+                style={{
+                  width: "34px",
+                  color:
+                    this.props.currentMemoryChanges.find(
+                      m => m.address === item.address
+                    ) && "red"
+                }}
                 size="small"
                 disabled
                 value={item.content}
@@ -21,7 +27,13 @@ class DataSegment extends PureComponent {
         return (
           <span key={item.address}>
             <Input
-              style={{ width: "31px" }}
+              style={{
+                width: "34px",
+                color:
+                  this.props.currentMemoryChanges.find(
+                    m => m.address === item.address
+                  ) && "red"
+              }}
               size="small"
               disabled
               value={item.content}

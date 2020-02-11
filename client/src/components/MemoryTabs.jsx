@@ -80,21 +80,25 @@ export default class TabsCard extends React.Component {
       dataSegment: DSRAM,
       codeSegment: CSRAM,
       stackSegment: STACKRAM,
-      register: REGISTER
+      register: REGISTER,
+      currentMemoryChanges: []
     };
   }
 
   updateSegment = (segmentKey, currentCode) => {
     const memory = currentCode.memory;
+
     this.setState({
       [segmentKey]: this.state[segmentKey].map(ds => {
         const matchedMemory = memory.find(item => item.address === ds.address);
         return matchedMemory || ds;
-      })
+      }),
+      currentMemoryChanges: memory
     });
   };
 
-  componentWillReceiveProps() {
+  componentDidUpdate(prevProps) {
+    if (prevProps === this.props) return;
     const { currentCode } = this.props;
     if (!currentCode) return;
     if (!currentCode.memory) return;
@@ -119,12 +123,25 @@ export default class TabsCard extends React.Component {
 
   render() {
     const contentListNoTitle = {
-      dataSegment: <DataSegment data={this.state.dataSegment} />,
-      codeSegment: <CodeSegment data={this.state.codeSegment} />,
-      stackSegment: <StackSegment data={this.state.stackSegment} />
+      dataSegment: (
+        <DataSegment
+          data={this.state.dataSegment}
+          currentMemoryChanges={this.state.currentMemoryChanges}
+        />
+      ),
+      codeSegment: (
+        <CodeSegment
+          data={this.state.codeSegment}
+          currentMemoryChanges={this.state.currentMemoryChanges}
+        />
+      ),
+      stackSegment: (
+        <StackSegment
+          data={this.state.stackSegment}
+          currentMemoryChanges={this.state.currentMemoryChanges}
+        />
+      )
     };
-
-    console.log(this.state);
 
     return (
       <Card
