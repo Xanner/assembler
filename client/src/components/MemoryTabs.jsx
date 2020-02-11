@@ -33,7 +33,6 @@ for (let i = 0; i < 128; i++) {
   });
 }
 
-// jezeli currencode zawiera ktorys z registrow to go modyfikuj i  podstwietl
 let REGISTER = {
   AH: "00",
   AL: "00",
@@ -81,19 +80,42 @@ export default class TabsCard extends React.Component {
       codeSegment: CSRAM,
       stackSegment: STACKRAM,
       register: REGISTER,
-      currentMemoryChanges: []
+      currentMemoryChanges: [],
+      currentRegisterChanges: null
     };
   }
 
-  updateSegment = (segmentKey, currentCode) => {
+  updateSegment = (segmentKey, currentCode, lastOffset) => {
     const memory = currentCode.memory;
 
+    this.setState(
+      {
+        [segmentKey]: this.state[segmentKey].map(ds => {
+          const matchedMemory = memory.find(
+            item => item.address === ds.address
+          );
+          return matchedMemory || ds;
+        }),
+        currentMemoryChanges: memory
+      },
+      () => {
+        if (currentCode.registers)
+          this.updateRegister(currentCode.registers, lastOffset);
+      }
+    );
+  };
+
+  updateRegister = (registers, lastOffset) => {
     this.setState({
-      [segmentKey]: this.state[segmentKey].map(ds => {
-        const matchedMemory = memory.find(item => item.address === ds.address);
-        return matchedMemory || ds;
-      }),
-      currentMemoryChanges: memory
+      register: {
+        ...this.state.register,
+        IP: lastOffset,
+        ...registers[0]
+      },
+      currentRegisterChanges: {
+        IP: lastOffset,
+        ...registers[0]
+      }
     });
   };
 
@@ -101,18 +123,25 @@ export default class TabsCard extends React.Component {
     if (prevProps === this.props) return;
     const { currentCode } = this.props;
     if (!currentCode) return;
-    if (!currentCode.memory) return;
-    const initialAddress = currentCode.memory[0].address.substring(0, 4);
+    const initialAddress =
+      currentCode.memory && currentCode.memory[0].address.substring(0, 4);
+    let lastOffset;
+    const memoryLength = currentCode.memory && currentCode.memory.length;
+    if (memoryLength) {
+      lastOffset =
+        currentCode.memory &&
+        currentCode.memory[memoryLength - 1].address.substring(5, 9);
+    }
 
     if (initialAddress) {
       if (initialAddress === DSADDRESS) {
-        this.updateSegment("dataSegment", currentCode);
+        this.updateSegment("dataSegment", currentCode, lastOffset);
       }
       if (initialAddress === CSADDRESS) {
-        this.updateSegment("codeSegment", currentCode);
+        this.updateSegment("codeSegment", currentCode, lastOffset);
       }
       if (initialAddress === SSADDRESS) {
-        this.updateSegment("stackSegment", currentCode);
+        this.updateSegment("stackSegment", currentCode, lastOffset);
       }
     }
   }
@@ -154,7 +183,10 @@ export default class TabsCard extends React.Component {
       >
         <Col xs={21}>{contentListNoTitle[this.state.selectedTab]}</Col>
         <Col xs={3}>
-          <Register data={this.state.register} />
+          <Register
+            data={this.state.register}
+            currentRegisterChanges={this.state.currentRegisterChanges}
+          />
         </Col>
       </Card>
     );
