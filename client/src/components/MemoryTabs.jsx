@@ -83,7 +83,7 @@ export default class TabsCard extends React.Component {
       register: REGISTER,
       currentMemoryChanges: [],
       currentRegisterChanges: null,
-      consoleContent: "> zawartosc konsoli"
+      consoleContent: ""
     };
   }
 
@@ -121,9 +121,11 @@ export default class TabsCard extends React.Component {
     });
   };
 
-  updateConsole = consoleResult => {
+  updateConsole = (consoleResult, action) => {
+    if (this.state.consoleContent.includes(consoleResult)) return;
     this.setState({
-      consoleContent: consoleResult
+      consoleContent: this.state.consoleContent + consoleResult,
+      consoleAction: action
     });
   };
 
@@ -153,7 +155,7 @@ export default class TabsCard extends React.Component {
       }
     }
     if (currentCode.type === "Interruption")
-      this.updateConsole(currentCode.consoleResult);
+      this.updateConsole(currentCode.consoleResult, currentCode.consoleAction);
   }
 
   onTabChange = key => {
@@ -184,7 +186,10 @@ export default class TabsCard extends React.Component {
 
     return (
       <>
-        <Console consoleContent={this.state.consoleContent} />
+        <Console
+          consoleContent={this.state.consoleContent}
+          consoleAction={this.state.consoleAction}
+        />
         <Card
           style={{ width: "100%" }}
           tabList={tabListNoTitle}

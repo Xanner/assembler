@@ -7,9 +7,24 @@ class Console extends Component {
     super(props);
     this.state = {
       isConsoleVisible: false,
-      isConsoleDisabled: false
+      isConsoleDisabled: false,
+      tempConsole: ""
     };
   }
+
+  componentDidUpdate() {
+    if (this.props.consoleAction === "input") {
+      this.setState({ isConsoleDisabled: false });
+    }
+    // if(this.props.consoleAction === "output") {
+    //   this.setState({
+    //     isConsoleDisabled: true,
+    //     tempConsole: ""
+    //   });
+    // }
+  }
+
+  onInputChange = text => this.setState({ tempConsole: text });
 
   render() {
     return (
@@ -24,19 +39,36 @@ class Console extends Component {
           {!this.state.isConsoleVisible ? "Pokaż" : "Ukryj"} konsole
         </Button>
         {this.state.isConsoleVisible && (
-          <TextArea
-            disabled={this.state.isConsoleDisabled}
-            value={this.props.consoleContent}
-            style={{
-              width: 300,
-              height: 400,
-              backgroundColor: "black",
-              color: "white",
-              position: "fixed",
-              top: 30,
-              right: 10
-            }}
-          />
+          <>
+            <TextArea
+              disabled
+              value={this.props.consoleContent}
+              style={{
+                width: 300,
+                height: 400,
+                backgroundColor: "black",
+                color: "white",
+                position: "fixed",
+                top: 30,
+                right: 10
+              }}
+            />
+            <TextArea
+              disabled={this.state.isConsoleDisabled}
+              value={this.state.tempConsole}
+              onChange={e => this.onInputChange(e.target.value)}
+              style={{
+                width: 300,
+                height: 40,
+                borderColor: "white",
+                backgroundColor: "black",
+                color: "white",
+                position: "fixed",
+                top: 430,
+                right: 10
+              }}
+            />
+          </>
         )}
       </>
     );
