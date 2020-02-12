@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import ifConditionExample from "../../dal/arithmetic/conditions1.json";
+import ifConditionExample from "../../dal/arithmetic/addition.json";
 import ArithmeticPage from "../ArithmeticPage";
 import { Row, InputNumber } from "antd";
 
