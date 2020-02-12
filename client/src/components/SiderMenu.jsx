@@ -64,17 +64,9 @@ class SiderMenu extends React.Component {
       this.setState({
         currentKey: ["array"]
       });
-    if (path === "/courses/procedure")
-      this.setState({
-        currentKey: ["procedure"]
-      });
     if (path === "/courses/strings")
       this.setState({
         currentKey: ["strings"]
-      });
-    if (path === "/courses/stack")
-      this.setState({
-        currentKey: ["stack"]
       });
   };
 
@@ -182,34 +174,6 @@ class SiderMenu extends React.Component {
               <Menu.Item key="array">
                 <span>Tablica</span>
                 <Link to="/courses/array" />
-              </Menu.Item>
-            </SubMenu>
-            <SubMenu
-              key="procedures"
-              title={
-                <span>
-                  <StockOutlined />
-                  <span>Procedury</span>
-                </span>
-              }
-            >
-              <Menu.Item key="procedure">
-                <span>Procedura</span>
-                <Link to="/courses/procedure" />
-              </Menu.Item>
-            </SubMenu>
-            <SubMenu
-              key="stack"
-              title={
-                <span>
-                  <AlignCenterOutlined />
-                  <span>Stack</span>
-                </span>
-              }
-            >
-              <Menu.Item key="stack">
-                <span>Stos</span>
-                <Link to="/courses/stack" />
               </Menu.Item>
             </SubMenu>
           </SubMenu>

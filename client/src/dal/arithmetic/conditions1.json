@@ -72,7 +72,7 @@
             },
             "rightValue": {
                 "type": "String",
-                "value": "13, 10, \"Input a and b, program will check equality $\"",// dwa pierwsze znaki [0D], [0A]
+                "value": "13, 10, \"Input a and b, program will check equality $\"",
                 "address": "0720:0000"
             }
         },
@@ -152,7 +152,7 @@
             },
             "rightValue": {
                 "type": "ValueHex",
-                "value": null
+                "value": "0"
             },
             "memory": [
                 {
@@ -169,11 +169,11 @@
             "comment": "Definicja zmiennej 'b'",
             "leftValue": {
                 "type": "Variable",
-                "value": "a"
+                "value": "b"
             },
             "rightValue": {
                 "type": "ValueHex",
-                "value": null
+                "value": "0"
             },
             "memory": [
                 {
@@ -351,7 +351,7 @@
             },
             "rightValue": {
                 "type": "Offset",
-                "value": "message" //mov dx, offset message
+                "value": "offset message"
             },
             "memory": [
                 {
@@ -396,7 +396,9 @@
                     "address": "0729:000B",
                     "content": "21"
                 }
-            ]
+            ],
+            "consoleResult": "Input a and b, program will check equality\n",
+            "consoleAction": "output"
         },
         {
             "id": 21,
@@ -458,7 +460,7 @@
             },
             "rightValue": {
                 "type": "Offset",
-                "value": "a_message" //mov dx, offset a_message
+                "value": "offset a_message"
             },
             "memory": [
                 {
@@ -503,7 +505,9 @@
                 {
                     "DL": "2E"
                 }
-            ]
+            ],
+            "consoleResult": "First number: \n",
+            "consoleAction": "output"
         },
         {
             "id": 25,
@@ -564,7 +568,9 @@
                 {
                     "AH": "01"
                 }
-            ]
+            ],
+            "consoleResult": "",
+            "consoleAction": "input"
         },
         {
             "id": 27,
@@ -667,7 +673,7 @@
             },
             "rightValue": {
                 "type": "Offset",
-                "value": "b_message" //mov dx, offset b_message
+                "value": "offset b_message"
             },
             "memory": [
                 {
@@ -717,7 +723,9 @@
                 {
                     "DH": "3F"
                 }
-            ]
+            ],
+            "consoleResult": "\nSecond number:\n",
+            "consoleAction": "input"
         },
         {
             "id": 33,
@@ -778,7 +786,9 @@
                 {
                     "AH": "01"
                 }
-            ]
+            ],
+            "consoleResult": "\nThese numbers are NOT equal\n",
+            "consoleAction": "output"
         },
         {
             "id": 35,
@@ -990,7 +1000,7 @@
                     "address": "0721:0033",
                     "content": "0B"
                 }
-            ]           
+            ]
         },
         {
             "id": 43,
@@ -1015,8 +1025,7 @@
                     "address": "0721:0033",
                     "content": "0B"
                 }
-            ]           
-        },
-
+            ]
+        }
     ]
 }
