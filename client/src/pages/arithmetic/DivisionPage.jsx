@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import divisionExample from "../../dal/arithmetic/division.json";
-import ArithmeticPage from "./ArithmeticPage";
+import ArithmeticPage from "../ArithmeticPage";
 import { Row, InputNumber } from "antd";
 
 const divisionAction = (

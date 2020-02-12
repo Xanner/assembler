@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import multiplicationExample from "../../dal/arithmetic/multiplication.json";
-import ArithmeticPage from "./ArithmeticPage";
+import ArithmeticPage from "../ArithmeticPage";
 import { Row, InputNumber } from "antd";
 
 const multiplicationAction = (

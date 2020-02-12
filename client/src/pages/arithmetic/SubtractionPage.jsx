@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { MinusOutlined } from "@ant-design/icons";
 import subtractionExample from "../../dal/arithmetic/subtraction.json";
-import ArithmeticPage from "./ArithmeticPage";
+import ArithmeticPage from "../ArithmeticPage";
 import { Row, InputNumber } from "antd";
 
 const subtractionAction = (

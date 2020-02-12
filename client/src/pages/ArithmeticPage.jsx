@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Layout, Col, Row, Timeline, Card, Button, Icon } from "antd";
 import { PlayCircleOutlined, CaretRightOutlined } from "@ant-design/icons";
-import Diagram from "../../components/Diagram";
-import { ArithmeticCodeItems } from "../../components/ArithmeticCodeItems";
-import MemoryTabs from "../../components/MemoryTabs";
+import Diagram from "../components/Diagram";
+import { ArithmeticCodeItems } from "../components/ArithmeticCodeItems";
+import MemoryTabs from "../components/MemoryTabs";
 
 const { Content, Header } = Layout;
 
@@ -83,12 +83,9 @@ export default class ArithmeticPage extends Component {
           <h2>{headerTitle}</h2>
         </Header>
         <Content>
-          <div
-            className="site-layout-background"
-            style={{ padding: 24, minHeight: 360 }}
-          >
+          <div className="site-layout-background" style={{ minHeight: 360 }}>
             <Row type="flex" justify="start">
-              <Col span={8}>
+              <Col span={10}>
                 <Row style={{ marginBottom: 16 }}>
                   <Card
                     title={
@@ -135,7 +132,7 @@ export default class ArithmeticPage extends Component {
                   </Button>
                 </Row>
                 <Row>
-                  <Card>
+                  <Card style={{ maxHeight: 700, overflow: "auto" }}>
                     {this.state.hasData ? (
                       <Timeline style={{ textAlign: "left" }}>
                         {codeLines}
@@ -146,7 +143,7 @@ export default class ArithmeticPage extends Component {
                   </Card>
                 </Row>
               </Col>
-              <Col span={16}>
+              <Col span={14}>
                 {!this.state.hasRestarted && (
                   <Diagram
                     activReg={{

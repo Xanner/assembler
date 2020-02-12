@@ -10,6 +10,7 @@ import SubtractionPage from "./pages/arithmetic/SubtractionPage";
 import MultiplicationPage from "./pages/arithmetic/MultiplicationPage";
 import DivisionPage from "./pages/arithmetic/DivisionPage";
 import RegisterPage from "./pages/RegisterPage";
+import IfConditionPage from "./pages/conditions/IfConditionPage";
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
                 component={MultiplicationPage}
               />
               <Route exact path="/courses/division" component={DivisionPage} />
+              <Route
+                exact
+                path="/courses/ifcondition"
+                component={IfConditionPage}
+              />
               <Route exact path="/guide/register" component={RegisterPage} />
             </Switch>
           </Layout.Content>
