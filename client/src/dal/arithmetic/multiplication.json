@@ -71,13 +71,13 @@
                 "value": "a"
             },
             "rightValue": {
-                "type": "Value",
-                "value": null
+                "type": "ValueHex",
+                "value": "03h"
             },
             "memory": [
                 {
                     "address": "0720:0000",
-                    "content": "05"
+                    "content": "03"
                 }
             ]
         },
@@ -92,13 +92,13 @@
                 "value": "b"
             },
             "rightValue": {
-                "type": "Value",
-                "value": null
+                "type": "ValueHex",
+                "value": "03h"
             },
             "memory": [
                 {
                     "address": "0720:0001",
-                    "content": "02"
+                    "content": "03"
                 }
             ]
         },
@@ -161,8 +161,6 @@
                 "type": "Declared data",
                 "value": "@data"
             },
-            "address": "0721",
-            "offset": "0000",
             "memory": [
                 {
                     "address": "0721:0000",
@@ -272,7 +270,7 @@
             "comment": "Przenieś wartość zmienniej b do rejestru BL.",
             "leftValue": {
                 "type": "Registry",
-                "value": "bx"
+                "value": "bl"
             },
             "rightValue": {
                 "type": "Variable",
@@ -352,31 +350,31 @@
             "lineNumber": 17,
             "type": "Code",
             "operation": "add",
-            "comment": "Dodaj 30h do rejestru AX, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
+            "comment": "Dodaj 30h do rejestru AL, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
             "leftValue": {
                 "type": "Registry",
-                "value": "ax"
+                "value": "al"
             },
             "rightValue": {
                 "type": "_ValueHex",
                 "value": "30h"
             },
             "memory": [
-				{
-					"address": "0721:000E",
-					"content": "04"
-				},
-				{
-					"address": "0721:000F",
-					"content": "30"
-				}
-			],
-			"registers": [
-				{
-					"AL": "09",
-					"AH": "00"
-				}
-			]
+                {
+                    "address": "0721:000E",
+                    "content": "04"
+                },
+                {
+                    "address": "0721:000F",
+                    "content": "30"
+                }
+            ],
+            "registers": [
+                {
+                    "AL": "09",
+                    "AH": "00"
+                }
+            ]
         },
         {
             "id": 18,
@@ -408,20 +406,20 @@
                 "value": "02"
             },
             "memory": [
-				{
-					"address": "0721:0010",
-					"content": "B4"
-				},
-				{
-					"address": "0721:0011",
-					"content": "02"
-				}
-			],
-			"registers": [
-				{
-					"AL": "39"
-				}
-			]
+                {
+                    "address": "0721:0010",
+                    "content": "B4"
+                },
+                {
+                    "address": "0721:0011",
+                    "content": "02"
+                }
+            ],
+            "registers": [
+                {
+                    "AL": "39"
+                }
+            ]
         },
         {
             "id": 20,
@@ -438,20 +436,20 @@
                 "value": "al"
             },
             "memory": [
-				{
-					"address": "0721:0012",
-					"content": "8A"
-				},
-				{
-					"address": "0721:0013",
-					"content": "D0"
-				}
-			],
-			"registers": [
-				{
-					"AH": "02"
-				}
-			]
+                {
+                    "address": "0721:0012",
+                    "content": "8A"
+                },
+                {
+                    "address": "0721:0013",
+                    "content": "D0"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "02"
+                }
+            ]
         },
         {
             "id": 21,
@@ -468,20 +466,22 @@
                 "value": null
             },
             "memory": [
-				{
-					"address": "0721:0014",
-					"content": "CD"
-				},
-				{
-					"address": "0721:0015",
-					"content": "21"
-				}
-			],
-			"registers": [
-				{
-					"DL": "39"
-				}
-			]
+                {
+                    "address": "0721:0014",
+                    "content": "CD"
+                },
+                {
+                    "address": "0721:0015",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "DL": "39"
+                }
+            ],
+            "consoleResult": "9",
+            "consoleAction": "output"
         },
         {
             "id": 22,
@@ -498,16 +498,16 @@
                 "value": null
             },
             "registers": [
-				{
-					"CS": "F400"
-				},
-				{
-					"IP": "0200"
-				},
-				{
-					"SP": "00FA"
-				}
-			]
+                {
+                    "CS": "F400"
+                },
+                {
+                    "IP": "0200"
+                },
+                {
+                    "SP": "00FA"
+                }
+            ]
         },
         {
             "id": 23,

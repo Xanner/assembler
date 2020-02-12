@@ -1,19 +1,6 @@
 import React, { Component } from "react";
-import {
-  Layout,
-  Col,
-  Row,
-  InputNumber,
-  Timeline,
-  Card,
-  Button,
-  Icon
-} from "antd";
-import {
-  PauseOutlined,
-  PlayCircleOutlined,
-  CaretRightOutlined
-} from "@ant-design/icons";
+import { Layout, Col, Row, Timeline, Card, Button, Icon } from "antd";
+import { PlayCircleOutlined, CaretRightOutlined } from "@ant-design/icons";
 import Diagram from "../../components/Diagram";
 import { ArithmeticCodeItems } from "../../components/ArithmeticCodeItems";
 import MemoryTabs from "../../components/MemoryTabs";
@@ -24,9 +11,6 @@ export default class ArithmeticPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstNumber: null,
-      secondNumber: null,
-      result: null,
       currentLineNumber: null,
       currentCode: null,
       currentLeftRegister: null,
@@ -56,16 +40,7 @@ export default class ArithmeticPage extends Component {
   handleNextStep = () => {
     this.setState(
       prevState => ({
-        currentLineNumber: prevState.currentLineNumber + 1,
-        result:
-          prevState.currentLineNumber + 1 === 20
-            ? this.props
-                .handleArithmeticOperation(
-                  this.state.firstNumber,
-                  this.state.secondNumber
-                )
-                .toFixed(2)
-            : prevState.result
+        currentLineNumber: prevState.currentLineNumber + 1
       }),
       () => this.setNextCodeLine()
     );
@@ -88,7 +63,6 @@ export default class ArithmeticPage extends Component {
     this.setState(
       {
         currentLineNumber: 0,
-        result: null,
         currentLeftRegister: null,
         currentRightRegister: null,
         currentComment: null,
@@ -99,16 +73,10 @@ export default class ArithmeticPage extends Component {
     );
 
   render() {
-    const { codes, currentLineNumber, firstNumber, secondNumber } = this.state;
-    const {
-      headerTitle,
-      cardText,
-      arithmeticSign,
-      beforeYouStartPath
-    } = this.props;
+    const { codes, currentLineNumber } = this.state;
+    const { headerTitle, cardText, beforeYouStartPath } = this.props;
     const codeLines =
-      this.state.hasData &&
-      ArithmeticCodeItems(codes, currentLineNumber, firstNumber, secondNumber);
+      this.state.hasData && ArithmeticCodeItems(codes, currentLineNumber);
     return (
       <>
         <Header style={{ background: "#fff" }}>
@@ -133,36 +101,12 @@ export default class ArithmeticPage extends Component {
                   >
                     Przejdź do odnośnika aby dowiedzieć się więcej na dany
                     temat.
+                    <Row style={{ marginTop: 8 }}>{this.props.userAction}</Row>
                   </Card>
                 </Row>
-                <Row style={{ marginBottom: 16 }}>
-                  <InputNumber
-                    style={{ width: "60px" }}
-                    value={this.state.firstNumber}
-                    size="default"
-                    onChange={value => this.handleChange("firstNumber", value)}
-                  />
-                  {arithmeticSign}
-                  <InputNumber
-                    style={{ width: "60px" }}
-                    value={this.state.secondNumber}
-                    size="default"
-                    onChange={value => this.handleChange("secondNumber", value)}
-                  />
-                  <PauseOutlined rotate={90} />
-                  <InputNumber
-                    style={{ width: "60px" }}
-                    disabled
-                    value={this.state.result}
-                    size="default"
-                  />
-                </Row>
-                <Row style={{ marginBottom: 8 }} justify="start">
+                <Row style={{ marginBottom: 8 }} justify="space-between">
                   <Button
-                    disabled={
-                      this.state.hasStarted ||
-                      !(this.state.firstNumber && this.state.secondNumber)
-                    }
+                    disabled={this.state.hasStarted}
                     onClick={this.handleStart}
                     type="primary"
                   >

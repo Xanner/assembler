@@ -2,18 +2,35 @@ import React, { PureComponent } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import additionExample from "../../dal/arithmetic/addition.json";
 import ArithmeticPage from "./ArithmeticPage";
+import { Row, InputNumber } from "antd";
 
+const addtionAction = (
+  <>
+    <Row style={{ marginBottom: 16 }}>
+      <InputNumber
+        style={{ width: "60px" }}
+        value={5}
+        size="default"
+        disabled
+      />
+      <PlusOutlined rotate={90} />
+      <InputNumber
+        style={{ width: "60px" }}
+        value={2}
+        size="default"
+        disabled
+      />
+    </Row>
+  </>
+);
 export default class AdditionPage extends PureComponent {
-  addition = (firstNumber, secondNumber) => firstNumber + secondNumber;
-
   render() {
     return (
       <ArithmeticPage
         headerTitle="Operacje arytmetyczne - dodawanie"
         data={additionExample}
-        arithmeticSign={<PlusOutlined rotate={90} />}
+        userAction={addtionAction}
         cardText="Dodaj dwie liczby do siebie i naciśnij Start."
-        handleArithmeticOperation={this.addition}
         beforeYouStartPath="/guide/register"
       />
     );

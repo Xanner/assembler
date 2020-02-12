@@ -64,7 +64,7 @@
 			"id": 5,
 			"lineNumber": 5,
 			"type": "DataDefinition",
-			"operation": "dw",
+			"operation": "db",
 			"comment": "Definicja zmiennej 'a'",
 			"leftValue": {
 				"type": "Variable",
@@ -72,7 +72,7 @@
 			},
 			"rightValue": {
 				"type": "ValueHex",
-				"value": null
+				"value": "05h"
 			},
 			"memory": [
 				{
@@ -85,7 +85,7 @@
 			"id": 6,
 			"lineNumber": 6,
 			"type": "DataDefinition",
-			"operation": "dw",
+			"operation": "db",
 			"comment": "Definicja zmiennej 'b'",
 			"leftValue": {
 				"type": "Variable",
@@ -93,7 +93,7 @@
 			},
 			"rightValue": {
 				"type": "ValueHex",
-				"value": null
+				"value": "02h"
 			},
 			"memory": [
 				{
@@ -236,7 +236,7 @@
 			"comment": "Przenieś wartość zmienniej a do rejestru ax.",
 			"leftValue": {
 				"type": "Registry",
-				"value": "ax"
+				"value": "al"
 			},
 			"rightValue": {
 				"type": "Variable",
@@ -270,7 +270,7 @@
 			"comment": "Przenieś wartość zmienniej b do rejestru bx.",
 			"leftValue": {
 				"type": "Registry",
-				"value": "bx"
+				"value": "bl"
 			},
 			"rightValue": {
 				"type": "Variable",
@@ -323,11 +323,11 @@
 			"comment": "DODAJ zawartość rejestru bx do rejestru ax.",
 			"leftValue": {
 				"type": "Registry",
-				"value": "ax"
+				"value": "al"
 			},
 			"rightValue": {
 				"type": "Registry",
-				"value": "bx"
+				"value": "bl"
 			},
 			"memory": [
 				{
@@ -353,7 +353,7 @@
 			"comment": "Dodaj 30h do rejestru ax, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
 			"leftValue": {
 				"type": "Registry",
-				"value": "ax"
+				"value": "al"
 			},
 			"rightValue": {
 				"type": "_ValueHex",
@@ -428,11 +428,11 @@
 			"comment": "Przenieś zawartość rejestru ax (zawierający wynik dodawania) do rejestru dx. Rejest dx może zostać użyty do wypisywania zawartości na ekranie. ",
 			"leftValue": {
 				"type": "Registry",
-				"value": "dx"
+				"value": "dl"
 			},
 			"rightValue": {
 				"type": "Registry",
-				"value": "ax"
+				"value": "al"
 			},
 			"memory": [
 				{
