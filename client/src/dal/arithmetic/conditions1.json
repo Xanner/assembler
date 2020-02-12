@@ -243,21 +243,21 @@
             },
             "memory": [
                 {
-                    "address": "0729:0000",
+                    "address": "0721:0000",
                     "content": "B8"
                 },
                 {
-                    "address": "0729:0001",
+                    "address": "0721:0001",
                     "content": "20"
                 },
                 {
-                    "address": "0729:0002",
+                    "address": "0721:0002",
                     "content": "07"
                 }
             ],
             "registers": [
                 {
-                    "CS": "0729",
+                    "CS": "0721",
                     "AH": "00",
                     "AL": "00"
                 }
@@ -279,11 +279,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:0003",
+                    "address": "0721:0003",
                     "content": "8E"
                 },
                 {
-                    "address": "0729:0004",
+                    "address": "0721:0004",
                     "content": "D8"
                 }
             ],
@@ -325,11 +325,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:0005",
+                    "address": "0721:0005",
                     "content": "B4"
                 },
                 {
-                    "address": "0729:0006",
+                    "address": "0721:0006",
                     "content": "09"
                 }
             ],
@@ -355,15 +355,15 @@
             },
             "memory": [
                 {
-                    "address": "0729:0007",
+                    "address": "0721:0007",
                     "content": "BA"
                 },
                 {
-                    "address": "0729:0008",
+                    "address": "0721:0008",
                     "content": "00"
                 },
                 {
-                    "address": "0729:0009",
+                    "address": "0721:0009",
                     "content": "00"
                 }
             ],
@@ -389,11 +389,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:000A",
+                    "address": "0721:000A",
                     "content": "CD"
                 },
                 {
-                    "address": "0729:000B",
+                    "address": "0721:000B",
                     "content": "21"
                 }
             ],
@@ -431,11 +431,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:000C",
+                    "address": "0721:000C",
                     "content": "B4"
                 },
                 {
-                    "address": "0729:000D",
+                    "address": "0721:000D",
                     "content": "09"
                 }
             ],
@@ -443,7 +443,7 @@
                 {
                     "AL": "07",
                     "DS": "0720",
-                    "CS": "0729",
+                    "CS": "0721",
                     "SP": "0100"
                 }
             ]
@@ -464,15 +464,15 @@
             },
             "memory": [
                 {
-                    "address": "0729:000E",
+                    "address": "0721:000E",
                     "content": "BA"
                 },
                 {
-                    "address": "0729:000F",
+                    "address": "0721:000F",
                     "content": "00"
                 },
                 {
-                    "address": "0729:0010",
+                    "address": "0721:0010",
                     "content": "00"
                 }
             ]
@@ -493,11 +493,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:0011",
+                    "address": "0721:0011",
                     "content": "CD"
                 },
                 {
-                    "address": "0729:0012",
+                    "address": "0721:0012",
                     "content": "21"
                 }
             ],
@@ -525,11 +525,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:0013",
+                    "address": "0721:0013",
                     "content": "B4"
                 },
                 {
-                    "address": "0729:0014",
+                    "address": "0721:0014",
                     "content": "01"
                 }
             ],
@@ -556,11 +556,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:0015",
+                    "address": "0721:0015",
                     "content": "CD"
                 },
                 {
-                    "address": "0729:0016",
+                    "address": "0721:0016",
                     "content": "21"
                 }
             ],
@@ -652,11 +652,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:001A",
+                    "address": "0721:001A",
                     "content": "B4"
                 },
                 {
-                    "address": "0729:001B",
+                    "address": "0721:001B",
                     "content": "09"
                 }
             ]
@@ -677,15 +677,15 @@
             },
             "memory": [
                 {
-                    "address": "0729:001C",
+                    "address": "0721:001C",
                     "content": "BA"
                 },
                 {
-                    "address": "0729:001D",
+                    "address": "0721:001D",
                     "content": "3F"
                 },
                 {
-                    "address": "0729:001E",
+                    "address": "0721:001E",
                     "content": "00"
                 }
             ],
@@ -711,11 +711,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:001F",
+                    "address": "0721:001F",
                     "content": "CD"
                 },
                 {
-                    "address": "0729:0020",
+                    "address": "0721:0020",
                     "content": "21"
                 }
             ],
@@ -743,11 +743,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:0021",
+                    "address": "0721:0021",
                     "content": "B4"
                 },
                 {
-                    "address": "0729:0022",
+                    "address": "0721:0022",
                     "content": "01"
                 }
             ],
@@ -774,11 +774,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:0023",
+                    "address": "0721:0023",
                     "content": "CD"
                 },
                 {
-                    "address": "0729:0024",
+                    "address": "0721:0024",
                     "content": "21"
                 }
             ],
@@ -1006,6 +1006,70 @@
             "id": 43,
             "lineNumber": 43,
             "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "dx"
+            },
+            "rightValue": {
+                "type": "Offset",
+                "value": "offset info_equal"
+            },
+            "memory": [
+                {
+                    "address": "0721:0035",
+                    "content": "BA"
+                },
+                {
+                    "address": "0721:0036",
+                    "content": "6C"
+                },
+                {
+                    "address": "0721:0037",
+                    "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "DL": "37"
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "lineNumber": 43,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "09h"
+            },
+            "memory": [
+                {
+                    "address": "0721:0038",
+                    "content": "B4"
+                },
+                {
+                    "address": "0721:0039",
+                    "content": "09"
+                }
+            ],
+            "registers": [
+                {
+                    "DL": "6C"
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "lineNumber": 43,
+            "type": "Code",
             "operation": "",
             "comment": "",
             "leftValue": {
@@ -1024,6 +1088,40 @@
                 {
                     "address": "0721:0033",
                     "content": "0B"
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "lineNumber": 44,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "dx"
+            },
+            "rightValue": {
+                "type": "Offset",
+                "value": "offset info_not_equal"
+            },
+            "memory": [
+                {
+                    "address": "0721:0007",
+                    "content": "BA"
+                },
+                {
+                    "address": "0721:0008",
+                    "content": "00"
+                },
+                {
+                    "address": "0721:0009",
+                    "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "09"
                 }
             ]
         }
