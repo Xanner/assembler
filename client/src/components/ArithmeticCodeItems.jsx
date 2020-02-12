@@ -5,12 +5,7 @@ import CommentView from "./CommentView";
 export const convertToHex = digit =>
   ("0" + Number(digit).toString(16)).slice(-2).toUpperCase();
 
-export const ArithmeticCodeItems = (
-  codes,
-  currentLineNumber,
-  firstNumber,
-  secondNumber
-) => {
+export const ArithmeticCodeItems = (codes, currentLineNumber) => {
   return (
     codes &&
     codes.map(code => {
@@ -35,11 +30,7 @@ export const ArithmeticCodeItems = (
               {code.type === "DataDefinition"
                 ? `${code.leftValue && code.leftValue.value} ${
                     code.operation
-                  } ${
-                    code.leftValue && code.leftValue.value === "a"
-                      ? convertToHex(firstNumber)
-                      : convertToHex(secondNumber)
-                  }`
+                  } ${code.rightValue.value}`
                 : `${code.operation || ""} ${code.leftValue.value || ""}${
                     code.rightValue.value ? "," + code.rightValue.value : ""
                   }`}
