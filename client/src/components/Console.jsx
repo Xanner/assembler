@@ -12,17 +12,7 @@ class Console extends Component {
     };
   }
 
-  componentDidUpdate() {
-    if (this.props.consoleAction === "input") {
-      this.setState({ isConsoleDisabled: false });
-    }
-    // if(this.props.consoleAction === "output") {
-    //   this.setState({
-    //     isConsoleDisabled: true,
-    //     tempConsole: ""
-    //   });
-    // }
-  }
+  clearTempConsole = () => this.setState({ tempConsole: "" });
 
   onInputChange = text => this.setState({ tempConsole: text });
 
@@ -49,8 +39,8 @@ class Console extends Component {
                 backgroundColor: "black",
                 color: "white",
                 position: "fixed",
-                top: 30,
-                right: 10
+                top: 80,
+                right: 15
               }}
             />
             <TextArea
@@ -64,8 +54,8 @@ class Console extends Component {
                 backgroundColor: "black",
                 color: "white",
                 position: "fixed",
-                top: 430,
-                right: 10
+                top: 480,
+                right: 15
               }}
             />
           </>

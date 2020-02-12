@@ -16,10 +16,12 @@ export default class ArithmeticPage extends Component {
       currentLeftRegister: null,
       currentRightRegister: null,
       currentComment: null,
+      counter: 3,
       codes: [],
       hasStarted: false,
       hasData: false
     };
+    this.memoryRef = React.createRef();
   }
 
   handleChange = (field, value) => this.setState({ [field]: value });
@@ -32,6 +34,7 @@ export default class ArithmeticPage extends Component {
       currentRightRegister: null,
       currentComment: null,
       currentCode: null,
+      counter: 3,
       hasData: true,
       hasStarted: true
     });
@@ -50,13 +53,26 @@ export default class ArithmeticPage extends Component {
     const currentCode = this.state.codes.find(
       c => c.lineNumber === this.state.currentLineNumber
     );
-    currentCode &&
+    if (!currentCode) return;
+    if (currentCode.type === "endLoop" && this.state.counter !== 0) {
+      const startCode = this.state.codes.find(d => d.lineNumber === 25);
       this.setState({
-        currentLeftRegister: currentCode.leftValue.value,
-        currentRightRegister: currentCode.rightValue.value,
-        currentComment: currentCode.comment,
-        currentCode: currentCode
+        currentLeftRegister: startCode.leftValue.value,
+        currentRightRegister: startCode.rightValue.value,
+        currentComment: startCode.comment,
+        currentCode: startCode,
+        currentLineNumber: 25,
+        counter: this.state.counter - 1
       });
+    } else {
+      currentCode &&
+        this.setState({
+          currentLeftRegister: currentCode.leftValue.value,
+          currentRightRegister: currentCode.rightValue.value,
+          currentComment: currentCode.comment,
+          currentCode: currentCode
+        });
+    }
   };
 
   handleRestart = () =>
@@ -154,7 +170,11 @@ export default class ArithmeticPage extends Component {
                 )}
                 <div style={{ marginLeft: 40 }}>
                   {!this.state.hasRestarted && (
-                    <MemoryTabs currentCode={this.state.currentCode} />
+                    <MemoryTabs
+                      counter={this.state.counter}
+                      currentCode={this.state.currentCode}
+                      ref={this.memoryRef}
+                    />
                   )}
                 </div>
               </Col>
