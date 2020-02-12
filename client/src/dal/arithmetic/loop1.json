@@ -104,7 +104,7 @@
             },
             "rightValue": {
                 "type": "ValueHex",
-                "value": null
+                "value": "0"
             },
             "memory": [
                 {
@@ -125,7 +125,7 @@
             },
             "rightValue": {
                 "type": "ValueHex",
-                "value": null
+                "value": "0"
             },
             "memory": [
                 {
@@ -195,21 +195,21 @@
             },
             "memory": [
                 {
-                    "address": "0726:0000",
+                    "address": "0721:0000",
                     "content": "B8"
                 },
                 {
-                    "address": "0726:0001",
+                    "address": "0721:0001",
                     "content": "20"
                 },
                 {
-                    "address": "0726:0002",
+                    "address": "0721:0002",
                     "content": "07"
                 }
             ],
             "registers": [
                 {
-                    "CS": "0726",
+                    "CS": "0721",
                     "AH": "00",
                     "AL": "00"
                 }
@@ -231,11 +231,11 @@
             },
             "memory": [
                 {
-                    "address": "0726:0003",
+                    "address": "0721:0003",
                     "content": "8E"
                 },
                 {
-                    "address": "0726:0004",
+                    "address": "0721:0004",
                     "content": "D8"
                 }
             ],
@@ -277,11 +277,11 @@
             },
             "memory": [
                 {
-                    "address": "0726:0005",
+                    "address": "0721:0005",
                     "content": "B4"
                 },
                 {
-                    "address": "0726:0006",
+                    "address": "0721:0006",
                     "content": "09"
                 }
             ],
@@ -303,19 +303,19 @@
             },
             "rightValue": {
                 "type": "Offset",
-                "value": "message" //mov dx, offset message
+                "value": "offset message"
             },
             "memory": [
                 {
-                    "address": "0726:0007",
+                    "address": "0721:0007",
                     "content": "BA"
                 },
                 {
-                    "address": "0726:0008",
+                    "address": "0721:0008",
                     "content": "00"
                 },
                 {
-                    "address": "0726:0009",
+                    "address": "0721:0009",
                     "content": "00"
                 }
             ],
@@ -341,14 +341,16 @@
             },
             "memory": [
                 {
-                    "address": "0729:000A",
+                    "address": "0721:000A",
                     "content": "CD"
                 },
                 {
-                    "address": "0729:000B",
+                    "address": "0721:000B",
                     "content": "21"
                 }
-            ]
+            ],
+            "consoleResult": "Enter number of loop execution repetitions:\n",
+            "consoleAction": "output"
         },
         {
             "id": 18,
@@ -366,17 +368,17 @@
             },
             "memory": [
                 {
-                    "address": "0729:000C",
+                    "address": "0721:000C",
                     "content": "B4"
                 },
                 {
-                    "address": "0729:000D",
+                    "address": "0721:000D",
                     "content": "01"
                 }
             ],
             "registers": [
                 {
-                    "CS": "0726",
+                    "CS": "0721",
                     "SP": "0100"
                 }
             ]
@@ -397,11 +399,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:000E",
+                    "address": "0721:000E",
                     "content": "CD"
                 },
                 {
-                    "address": "0729:000F",
+                    "address": "0721:000F",
                     "content": "21"
                 }
             ],
@@ -410,7 +412,9 @@
                     "AH": "01",
                     "SP": "0100"
                 }
-            ]
+            ],
+            "consoleResult": "",
+            "consoleAction": "input"
         },
         {
             "id": 20,
@@ -478,11 +482,11 @@
             },
             "memory": [
                 {
-                    "address": "0729:0012",
+                    "address": "0721:0012",
                     "content": "8A"
                 },
                 {
-                    "address": "0729:0013",
+                    "address": "0721:0013",
                     "content": "C8"
                 }
             ],
@@ -509,15 +513,15 @@
             },
             "memory": [
                 {
-                    "address": "0729:0014",
+                    "address": "0721:0014",
                     "content": "80"
                 },
                 {
-                    "address": "0729:0015",
+                    "address": "0721:0015",
                     "content": "E9"
                 },
                 {
-                    "address": "0729:0016",
+                    "address": "0721:0016",
                     "content": "30"
                 }
             ],
@@ -578,11 +582,11 @@
             },
             "memory": [
                 {
-                    "address": "0726:0017",
+                    "address": "0721:0017",
                     "content": "B4"
                 },
                 {
-                    "address": "0726:0018",
+                    "address": "0721:0018",
                     "content": "09"
                 }
             ]
@@ -599,19 +603,19 @@
             },
             "rightValue": {
                 "type": "Offset",
-                "value": "inner_message" //mov dx, offset b_message
+                "value": "offset inner_message"
             },
             "memory": [
                 {
-                    "address": "0726:0019",
+                    "address": "0721:0019",
                     "content": "BA"
                 },
                 {
-                    "address": "0726:001A",
+                    "address": "0721:001A",
                     "content": "2F"
                 },
                 {
-                    "address": "0726:001B",
+                    "address": "0721:001B",
                     "content": "00"
                 }
             ],
@@ -637,11 +641,11 @@
             },
             "memory": [
                 {
-                    "address": "0726:001C",
+                    "address": "0721:001C",
                     "content": "CD"
                 },
                 {
-                    "address": "0726:002D",
+                    "address": "0721:002D",
                     "content": "21"
                 }
             ],
@@ -649,7 +653,9 @@
                 {
                     "DH": "2F"
                 }
-            ]
+            ],
+            "consoleResult": "Execution loop. Counter value:\n",
+            "consoleAction": "output"
         },
         {
             "id": 29,
@@ -667,17 +673,17 @@
             },
             "memory": [
                 {
-                    "address": "0726:001E",
+                    "address": "0721:001E",
                     "content": "B4"
                 },
                 {
-                    "address": "0726:001F",
+                    "address": "0721:001F",
                     "content": "02"
                 }
             ],
             "registers": [
                 {
-                    "CS": "0726"
+                    "CS": "0721"
                 }
             ]
         },
@@ -697,11 +703,11 @@
             },
             "memory": [
                 {
-                    "address": "0726:0020",
+                    "address": "0721:0020",
                     "content": "8A"
                 },
                 {
-                    "address": "0726:0021",
+                    "address": "0721:0021",
                     "content": "D1"
                 }
             ],
@@ -727,15 +733,15 @@
             },
             "memory": [
                 {
-                    "address": "0726:0022",
+                    "address": "0721:0022",
                     "content": "80"
                 },
                 {
-                    "address": "0726:0023",
+                    "address": "0721:0023",
                     "content": "C2"
                 },
                 {
-                    "address": "0726:0024",
+                    "address": "0721:0024",
                     "content": "30"
                 }
             ],
@@ -761,11 +767,11 @@
             },
             "memory": [
                 {
-                    "address": "0726:0025",
+                    "address": "0721:0025",
                     "content": "CD"
                 },
                 {
-                    "address": "0726:0026",
+                    "address": "0721:0026",
                     "content": "21"
                 }
             ],
@@ -773,12 +779,14 @@
                 {
                     "DL": "35"
                 }
-            ]
+            ],
+            "consoleResult": "varCounter",
+            "consoleAction": "output"
         },
         {
             "id": 33,
             "lineNumber": 33,
-            "type": "Code",
+            "type": "endLoop",
             "operation": "loop",
             "comment": "",
             "leftValue": {
@@ -791,11 +799,11 @@
             },
             "memory": [
                 {
-                    "address": "0726:0027",
+                    "address": "0721:0027",
                     "content": "E2"
                 },
                 {
-                    "address": "0726:0028",
+                    "address": "0721:0028",
                     "content": "EE"
                 }
             ]
@@ -846,11 +854,11 @@
             },
             "memory": [
                 {
-                    "address": "0726:0029",
+                    "address": "0721:0029",
                     "content": "B4"
                 },
                 {
-                    "address": "0726:002A",
+                    "address": "0721:002A",
                     "content": "4C"
                 }
             ],
@@ -876,11 +884,11 @@
             },
             "memory": [
                 {
-                    "address": "0726:002B",
+                    "address": "0721:002B",
                     "content": "CD"
                 },
                 {
-                    "address": "0726:002C",
+                    "address": "0721:002C",
                     "content": "21"
                 }
             ],
@@ -951,5 +959,4 @@
             }
         }
     ]
-]
 }

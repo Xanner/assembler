@@ -124,8 +124,13 @@ export default class TabsCard extends React.Component {
 
   updateConsole = (consoleResult, action) => {
     if (this.state.consoleContent.includes(consoleResult)) return;
+    if (this.state.consoleContent.includes(this.props.counter)) return;
     this.setState({
-      consoleContent: this.state.consoleContent + consoleResult,
+      consoleContent:
+        this.state.consoleContent +
+        (consoleResult === "varCounter"
+          ? `${this.props.counter}\n`
+          : consoleResult),
       consoleAction: action
     });
   };

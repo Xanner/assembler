@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import loopExample from "../../dal/arithmetic/addition.json";
+import loopExample from "../../dal/arithmetic/loop1.json";
 import ArithmeticPage from "../ArithmeticPage";
 import { Row, InputNumber } from "antd";
 
