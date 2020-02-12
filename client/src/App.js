@@ -14,6 +14,7 @@ import IfConditionPage from "./pages/conditions/IfConditionPage";
 import LoopPage from "./pages/loops/LoopPage";
 import ArrayPage from "./pages/arrays/ArrayPage";
 import StringPage from "./pages/strings/StringPage";
+import Interruption from "./pages/Interruption";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
               <Route exact path="/courses/array" component={ArrayPage} />
               <Route exact path="/courses/strings" component={StringPage} />
               <Route exact path="/guide/register" component={RegisterPage} />
+              <Route exact path="/guide/interruption" component={Interruption} />
             </Switch>
           </Layout.Content>
         </Layout>
