@@ -1,0 +1,1022 @@
+{
+    "codes": [
+        {
+            "id": 1,
+            "lineNumber": 1,
+            "type": "Segment",
+            "operation": ".Model small",
+            "comment": "Definicja wielkości modelu pamięci, używamy modelu małego - 1 segment kodu, 1 segmentu danych, 1 segmentu stosu.",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 2,
+            "lineNumber": 2,
+            "type": "Segment",
+            "operation": ".stack 100h",
+            "comment": "Definicja rozmiaru stosu",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 3,
+            "lineNumber": 3,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 4,
+            "lineNumber": 4,
+            "type": "Segment",
+            "operation": ".data",
+            "comment": "Definicja segmentu danych",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 5,
+            "lineNumber": 5,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "",
+            "leftValue": {
+                "type": "Variable",
+                "value": "message"
+            },
+            "rightValue": {
+                "type": "String",
+                "value": "13, 10, \"Input a and b, program will check equality $\"",// dwa pierwsze znaki [0D], [0A]
+                "address": "0720:0000"
+            }
+        },
+        {
+            "id": 6,
+            "lineNumber": 6,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "",
+            "leftValue": {
+                "type": "Variable",
+                "value": "a_message"
+            },
+            "rightValue": {
+                "type": "String",
+                "value": "13, 10, \"First number: $\"",
+                "address": "0720:002E"
+            }
+        },
+        {
+            "id": 7,
+            "lineNumber": 7,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "",
+            "leftValue": {
+                "type": "Variable",
+                "value": "b_message"
+            },
+            "rightValue": {
+                "type": "String",
+                "value": "13, 10, \"Second number: $\"",
+                "address": "0720:003F"
+            }
+        },
+        {
+            "id": 8,
+            "lineNumber": 8,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "",
+            "leftValue": {
+                "type": "Variable",
+                "value": "info_equal"
+            },
+            "rightValue": {
+                "type": "String",
+                "value": "13, 10, \"These numbers are equal $\"",
+                "address": "0720:0051"
+            }
+        },
+        {
+            "id": 9,
+            "lineNumber": 9,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "",
+            "leftValue": {
+                "type": "Variable",
+                "value": "info_not_equal"
+            },
+            "rightValue": {
+                "type": "String",
+                "value": "13, 10, \"These numbers are NOT equal $\"",
+                "address": "0720:006C"
+            }
+        },
+        {
+            "id": 10,
+            "lineNumber": 10,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "Definicja zmiennej 'a'",
+            "leftValue": {
+                "type": "Variable",
+                "value": "a"
+            },
+            "rightValue": {
+                "type": "ValueHex",
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0720:008B",
+                    "content": "00"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "lineNumber": 11,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "Definicja zmiennej 'b'",
+            "leftValue": {
+                "type": "Variable",
+                "value": "a"
+            },
+            "rightValue": {
+                "type": "ValueHex",
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0720:008C",
+                    "content": "00"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "lineNumber": 12,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 13,
+            "lineNumber": 13,
+            "type": "Segment",
+            "operation": ".code",
+            "comment": "Definicja segmentu kodu",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 14,
+            "lineNumber": 14,
+            "type": "Procedure",
+            "operation": "MAIN PROC",
+            "comment": "Rozpoczęcie głownej procedury",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 15,
+            "lineNumber": 15,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "Przenieś dane z @data do rejestru ax",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ax"
+            },
+            "rightValue": {
+                "type": "Declared data",
+                "value": "@data"
+            },
+            "memory": [
+                {
+                    "address": "0729:0000",
+                    "content": "B8"
+                },
+                {
+                    "address": "0729:0001",
+                    "content": "20"
+                },
+                {
+                    "address": "0729:0002",
+                    "content": "07"
+                }
+            ],
+            "registers": [
+                {
+                    "CS": "0729",
+                    "AH": "00",
+                    "AL": "00"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "lineNumber": 16,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ds"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "ax"
+            },
+            "memory": [
+                {
+                    "address": "0729:0003",
+                    "content": "8E"
+                },
+                {
+                    "address": "0729:0004",
+                    "content": "D8"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "07",
+                    "AL": "20"
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "lineNumber": 17,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 18,
+            "lineNumber": 18,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "09h"
+            },
+            "memory": [
+                {
+                    "address": "0729:0005",
+                    "content": "B4"
+                },
+                {
+                    "address": "0729:0006",
+                    "content": "09"
+                }
+            ],
+            "registers": [
+                {
+                    "DS": "0720"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "lineNumber": 19,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "dx"
+            },
+            "rightValue": {
+                "type": "Offset",
+                "value": "message" //mov dx, offset message
+            },
+            "memory": [
+                {
+                    "address": "0729:0007",
+                    "content": "BA"
+                },
+                {
+                    "address": "0729:0008",
+                    "content": "00"
+                },
+                {
+                    "address": "0729:0009",
+                    "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "09"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "lineNumber": 20,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0729:000A",
+                    "content": "CD"
+                },
+                {
+                    "address": "0729:000B",
+                    "content": "21"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "lineNumber": 21,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 22,
+            "lineNumber": 22,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "09h"
+            },
+            "memory": [
+                {
+                    "address": "0729:000C",
+                    "content": "B4"
+                },
+                {
+                    "address": "0729:000D",
+                    "content": "09"
+                }
+            ],
+            "registers": [
+                {
+                    "AL": "07",
+                    "DS": "0720",
+                    "CS": "0729",
+                    "SP": "0100"
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "lineNumber": 23,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "dx"
+            },
+            "rightValue": {
+                "type": "Offset",
+                "value": "a_message" //mov dx, offset a_message
+            },
+            "memory": [
+                {
+                    "address": "0729:000E",
+                    "content": "BA"
+                },
+                {
+                    "address": "0729:000F",
+                    "content": "00"
+                },
+                {
+                    "address": "0729:0010",
+                    "content": "00"
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "lineNumber": 24,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0729:0011",
+                    "content": "CD"
+                },
+                {
+                    "address": "0729:0012",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "DL": "2E"
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "lineNumber": 25,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "01h"
+            },
+            "memory": [
+                {
+                    "address": "0729:0013",
+                    "content": "B4"
+                },
+                {
+                    "address": "0729:0014",
+                    "content": "01"
+                }
+            ],
+            "registers": [
+                {
+                    "AL": "07",
+                    "DS": "0720"
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "lineNumber": 26,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0729:0015",
+                    "content": "CD"
+                },
+                {
+                    "address": "0729:0016",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "01"
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "lineNumber": 27,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 28,
+            "lineNumber": 28,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "Skopiowanie wartości rejestru al do pamięci wewnętrznej w miejscu, na które wskazuje zmienna a.",
+            "leftValue": {
+                "type": "Variable",
+                "value": "a"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "al"
+            },
+            "memory": [
+                {
+                    "address": "0721:0017",
+                    "content": "A2"
+                },
+                {
+                    "address": "0721:0018",
+                    "content": "8B"
+                },
+                {
+                    "address": "0721:0019",
+                    "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "02"
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "lineNumber": 29,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 30,
+            "lineNumber": 30,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "09h"
+            },
+            "memory": [
+                {
+                    "address": "0729:001A",
+                    "content": "B4"
+                },
+                {
+                    "address": "0729:001B",
+                    "content": "09"
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "lineNumber": 31,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "dx"
+            },
+            "rightValue": {
+                "type": "Offset",
+                "value": "b_message" //mov dx, offset b_message
+            },
+            "memory": [
+                {
+                    "address": "0729:001C",
+                    "content": "BA"
+                },
+                {
+                    "address": "0729:001D",
+                    "content": "3F"
+                },
+                {
+                    "address": "0729:001E",
+                    "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "09"
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "lineNumber": 32,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0729:001F",
+                    "content": "CD"
+                },
+                {
+                    "address": "0729:0020",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "DH": "3F"
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "lineNumber": 33,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "01h"
+            },
+            "memory": [
+                {
+                    "address": "0729:0021",
+                    "content": "B4"
+                },
+                {
+                    "address": "0729:0022",
+                    "content": "01"
+                }
+            ],
+            "registers": [
+                {
+                    "AL": "07",
+                    "DS": "0720"
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "lineNumber": 34,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0729:0023",
+                    "content": "CD"
+                },
+                {
+                    "address": "0729:0024",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "01"
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "lineNumber": 35,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 36,
+            "lineNumber": 36,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "Skopiowanie wartości rejestru al do pamięci wewnętrznej w miejscu, na które wskazuje zmienna b.",
+            "leftValue": {
+                "type": "Variable",
+                "value": "a"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "al"
+            },
+            "memory": [
+                {
+                    "address": "0721:0025",
+                    "content": "A2"
+                },
+                {
+                    "address": "0721:0026",
+                    "content": "8C"
+                },
+                {
+                    "address": "0721:0027",
+                    "content": "00"
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "lineNumber": 37,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 38,
+            "lineNumber": 38,
+            "type": "Code",
+            "operation": "xor",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ax"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "ax"
+            },
+            "memory": [
+                {
+                    "address": "0721:0028",
+                    "content": "33"
+                },
+                {
+                    "address": "0721:0029",
+                    "content": "C0"
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "lineNumber": 39,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Variable",
+                "value": "b"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "al"
+            },
+            "memory": [
+                {
+                    "address": "0721:002A",
+                    "content": "A0"
+                },
+                {
+                    "address": "0721:002B",
+                    "content": "8C"
+                },
+                {
+                    "address": "0721:002C",
+                    "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "00",
+                    "AL": "00"
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "lineNumber": 40,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Variable",
+                "value": "a"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "memory": [
+                {
+                    "address": "0721:002D",
+                    "content": "8A"
+                },
+                {
+                    "address": "0721:002E",
+                    "content": "26"
+                },
+                {
+                    "address": "0721:002F",
+                    "content": "8B"
+                },
+                {
+                    "address": "0721:0030",
+                    "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "AL": "36"
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "lineNumber": 41,
+            "type": "Code",
+            "operation": "cmp",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "al"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "memory": [
+                {
+                    "address": "0721:0031",
+                    "content": "3A"
+                },
+                {
+                    "address": "0721:0032",
+                    "content": "C4"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "35"
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "lineNumber": 42,
+            "type": "Code",
+            "operation": "je",
+            "comment": "",
+            "leftValue": {
+                "type": "Label",
+                "value": "is_equal"
+            },
+            "rightValue": {
+                "type": "",
+                "value": ""
+            },
+            "memory": [
+                {
+                    "address": "0721:0033",
+                    "content": "74"
+                },
+                {
+                    "address": "0721:0033",
+                    "content": "0B"
+                }
+            ]           
+        },
+        {
+            "id": 43,
+            "lineNumber": 43,
+            "type": "Code",
+            "operation": "",
+            "comment": "",
+            "leftValue": {
+                "type": "Label",
+                "value": "is_not_equal"
+            },
+            "rightValue": {
+                "type": "",
+                "value": ""
+            },
+            "memory": [
+                {
+                    "address": "0721:0033",
+                    "content": "74"
+                },
+                {
+                    "address": "0721:0033",
+                    "content": "0B"
+                }
+            ]           
+        },
+
+    ]
+}

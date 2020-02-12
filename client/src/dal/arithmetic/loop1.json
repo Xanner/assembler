@@ -1,0 +1,955 @@
+{
+    "codes": [
+        {
+            "id": 1,
+            "lineNumber": 1,
+            "type": "Segment",
+            "operation": ".Model small",
+            "comment": "Definicja wielkości modelu pamięci, używamy modelu małego - 1 segment kodu, 1 segmentu danych, 1 segmentu stosu.",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 2,
+            "lineNumber": 2,
+            "type": "Segment",
+            "operation": ".stack 100h",
+            "comment": "Definicja rozmiaru stosu",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 3,
+            "lineNumber": 3,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 4,
+            "lineNumber": 4,
+            "type": "Segment",
+            "operation": ".data",
+            "comment": "Definicja segmentu danych",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 5,
+            "lineNumber": 5,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "",
+            "leftValue": {
+                "type": "Variable",
+                "value": "message"
+            },
+            "rightValue": {
+                "type": "String",
+                "value": "13, 10, \"Enter number of loop execution repetitions: $\"",
+                "address": "0720:0000"
+            }
+        },
+        {
+            "id": 6,
+            "lineNumber": 6,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "",
+            "leftValue": {
+                "type": "Variable",
+                "value": "inner_message"
+            },
+            "rightValue": {
+                "type": "String",
+                "value": "13, 10, \"Execution loop. Counter value: $\"",
+                "address": "0720:002F"
+            }
+        },
+        {
+            "id": 7,
+            "lineNumber": 7,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "Definicja zmiennej 'a'",
+            "leftValue": {
+                "type": "Variable",
+                "value": "val_repeat"
+            },
+            "rightValue": {
+                "type": "ValueHex",
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0720:0051",
+                    "content": "00"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "lineNumber": 8,
+            "type": "DataDefinition",
+            "operation": "db",
+            "comment": "Definicja zmiennej 'a'",
+            "leftValue": {
+                "type": "Variable",
+                "value": "counter"
+            },
+            "rightValue": {
+                "type": "ValueHex",
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0720:0052",
+                    "content": "00"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "lineNumber": 9,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 10,
+            "lineNumber": 10,
+            "type": "Segment",
+            "operation": ".code",
+            "comment": "Definicja segmentu kodu",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 11,
+            "lineNumber": 11,
+            "type": "Procedure",
+            "operation": "MAIN PROC",
+            "comment": "Rozpoczęcie głownej procedury",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 12,
+            "lineNumber": 12,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "Przenieś dane z @data do rejestru ax",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ax"
+            },
+            "rightValue": {
+                "type": "Declared data",
+                "value": "@data"
+            },
+            "memory": [
+                {
+                    "address": "0726:0000",
+                    "content": "B8"
+                },
+                {
+                    "address": "0726:0001",
+                    "content": "20"
+                },
+                {
+                    "address": "0726:0002",
+                    "content": "07"
+                }
+            ],
+            "registers": [
+                {
+                    "CS": "0726",
+                    "AH": "00",
+                    "AL": "00"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "lineNumber": 13,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ds"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "ax"
+            },
+            "memory": [
+                {
+                    "address": "0726:0003",
+                    "content": "8E"
+                },
+                {
+                    "address": "0726:0004",
+                    "content": "D8"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "07",
+                    "AL": "20"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "lineNumber": 14,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 15,
+            "lineNumber": 15,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "09h"
+            },
+            "memory": [
+                {
+                    "address": "0726:0005",
+                    "content": "B4"
+                },
+                {
+                    "address": "0726:0006",
+                    "content": "09"
+                }
+            ],
+            "registers": [
+                {
+                    "DS": "0720"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "lineNumber": 16,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "dx"
+            },
+            "rightValue": {
+                "type": "Offset",
+                "value": "message" //mov dx, offset message
+            },
+            "memory": [
+                {
+                    "address": "0726:0007",
+                    "content": "BA"
+                },
+                {
+                    "address": "0726:0008",
+                    "content": "00"
+                },
+                {
+                    "address": "0726:0009",
+                    "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "09"
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "lineNumber": 17,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0729:000A",
+                    "content": "CD"
+                },
+                {
+                    "address": "0729:000B",
+                    "content": "21"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "lineNumber": 18,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "01h"
+            },
+            "memory": [
+                {
+                    "address": "0729:000C",
+                    "content": "B4"
+                },
+                {
+                    "address": "0729:000D",
+                    "content": "01"
+                }
+            ],
+            "registers": [
+                {
+                    "CS": "0726",
+                    "SP": "0100"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "lineNumber": 19,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0729:000E",
+                    "content": "CD"
+                },
+                {
+                    "address": "0729:000F",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "01",
+                    "SP": "0100"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "lineNumber": 20,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "registers": [
+                {
+                    "AL": "35"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "lineNumber": 21,
+            "type": "Code",
+            "operation": "xor",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "cx"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "cx"
+            },
+            "memory": [
+                {
+                    "address": "0721:0010",
+                    "content": "33"
+                },
+                {
+                    "address": "0721:0011",
+                    "content": "C9"
+                }
+            ],
+            "registers": [
+                {
+                    "AL": "35"
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "lineNumber": 22,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "cl"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "al"
+            },
+            "memory": [
+                {
+                    "address": "0729:0012",
+                    "content": "8A"
+                },
+                {
+                    "address": "0729:0013",
+                    "content": "C8"
+                }
+            ],
+            "registers": [
+                {
+                    "CL": "0",
+                    "CH": "0"
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "lineNumber": 23,
+            "type": "Code",
+            "operation": "sub",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "cl"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "30h"
+            },
+            "memory": [
+                {
+                    "address": "0729:0014",
+                    "content": "80"
+                },
+                {
+                    "address": "0729:0015",
+                    "content": "E9"
+                },
+                {
+                    "address": "0729:0016",
+                    "content": "30"
+                }
+            ],
+            "registers": [
+                {
+                    "CL": "35"
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "lineNumber": 24,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "registers": [
+                {
+                    "CL": "5"
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "lineNumber": 25,
+            "type": "Label",
+            "operation": "start:",
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 26,
+            "lineNumber": 26,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "09h"
+            },
+            "memory": [
+                {
+                    "address": "0726:0017",
+                    "content": "B4"
+                },
+                {
+                    "address": "0726:0018",
+                    "content": "09"
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "lineNumber": 27,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "dx"
+            },
+            "rightValue": {
+                "type": "Offset",
+                "value": "inner_message" //mov dx, offset b_message
+            },
+            "memory": [
+                {
+                    "address": "0726:0019",
+                    "content": "BA"
+                },
+                {
+                    "address": "0726:001A",
+                    "content": "2F"
+                },
+                {
+                    "address": "0726:001B",
+                    "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "09"
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "lineNumber": 28,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0726:001C",
+                    "content": "CD"
+                },
+                {
+                    "address": "0726:002D",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "DH": "2F"
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "lineNumber": 29,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "02h"
+            },
+            "memory": [
+                {
+                    "address": "0726:001E",
+                    "content": "B4"
+                },
+                {
+                    "address": "0726:001F",
+                    "content": "02"
+                }
+            ],
+            "registers": [
+                {
+                    "CS": "0726"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "lineNumber": 30,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "dl"
+            },
+            "rightValue": {
+                "type": "Registry",
+                "value": "cl"
+            },
+            "memory": [
+                {
+                    "address": "0726:0020",
+                    "content": "8A"
+                },
+                {
+                    "address": "0726:0021",
+                    "content": "D1"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "02"
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "lineNumber": 31,
+            "type": "Code",
+            "operation": "add",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "dl"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "30h"
+            },
+            "memory": [
+                {
+                    "address": "0726:0022",
+                    "content": "80"
+                },
+                {
+                    "address": "0726:0023",
+                    "content": "C2"
+                },
+                {
+                    "address": "0726:0024",
+                    "content": "30"
+                }
+            ],
+            "registers": [
+                {
+                    "DL": "05"
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "lineNumber": 32,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0726:0025",
+                    "content": "CD"
+                },
+                {
+                    "address": "0726:0026",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "DL": "35"
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "lineNumber": 33,
+            "type": "Code",
+            "operation": "loop",
+            "comment": "",
+            "leftValue": {
+                "type": "String",
+                "value": "start"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0726:0027",
+                    "content": "E2"
+                },
+                {
+                    "address": "0726:0028",
+                    "content": "EE"
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "lineNumber": 34,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 35,
+            "lineNumber": 35,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 36,
+            "lineNumber": 36,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "4Ch"
+            },
+            "memory": [
+                {
+                    "address": "0726:0029",
+                    "content": "B4"
+                },
+                {
+                    "address": "0726:002A",
+                    "content": "4C"
+                }
+            ],
+            "registers": [
+                {
+                    "CL": "00"
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "lineNumber": 37,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0726:002B",
+                    "content": "CD"
+                },
+                {
+                    "address": "0726:002C",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "4C"
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "lineNumber": 38,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 39,
+            "lineNumber": 39,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 40,
+            "lineNumber": 40,
+            "type": "Procedure",
+            "operation": "main endp",
+            "comment": "Zakonczenie procedury",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 41,
+            "lineNumber": 41,
+            "type": "Procedure",
+            "operation": "end main",
+            "comment": "Zakończenie bloku main",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        }
+    ]
+]
+}
