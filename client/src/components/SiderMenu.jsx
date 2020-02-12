@@ -60,6 +60,10 @@ class SiderMenu extends React.Component {
       this.setState({
         currentKey: ["loop"]
       });
+    if (path === "/courses/array")
+      this.setState({
+        currentKey: ["array"]
+      });
   };
 
   render() {
@@ -157,7 +161,12 @@ class SiderMenu extends React.Component {
                   <span>Tablice</span>
                 </span>
               }
-            ></SubMenu>
+            >
+              <Menu.Item key="array">
+                <span>Tablice</span>
+                <Link to="/courses/array" />
+              </Menu.Item>
+            </SubMenu>
             <SubMenu
               key="procedures"
               title={
