@@ -64,15 +64,15 @@
 			"id": 5,
 			"lineNumber": 5,
 			"type": "DataDefinition",
-			"operation": "dw",
-			"comment": "Definicja zmiennej 'a'",
+			"operation": "db",
+			"comment": "Definicja zmiennej bajtowej 'a'",
 			"leftValue": {
 				"type": "Variable",
 				"value": "a"
 			},
 			"rightValue": {
 				"type": "ValueHex",
-				"value": null
+				"value": "03h"
 			},
 			"memory": [
 				{
@@ -85,15 +85,15 @@
 			"id": 6,
 			"lineNumber": 6,
 			"type": "DataDefinition",
-			"operation": "dw",
-			"comment": "Definicja zmiennej 'b'",
+			"operation": "db",
+			"comment": "Definicja zmiennej bajtowej 'b'",
 			"leftValue": {
 				"type": "Variable",
 				"value": "b"
 			},
 			"rightValue": {
 				"type": "ValueHex",
-				"value": null
+				"value": "05h"
 			},
 			"memory": [
 				{
@@ -152,7 +152,7 @@
 			"lineNumber": 10,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś dane z @data do rejestru ax",
+			"comment": "Przenieś dane z @data do rejestru AX",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ax"
@@ -233,10 +233,10 @@
 			"lineNumber": 13,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś wartość zmienniej a do rejestru ax.",
+			"comment": "Przenieś wartość zmienniej a do rejestru AL.",
 			"leftValue": {
 				"type": "Registry",
-				"value": "ax"
+				"value": "al"
 			},
 			"rightValue": {
 				"type": "Variable",
@@ -258,8 +258,7 @@
 			],
 			"registers": [
 				{
-					"DS": "0720",
-					"IP": "0005"
+					"DS": "0720"
 				}
 			]
 		},
@@ -268,10 +267,10 @@
 			"lineNumber": 14,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś wartość zmienniej b do rejestru bx.",
+			"comment": "Przenieś wartość zmienniej b do rejestru BL.",
 			"leftValue": {
 				"type": "Registry",
-				"value": "bx"
+				"value": "bl"
 			},
 			"rightValue": {
 				"type": "Variable",
@@ -297,8 +296,7 @@
 			],
 			"registers": [
 				{
-					"AL": "03",
-					"IP": "0008"
+					"AL": "03"
 				}
 			]
 		},
@@ -590,7 +588,9 @@
 				{
 					"DL": "30"
 				}
-			]
+			],
+			"consoleResult": "0",
+			"consoleAction": "output"
 		},
 		{
 			"id": 26,
