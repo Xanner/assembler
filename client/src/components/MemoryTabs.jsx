@@ -85,6 +85,7 @@ export default class TabsCard extends React.Component {
       currentRegisterChanges: null,
       consoleContent: ""
     };
+    this.consoleRef = React.createRef();
   }
 
   updateSegment = (segmentKey, currentCode, lastOffset) => {
@@ -156,6 +157,7 @@ export default class TabsCard extends React.Component {
     }
     if (currentCode.type === "Interruption")
       this.updateConsole(currentCode.consoleResult, currentCode.consoleAction);
+    this.consoleRef.current.clearTempConsole();
   }
 
   onTabChange = key => {
@@ -189,6 +191,7 @@ export default class TabsCard extends React.Component {
         <Console
           consoleContent={this.state.consoleContent}
           consoleAction={this.state.consoleAction}
+          ref={this.consoleRef}
         />
         <Card
           style={{ width: "100%" }}
