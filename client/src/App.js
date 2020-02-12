@@ -13,6 +13,7 @@ import RegisterPage from "./pages/RegisterPage";
 import IfConditionPage from "./pages/conditions/IfConditionPage";
 import LoopPage from "./pages/loops/LoopPage";
 import ArrayPage from "./pages/arrays/ArrayPage";
+import ProcedurePage from "./pages/procedures/ProcedurePage";
 
 function App() {
   return (
@@ -41,6 +42,11 @@ function App() {
               />
               <Route exact path="/courses/loop" component={LoopPage} />
               <Route exact path="/courses/array" component={ArrayPage} />
+              <Route
+                exact
+                path="/courses/procedure"
+                component={ProcedurePage}
+              />
               <Route exact path="/guide/register" component={RegisterPage} />
             </Switch>
           </Layout.Content>
