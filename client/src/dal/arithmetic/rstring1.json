@@ -303,15 +303,15 @@
             },
             "memory": [
                 {
-                    "address": "0723:0000",
+                    "address": "0721:0000",
                     "content": "B8"
                 },
                 {
-                    "address": "0723:0001",
+                    "address": "0721:0001",
                     "content": "20"
                 },
                 {
-                    "address": "0723:0002",
+                    "address": "0721:0002",
                     "content": "07"
                 }
             ],
@@ -338,11 +338,11 @@
             },
             "memory": [
                 {
-                    "address": "0723:0003",
+                    "address": "0721:0003",
                     "content": "8E"
                 },
                 {
-                    "address": "0723:0004",
+                    "address": "0721:0004",
                     "content": "D8"
                 }
             ],
@@ -380,19 +380,19 @@
             },
             "rightValue": {
                 "type": "Offset",
-                "value": "bufferSize" //mov dx, offset message
+                "value": "offset bufferSize"
             },
             "memory": [
                 {
-                    "address": "0723:0005",
+                    "address": "0721:0005",
                     "content": "BA"
                 },
                 {
-                    "address": "0723:0005",
+                    "address": "0721:0005",
                     "content": "19"
                 },
                 {
-                    "address": "0723:0005",
+                    "address": "0721:0005",
                     "content": "00"
                 }
             ]
@@ -413,11 +413,11 @@
             },
             "memory": [
                 {
-                    "address": "0723:0008",
+                    "address": "0721:0008",
                     "content": "B4"
                 },
                 {
-                    "address": "0723:0009",
+                    "address": "0721:0009",
                     "content": "0A"
                 }
             ],
@@ -443,11 +443,11 @@
             },
             "memory": [
                 {
-                    "address": "0723:000A",
+                    "address": "0721:000A",
                     "content": "CD"
                 },
                 {
-                    "address": "0723:000B",
+                    "address": "0721:000B",
                     "content": "21"
                 }
             ],
@@ -484,19 +484,19 @@
             },
             "rightValue": {
                 "type": "Offset",
-                "value": "bufferSize"
+                "value": "offset msg"
             },
             "memory": [
                 {
-                    "address": "0723:000C",
+                    "address": "0721:000C",
                     "content": "BA"
                 },
                 {
-                    "address": "0723:000D",
+                    "address": "0721:000D",
                     "content": "00"
                 },
                 {
-                    "address": "0723:000E",
+                    "address": "0721:000E",
                     "content": "00"
                 }
             ]
@@ -517,11 +517,11 @@
             },
             "memory": [
                 {
-                    "address": "0723:000F",
+                    "address": "0721:000F",
                     "content": "B4"
                 },
                 {
-                    "address": "0723:0010",
+                    "address": "0721:0010",
                     "content": "09"
                 }
             ],
@@ -547,11 +547,11 @@
             },
             "memory": [
                 {
-                    "address": "0723:0011",
+                    "address": "0721:0011",
                     "content": "CD"
                 },
                 {
-                    "address": "0723:0012",
+                    "address": "0721:0012",
                     "content": "21"
                 }
             ],
@@ -588,25 +588,25 @@
             },
             "rightValue": {
                 "type": "Offset",
-                "value": "bufferSize"
+                "value": "offset buffer"
             },
             "memory": [
                 {
-                    "address": "0723:0013",
+                    "address": "0721:0013",
                     "content": "BA"
                 },
                 {
-                    "address": "0723:0014",
+                    "address": "0721:0014",
                     "content": "1B"
                 },
                 {
-                    "address": "0723:0015",
+                    "address": "0721:0015",
                     "content": "00"
                 }
             ],
             "registers": [
                 {
-                    "CS": "0723"
+                    "CS": "0721"
                 }
             ]
         },
@@ -626,11 +626,11 @@
             },
             "memory": [
                 {
-                    "address": "0723:0016",
+                    "address": "0721:0016",
                     "content": "B4"
                 },
                 {
-                    "address": "0723:0017",
+                    "address": "0721:0017",
                     "content": "09"
                 }
             ],
@@ -656,11 +656,11 @@
             },
             "memory": [
                 {
-                    "address": "0723:0018",
+                    "address": "0721:0018",
                     "content": "CD"
                 },
                 {
-                    "address": "0723:0019",
+                    "address": "0721:0019",
                     "content": "21"
                 }
             ]
