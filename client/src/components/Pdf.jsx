@@ -9,6 +9,7 @@ export default class Pdf extends Component {
     super(props);
     this.state = {
       path: this.props.pdfSource,
+      image: this.props.image || null,
       pdf: null,
       pageNum: 1,
       endPage: 1
@@ -33,7 +34,7 @@ export default class Pdf extends Component {
         viewport: viewport
       };
       var renderTask = page.render(renderContext);
-      renderTask.promise.then(function() {
+      renderTask.promise.then(function () {
         console.log("Page rendered");
       });
     });
@@ -44,8 +45,8 @@ export default class Pdf extends Component {
       pageNum + offset < 1
         ? 1
         : pageNum + offset > endPage
-        ? endPage
-        : pageNum + offset;
+          ? endPage
+          : pageNum + offset;
     if (newPage !== pageNum) {
       this.renderPage(newPage);
       this.setState({ pageNum: newPage });
