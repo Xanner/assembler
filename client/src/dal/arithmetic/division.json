@@ -320,7 +320,7 @@
 			"lineNumber": 16,
 			"type": "Code",
 			"operation": "xor",
-			"comment": "Wyczyszczenie rejestru ah, gdyż tutaj zostanie zapisana reszta dzielenia. Instrukcja ta przyjmuje także postac 'mov ah, 0'.",
+			"comment": "Zerowanie rejestru ah, gdyż tutaj zostanie zapisana reszta dzielenia. Instrukcja ta przyjmuje także postac 'mov ah, 0'.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ah"
@@ -692,7 +692,9 @@
 				{
 					"DL": "33"
 				}
-			]
+			],
+			"consoleAction": "output",
+			"consoleResult": ".5"
 		},
 		{
 			"id": 30,

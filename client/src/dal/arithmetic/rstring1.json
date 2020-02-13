@@ -5,7 +5,7 @@
             "lineNumber": 1,
             "type": "Segment",
             "operation": ".Model small",
-            "comment": "Definicja wielkości modelu pamięci, używamy modelu małego - 1 segment kodu, 1 segmentu danych, 1 segmentu stosu.",
+            "comment": "Inicjalizacja wielkości modelu - small.",
             "leftValue": {
                 "type": null,
                 "value": null
@@ -20,7 +20,7 @@
             "lineNumber": 2,
             "type": "Segment",
             "operation": ".stack 100h",
-            "comment": "Definicja rozmiaru stosu",
+            "comment": "Inicjalizacja segmentu stosu.",
             "leftValue": {
                 "type": null,
                 "value": null
@@ -50,7 +50,7 @@
             "lineNumber": 4,
             "type": "Segment",
             "operation": ".data",
-            "comment": "Definicja segmentu danych",
+            "comment": "Inicjalizacja segmentu danych.",
             "leftValue": {
                 "type": null,
                 "value": null
@@ -65,7 +65,7 @@
             "lineNumber": 5,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "",
+            "comment": "Definicja zmiennej msg typu db. Inicjalizacja wartościami: 13, 10 - > kod nowego znaku, oraz łańcuch znaków zakończony $.",
             "leftValue": {
                 "type": "Variable",
                 "value": "msg"
@@ -81,7 +81,7 @@
             "lineNumber": 6,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "Definicja zmiennej 'bufferSize'",
+            "comment": "Definicja zmiennej bufferSize typu db,inicjalizacja wartością 21 (maksymalna długość ciągu znaku).'",
             "leftValue": {
                 "type": "Variable",
                 "value": "bufferSize"
@@ -102,7 +102,7 @@
             "lineNumber": 7,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "Definicja zmiennej 'a'",
+            "comment": "Definicja zmiennej inputLength typu db,inicjalizacja wartością 0 (długość wczytanego ciągu znaku).",
             "leftValue": {
                 "type": "Variable",
                 "value": "inputLength"
@@ -123,7 +123,7 @@
             "lineNumber": 8,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "",
+            "comment": "Definicja zmiennej buffer typu db,inicjalizacja wartościami '$' x 21 (instrukcja X DUP(znak) mnoży dany znak przez wartość X). Wartości te będą zastępowane wpisanymy znakami ASCII z klawiatury (symbol $ jest pomijany podczas wypisywania na konsoli, dlatego niezastąpione znaki nie zostaną wypisane)",
             "leftValue": {
                 "type": "Variable",
                 "value": "inputLength"
@@ -292,7 +292,7 @@
             "lineNumber": 13,
             "type": "Code",
             "operation": "mov",
-            "comment": "Przenieś dane z @data do rejestru ax",
+            "comment": "Skopiowanie adresu segmentu danych w pamięci (przydzielonym przez procesor w lini .data) do rejestru ax. Rejestr ds (wykorzystany w następnej lini) przyjmuje tylko wartości z innych rejestrów ogólnego przeznaczenia, zatem wykorzytano rejestr AX.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ax"
@@ -327,7 +327,7 @@
             "lineNumber": 14,
             "type": "Code",
             "operation": "mov",
-            "comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
+            "comment": "Skopiowanie wartości rejestru ax do rejestru ds. Teraz rejestr ds wskazuje na początek segmentu danych w pamięci, co umożliwia i ułatwia programiście wiele operacji na pamięci.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ds"
@@ -373,7 +373,7 @@
             "lineNumber": 16,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości offsetu zmiennej bufferSize do rejestru dx. ",
             "leftValue": {
                 "type": "Registry",
                 "value": "dx"
@@ -402,7 +402,7 @@
             "lineNumber": 17,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 10. Przerwanie to pobiera wartość z pamięci na podstawie (ds:dx): Wpierw bufferSize - rozmiar buffora. Następnie przesuwa wskażnik o 1 bajt gdzie wpisze długość wpisanego ciągu znaków z klawiatury (zmienna inputLength) i znowu przesuwa wskażnik o 1 bajt gdzie wpisze ciąg znaków (zmienna buffer).",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -432,7 +432,7 @@
             "lineNumber": 18,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 10 - Przerwanie zakończy swe działanie po naciśnięciu klawisza ENTER i wypisze do buffora wpisane znaki z klawiatury.",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -455,7 +455,9 @@
                 {
                     "AH": "0A"
                 }
-            ]
+            ],
+            "consoleAction": "input",
+            "consoleResult": ""
         },
         {
             "id": 19,
@@ -477,7 +479,7 @@
             "lineNumber": 20,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości offsetu zmiennej msg do rejestru dx.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dx"
@@ -506,7 +508,7 @@
             "lineNumber": 21,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 09. ",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -536,7 +538,7 @@
             "lineNumber": 22,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 09 - wypisanie łańcucha znaków z pamięci.",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -559,7 +561,9 @@
                 {
                     "AH": "09"
                 }
-            ]
+            ],
+            "consoleAction": "output",
+            "consoleResult": "The output string is:"
         },
         {
             "id": 23,
@@ -581,7 +585,7 @@
             "lineNumber": 24,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości offsetu zmiennej buffer do rejestru dx.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dx"
@@ -615,7 +619,7 @@
             "lineNumber": 25,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 09. ",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -645,7 +649,7 @@
             "lineNumber": 26,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 09 - wypisanie łańcucha znaków z pamięci (z zapełnionego buffora).",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -663,7 +667,9 @@
                     "address": "0721:0019",
                     "content": "21"
                 }
-            ]
+            ],
+            "consoleAction": "output",
+            "consoleResult": "abc"
         },
         {
             "id": 27,

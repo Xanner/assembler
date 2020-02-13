@@ -130,7 +130,7 @@ export default class TabsCard extends React.Component {
         this.state.consoleContent +
         (consoleResult === "varCounter"
           ? `${this.props.counter}\n`
-          : consoleResult),
+          : consoleResult || ""),
       consoleAction: action
     });
   };

@@ -5,12 +5,14 @@ import { Row } from "antd";
 
 const multiplicationAction = (
   <>
-    <Row>Definicja kodu (3):</Row>
-    <Row>operacje logiczne (i)</Row>
-    <Row>etykiety (n)</Row>
-    <Row>cmp (o)</Row>
-    <Row>skoki warunkowe (p)</Row>
-    <Row>Przerwanie int 21 (4)</Row>
+    <b>
+      <Row>Definicja kodu</Row>
+      <Row>Operacje logiczne</Row>
+      <Row>Etykiety</Row>
+      <Row>Cmp</Row>
+      <Row>Skoki warunkowe</Row>
+      <Row>Przerwanie int 21</Row>
+    </b>
   </>
 );
 
@@ -18,7 +20,7 @@ export default class IfConditionPage extends PureComponent {
   render() {
     return (
       <ArithmeticPage
-        headerTitle="Instrukcje warunkowe - przykład pierwszy."
+        headerTitle="Instrukcje warunkowe - przykład pierwszy"
         data={ifConditionExample}
         userAction={multiplicationAction}
         cardText="Program ten pokazuje przykładowe działanie i wykorzystanie isntrukcji warunkowych/skoków warunkowych. Aby poprawnie na nich operować należy wykorzystać etykiety 

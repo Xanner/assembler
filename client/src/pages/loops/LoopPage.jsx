@@ -5,10 +5,12 @@ import { Row } from "antd";
 
 const userAction = (
   <>
-    <Row>Definicja kodu (3):</Row>
-    <Row>operacje logiczne (i)</Row>
-    <Row>etykiety (n)</Row>
-    <Row>loop (s)</Row>
+    <b>
+      <Row>Definicja kodu</Row>
+      <Row>Operacje logiczne</Row>
+      <Row>Etykiety</Row>
+      <Row>Loop</Row>
+    </b>
   </>
 );
 
