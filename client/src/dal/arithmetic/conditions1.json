@@ -65,7 +65,7 @@
             "lineNumber": 5,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "",
+            "comment": "Definicja zmiennej message typu db. Inicjalizacja wartościami: 13, 10 - > kod nowego znaku, oraz łańcuch znaków zakończony",
             "leftValue": {
                 "type": "Variable",
                 "value": "message"
@@ -81,7 +81,7 @@
             "lineNumber": 6,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "",
+            "comment": "Definicja zmiennej a_message typu db. Inicjalizacja wartościami: 13, 10 - > kod nowego znaku, oraz łańcuch znaków zakończony",
             "leftValue": {
                 "type": "Variable",
                 "value": "a_message"
@@ -97,7 +97,7 @@
             "lineNumber": 7,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "",
+            "comment": "Definicja zmiennej b_message typu db. Inicjalizacja wartościami: 13, 10 - > kod nowego znaku, oraz łańcuch znaków zakończony",
             "leftValue": {
                 "type": "Variable",
                 "value": "b_message"
@@ -113,7 +113,7 @@
             "lineNumber": 8,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "",
+            "comment": "Definicja zmiennej info_equal typu db. Inicjalizacja wartościami: 13, 10 - > kod nowego znaku, oraz łańcuch znaków zakończony",
             "leftValue": {
                 "type": "Variable",
                 "value": "info_equal"
@@ -129,7 +129,7 @@
             "lineNumber": 9,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "",
+            "comment": "Definicja zmiennej info_not_equal typu db. Inicjalizacja wartościami: 13, 10 - > kod nowego znaku, oraz łańcuch znaków zakończony",
             "leftValue": {
                 "type": "Variable",
                 "value": "info_not_equal"
@@ -145,7 +145,7 @@
             "lineNumber": 10,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "Definicja zmiennej 'a'",
+            "comment": "Definicja zmiennej a i inicjalizacja wartością 0. Tutaj przechowana zostanie wartość pobrana od użytkownika.",
             "leftValue": {
                 "type": "Variable",
                 "value": "a"
@@ -166,7 +166,7 @@
             "lineNumber": 11,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "Definicja zmiennej 'b'",
+            "comment": "Definicja zmiennej b i inicjalizacja wartością 0. Tutaj przechowana zostanie wartość pobrana od użytkownika.",
             "leftValue": {
                 "type": "Variable",
                 "value": "b"
@@ -268,7 +268,7 @@
             "lineNumber": 16,
             "type": "Code",
             "operation": "mov",
-            "comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
+            "comment": "Skopiowanie wartości rejestru ax do rejestru ds. Teraz rejestr ds wskazuje na początek segmentu danych w pamięci, co umożliwia i ułatwia programiście wiele operacji na pamięci.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ds"
@@ -314,7 +314,7 @@
             "lineNumber": 18,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 09 - wypisanie łańcucha znaków z pamięci.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -344,7 +344,7 @@
             "lineNumber": 19,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości offsetu zmiennej message do rejestru dx.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dx"
@@ -378,7 +378,7 @@
             "lineNumber": 20,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 09.",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -425,7 +425,7 @@
             "lineNumber": 22,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 09 - wypisanie łańcucha znaków z pamięci.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -457,7 +457,7 @@
             "lineNumber": 23,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości offsetu zmiennej a_message do rejestru dx.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dx"
@@ -491,7 +491,7 @@
             "lineNumber": 24,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 09.",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -523,7 +523,7 @@
             "lineNumber": 25,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 01.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -554,7 +554,7 @@
             "lineNumber": 26,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 01 - oczekiwanie i pobranie znaku z klawiatury (zapisanie znaku ASCII w rejestrze al).",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -597,7 +597,7 @@
             },
             "registers": [
                 {
-                    "AL": "34" 
+                    "AL": "34"
                 }
             ]
         },
@@ -650,7 +650,7 @@
             "lineNumber": 30,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 09 - wypisanie łańcucha znaków z pamięci.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -675,7 +675,7 @@
             "lineNumber": 31,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości offsetu zmiennej b_message do rejestru dx.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dx"
@@ -709,7 +709,7 @@
             "lineNumber": 32,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 09.",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -741,7 +741,7 @@
             "lineNumber": 33,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 01.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -772,7 +772,7 @@
             "lineNumber": 34,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 01 - oczekiwanie i pobranie znaku z klawiatury (zapisanie znaku ASCII w rejestrze al).",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -794,7 +794,7 @@
             "registers": [
                 {
                     "AH": "01",
-                    "AL": "35" 
+                    "AL": "35"
                 }
             ]
         },
@@ -862,7 +862,7 @@
             "lineNumber": 38,
             "type": "Code",
             "operation": "xor",
-            "comment": "",
+            "comment": "Wyczyszczenie rejestru ax",
             "leftValue": {
                 "type": "Registry",
                 "value": "ax"
@@ -887,7 +887,7 @@
             "lineNumber": 39,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości z pamięci, na którą wskazuje zmienna b do rejestru al. Przygotowanie do operacji porównania. ",
             "leftValue": {
                 "type": "Variable",
                 "value": "b"
@@ -922,7 +922,7 @@
             "lineNumber": 40,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości z pamięci, na którą wskazuje zmienna a do rejestru ah. Przygotowanie do operacji porównania.",
             "leftValue": {
                 "type": "Variable",
                 "value": "a"
@@ -951,7 +951,7 @@
             ],
             "registers": [
                 {
-                    "AL": "35" 
+                    "AL": "35"
                 }
             ]
         },
@@ -960,7 +960,7 @@
             "lineNumber": 41,
             "type": "Code",
             "operation": "cmp",
-            "comment": "",
+            "comment": "Porównanie wartości rejestru al do wartości rejestru ah. Jeśli wartości są równe, to wynik tej instrukcji równy jest 0 - ustawia wtedy ona flagę ZF na 1.",
             "leftValue": {
                 "type": "Registry",
                 "value": "al"
@@ -981,7 +981,7 @@
             ],
             "registers": [
                 {
-                    "AH": "34" 
+                    "AH": "34"
                 }
             ]
         },
@@ -990,7 +990,7 @@
             "lineNumber": 42,
             "type": "Code",
             "operation": "je",
-            "comment": "",
+            "comment": "Jump if equal - jeśli wartość flagi ZF równa jest 1 - skocz do etykiety is_equal, jeśli nie - wykonuj program dalej (etykieta is_not_equal)",
             "leftValue": {
                 "type": "Label",
                 "value": "is_equal"
@@ -1034,7 +1034,7 @@
             "id": 44,
             "lineNumber": 44,
             "type": "Code",
-            "operation": "",
+            "operation": "etykieta",
             "comment": "",
             "leftValue": {
                 "type": "Label",
@@ -1050,7 +1050,7 @@
             "lineNumber": 45,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości offsetu zmiennej info_not_equal  do rejestru dx.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dx"
@@ -1079,7 +1079,7 @@
             "lineNumber": 46,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 09 - wypisanie łańcucha znaków z pamięci.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -1104,7 +1104,7 @@
             "lineNumber": 47,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 09.",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -1136,7 +1136,7 @@
             "lineNumber": 48,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 4Ch - zakończenie programu",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -1161,7 +1161,7 @@
             "lineNumber": 49,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - instrukcja 4Ch - zakończenie programu",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -1186,61 +1186,61 @@
                 }
             ]
         },
-		{
-			"id": 58,
-			"lineNumber": 58,
-			"type": "Whitespace",
-			"operation": null,
-			"comment": null,
-			"leftValue": {
-				"type": null,
-				"value": null
-			},
-			"rightValue": {
-				"type": null,
-				"value": null
-			},
-			"registers": [
-				{
-					"CS": "F400"
-				},
-				{
-					"IP": "0200"
-				},
-				{
-					"SP": "00FA"
-				}
-			]
-		},
-		{
-			"id": 59,
-			"lineNumber": 59,
-			"type": "Procedure",
-			"operation": "main endp",
-			"comment": "Zakonczenie procedury",
-			"leftValue": {
-				"type": null,
-				"value": null
-			},
-			"rightValue": {
-				"type": null,
-				"value": null
-			}
-		},
-		{
-			"id": 60,
-			"lineNumber": 60,
-			"type": "Procedure",
-			"operation": "end main",
-			"comment": "Zakończenie bloku main",
-			"leftValue": {
-				"type": null,
-				"value": null
-			},
-			"rightValue": {
-				"type": null,
-				"value": null
-			}
-		}
+        {
+            "id": 58,
+            "lineNumber": 58,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "registers": [
+                {
+                    "CS": "F400"
+                },
+                {
+                    "IP": "0200"
+                },
+                {
+                    "SP": "00FA"
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "lineNumber": 59,
+            "type": "Procedure",
+            "operation": "main endp",
+            "comment": "Zakonczenie procedury",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 60,
+            "lineNumber": 60,
+            "type": "Procedure",
+            "operation": "end main",
+            "comment": "Zakończenie bloku main",
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        }
     ]
 }
