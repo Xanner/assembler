@@ -796,7 +796,9 @@
                     "AH": "01",
                     "AL": "35"
                 }
-            ]
+            ],
+            "consoleResult": "",
+            "consoleAction": "input"
         },
         {
             "id": 35,
@@ -1184,7 +1186,9 @@
                 {
                     "AH": "4C"
                 }
-            ]
+            ],
+            "consoleResult": "",
+            "consoleAction": "output"
         },
         {
             "id": 58,
