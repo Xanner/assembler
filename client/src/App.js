@@ -9,12 +9,13 @@ import AdditionPage from "./pages/arithmetic/AdditionPage";
 import SubtractionPage from "./pages/arithmetic/SubtractionPage";
 import MultiplicationPage from "./pages/arithmetic/MultiplicationPage";
 import DivisionPage from "./pages/arithmetic/DivisionPage";
-import RegisterPage from "./pages/RegisterPage";
 import IfConditionPage from "./pages/conditions/IfConditionPage";
 import LoopPage from "./pages/loops/LoopPage";
 import ArrayPage from "./pages/arrays/ArrayPage";
 import StringPage from "./pages/strings/StringPage";
-import Interruption from "./pages/Interruption";
+//guide
+import InterruptionPage from "./pages/guide/InterruptionPage";
+import RegisterPage from "./pages/guide/RegisterPage";
 
 function App() {
   return (
@@ -45,7 +46,11 @@ function App() {
               <Route exact path="/courses/array" component={ArrayPage} />
               <Route exact path="/courses/strings" component={StringPage} />
               <Route exact path="/guide/register" component={RegisterPage} />
-              <Route exact path="/guide/interruption" component={Interruption} />
+              <Route
+                exact
+                path="/guide/interruption"
+                component={InterruptionPage}
+              />
             </Switch>
           </Layout.Content>
         </Layout>
