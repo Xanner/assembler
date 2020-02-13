@@ -107,14 +107,12 @@ export default class ArithmeticPage extends Component {
                     title={
                       <>
                         <Icon type="bulb" theme="twoTone" />
-                        Zanim zaczniesz
+                        Zanim zaczniesz - co warto wiedzieć?
                       </>
                     }
                     extra={<a href={beforeYouStartPath}>Więcej</a>}
                   >
-                    Przejdź do odnośnika aby dowiedzieć się więcej na dany
-                    temat.
-                    <Row style={{ marginTop: 8 }}>{this.props.userAction}</Row>
+                    {this.props.userAction}
                   </Card>
                 </Row>
                 <Row style={{ marginBottom: 8 }} justify="space-between">

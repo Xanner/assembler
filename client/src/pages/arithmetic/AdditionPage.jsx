@@ -6,7 +6,20 @@ import { Row, InputNumber } from "antd";
 
 const addtionAction = (
   <>
-    <Row style={{ marginBottom: 16 }}>
+    <Row>
+      <Row>Rejestry Assemblera (1)</Row>
+      <Row>Budowa pamięci wenetrznej (2)</Row>
+      <Row>Definicja kodu(3):</Row>
+      <Row>
+        model (a), stack(b), data (c), zmienne (d), code (f), mov (g), op
+        arytmetyczne (h)
+      </Row>
+      <Row>Przerwanie int 21 (4)</Row>
+      <Row>Tablica ASCII (5)</Row>
+      <Row>HEX - system szenastkowy (6)</Row>
+      <Row>Litte Endian (7)</Row>
+    </Row>
+    <Row style={{ marginTop: 16 }}>
       <InputNumber
         style={{ width: "60px" }}
         value={5}
@@ -27,10 +40,13 @@ export default class AdditionPage extends PureComponent {
   render() {
     return (
       <ArithmeticPage
-        headerTitle="Operacje arytmetyczne - dodawanie"
+        headerTitle="Operacje arytmetyczne - Dodawanie dwóch cyfr - wynik jednocyfrowy, dodatni. "
         data={additionExample}
         userAction={addtionAction}
-        cardText="Dodaj dwie liczby do siebie i naciśnij Start."
+        cardText='Pierwszy program jest bardzo zwięzły oraz prosty w swej budowie jak i działaniu. Dodaje on dwie cyfry, a wynik wyświetla w konsoli. Wynik ten nie może być większy od 10, gdyż algorytm przystosowany jest do wyświetlenia pojedynczego znaku. 
+Operacje arytmetyczne w języku Assembler ograniczają się często do wywołania jednej, odpowiedniej komendy. Mimo tego odpowiednie wyświetlenie wyniku może wydawac się na początku nieco dziwne. Warto dodać, że program stanowi także
+wstęp, pokazujący strukturę kodu assemblera (TASM) z dodatkowymi komendami, wymaganymi w inicjalizacji wielu operacji. Pierszy krok kursu wymaga podstawowej wiedzy teoretycznej dotyczącej rejestrów, budowy procesora i pamięci oraz samego języka Assembler, 
+dlatego sekcja "Zanim zaczniesz" jest znacznie bardziej rozbudowana niż w pozostałych częściach kursu.'
         beforeYouStartPath="/guide/register"
       />
     );

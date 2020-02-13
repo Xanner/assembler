@@ -6,7 +6,10 @@ import { Row, InputNumber } from "antd";
 
 const multiplicationAction = (
   <>
-    <Row style={{ marginBottom: 16 }}>
+    <Row>Definicja kodu (3):</Row>
+    <Row>op arytmetyczne (h)</Row>
+    <Row>Przerwanie int 21 (4)</Row>
+    <Row style={{ marginTop: 16 }}>
       <InputNumber
         style={{ width: "60px" }}
         value={3}
@@ -27,10 +30,12 @@ export default class MultiplicationPage extends PureComponent {
   render() {
     return (
       <ArithmeticPage
-        headerTitle="Operacje arytmetyczne - mnożenie"
+        headerTitle="Operacje arytmetyczne - Mnożenie dwóch cyfr - wynik jednocyfrowy, dodatni. "
         data={multiplicationExample}
         userAction={multiplicationAction}
-        cardText="Pomnóż dwie liczby przez siebie i naciśnij Start."
+        cardText="Kolejny porsty program pokazuje instrukcję mnożenia dwóch wartości, a w tym przypadku dwóch cyfr. Tak jak w przypadku dzielenia, instrukacja ta przyjmuje jeden argument w postaci rejestru ogólnego przeznaczenia (jego wartości) 
+lub adresu pamięci (na wartość, którą ten adres wskazuje). Drugim mnożnikiem jest wartość rejestru ax (al - operacja jednobajtowa, ax - operacja dwubajtowa). Wynik mnożenia zapisywany jest rejestrze ax lub dx i ax dla większych wartości. 
+    "
         beforeYouStartPath="/guide/register"
       />
     );

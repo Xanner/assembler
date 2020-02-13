@@ -5,7 +5,13 @@ import { Row, InputNumber } from "antd";
 
 const divisionAction = (
   <>
-    <Row style={{ marginBottom: 16 }}>
+    <Row>Dodawanie dwóch cyfr</Row>
+    <Row>wynik jednocyfrowy</Row>
+    <Row>Definicja kodu (3):</Row>
+    <Row>operacje arytmetyczne</Row>
+    <Row>operacje logiczne</Row>
+    <Row>Przerwanie int 21h</Row>
+    <Row style={{ marginTop: 16 }}>
       <InputNumber
         style={{ width: "60px" }}
         value={3}
@@ -26,10 +32,12 @@ export default class MultiplicationPage extends PureComponent {
   render() {
     return (
       <ArithmeticPage
-        headerTitle="Operacje arytmetyczne - dzielenie"
+        headerTitle="Operacje arytmetyczne - Dzielenie dwóch cyfr - wynik oraz reszta. "
         data={divisionExample}
         userAction={divisionAction}
-        cardText="Podziel dwie liczby przez siebie i naciśnij Start."
+        cardText="Ten program w skrócie pokazuje operację dzielenia dwóch cyfr. Sama instrukcja div działa w bardzo prosty sposób: jako dzielną traktuje wartość rejestru AX (w przypadku zmiennej o rozmiarze dw: dx i ax), 
+jako dzielnik wartość rejestru dwa razy krótszego lub adres pamięci 
+wpisanego jako argument tej operacji. Program wypisuje wynik i resztę z dzielenia jako dwie cyfry obok siebie. "
         handleArithmeticOperation={this.division}
       />
     );

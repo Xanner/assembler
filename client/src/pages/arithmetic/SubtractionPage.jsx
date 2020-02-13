@@ -6,7 +6,10 @@ import { Row, InputNumber } from "antd";
 
 const subtractionAction = (
   <>
-    <Row style={{ marginBottom: 16 }}>
+    <Row>Definicja kodu (3)</Row>
+    <Row>op arytmetyczne (h)</Row>
+    <Row>Przerwanie int 21 (4)</Row>
+    <Row style={{ marginTop: 16 }}>
       <InputNumber
         style={{ width: "60px" }}
         value={5}
@@ -28,11 +31,11 @@ export default class SubtractionPAge extends PureComponent {
   render() {
     return (
       <ArithmeticPage
-        headerTitle="Operacje arytmetyczne - odejmowanie"
+        headerTitle="Operacje arytmetyczne - Odejmowanie dwóch cyfr - wynik jednocyfrowy, dodatni. "
         data={subtractionExample}
         userAction={subtractionAction}
-        cardText="Odejmij dwie liczby od siebie i naciśnij Start."
-        beforeYouStartPath="/guide/register"
+        cardText="W tym programie pokazana zostanie instrukcja odejmowania dwóch cyfr, która jest wręcz bliźniacza do instrukcji dodawania. Warto jednak przyswoić sobie te komendy, gdyż ich znajomość jest bardzo ważna w nieco bardziej skomplikowanych programach."
+        beforeYouStartPath="/guide/interruption"
       />
     );
   }
