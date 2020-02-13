@@ -14,10 +14,15 @@ import LoopPage from "./pages/loops/LoopPage";
 import ArrayPage from "./pages/arrays/ArrayPage";
 import StringPage from "./pages/strings/StringPage";
 //guide
-import InterruptionPage from "./pages/guide/InterruptionPage";
-import RegisterPage from "./pages/guide/RegisterPage";
+import GuideComponents from "./GuideComponents";
 
 function App() {
+  const _guideRoutes = GuideComponents.map(gc => {
+    return (
+      <Route key={gc.route} exact path={gc.route} component={gc.component} />
+    );
+  });
+
   return (
     <div className="App">
       <Router>
@@ -45,12 +50,7 @@ function App() {
               <Route exact path="/courses/loop" component={LoopPage} />
               <Route exact path="/courses/array" component={ArrayPage} />
               <Route exact path="/courses/strings" component={StringPage} />
-              <Route exact path="/guide/register" component={RegisterPage} />
-              <Route
-                exact
-                path="/guide/interruption"
-                component={InterruptionPage}
-              />
+              {_guideRoutes}
             </Switch>
           </Layout.Content>
         </Layout>
