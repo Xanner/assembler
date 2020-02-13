@@ -5,7 +5,7 @@
 			"lineNumber": 1,
 			"type": "Segment",
 			"operation": ".Model small",
-			"comment": "Definicja wielkości modelu pamięci, używamy modelu małego - 1 segment kodu, 1 segmentu danych, 1 segmentu stosu.",
+			"comment": "Inicjalizacja wielkości modelu - small.",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -20,7 +20,7 @@
 			"lineNumber": 2,
 			"type": "Segment",
 			"operation": ".stack 100h",
-			"comment": "Definicja rozmiaru stosu",
+			"comment": "Inicjalizacja segmentu stosu.",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -50,7 +50,7 @@
 			"lineNumber": 4,
 			"type": "Segment",
 			"operation": ".data",
-			"comment": "Definicja segmentu danych",
+			"comment": "Inicjalizacja segmentu danych.",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -65,7 +65,7 @@
 			"lineNumber": 5,
 			"type": "DataDefinition",
 			"operation": "db",
-			"comment": "Definicja zmiennej bajtowej 'a'",
+			"comment": "Definicja zmiennej a typu db, inicjalizacja wartością podaną przez użytkownika (edukacyjne \"podstawienie\" fragmentu kodu).",
 			"leftValue": {
 				"type": "Variable",
 				"value": "a"
@@ -86,7 +86,7 @@
 			"lineNumber": 6,
 			"type": "DataDefinition",
 			"operation": "db",
-			"comment": "Definicja zmiennej bajtowej 'b'",
+			"comment": "Definicja zmiennej b typu db, inicjalizacja wartością podaną przez użytkownika (edukacyjne \"podstawienie\" fragmentu kodu).",
 			"leftValue": {
 				"type": "Variable",
 				"value": "b"
@@ -122,7 +122,7 @@
 			"lineNumber": 8,
 			"type": "Segment",
 			"operation": ".code",
-			"comment": "Definicja segmentu kodu",
+			"comment": "Inicjalizacja segmentu kodu.",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -137,7 +137,7 @@
 			"lineNumber": 9,
 			"type": "Procedure",
 			"operation": "MAIN PROC",
-			"comment": "Rozpoczęcie głownej procedury",
+			"comment": "Inicjalizacja głównej procedury. ",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -152,7 +152,7 @@
 			"lineNumber": 10,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś dane z @data do rejestru AX",
+			"comment": "Skopiowanie adresu segmentu danych w pamięci (przydzielonym przez procesor w lini .data) do rejestru ax. Rejestr ds (wykorzystany w następnej lini) przyjmuje tylko wartości z innych rejestrów ogólnego przeznaczenia, zatem wykorzytano rejestr AX.  ",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ax"
@@ -187,7 +187,7 @@
 			"lineNumber": 11,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
+			"comment": "Skopiowanie wartości rejestru ax do rejestru ds. Teraz rejestr ds wskazuje na początek segmentu danych w pamięci, co umożliwia i ułatwia programiście wiele operacji na pamięci (wykorzystane w późniejszych częściach kursu).",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ds"
@@ -233,7 +233,7 @@
 			"lineNumber": 13,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś wartość zmienniej a do rejestru AL.",
+			"comment": "Skopiowanie wartości w pamięci, na którą wskazuje zmienna a do rejetru al.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "al"
@@ -267,7 +267,7 @@
 			"lineNumber": 14,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś wartość zmienniej b do rejestru BL.",
+			"comment": "Skopiowanie wartości w pamięci, na którą wskazuje zmienna b do rejetru bl",
 			"leftValue": {
 				"type": "Registry",
 				"value": "bl"
@@ -320,7 +320,7 @@
 			"lineNumber": 16,
 			"type": "Code",
 			"operation": "xor",
-			"comment": "",
+			"comment": "Wyczyszczenie rejestru ah, gdyż tutaj zostanie zapisana reszta dzielenia. Instrukcja ta przyjmuje także postac 'mov ah, 0'.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ah"
@@ -350,7 +350,7 @@
 			"lineNumber": 17,
 			"type": "Code",
 			"operation": "div",
-			"comment": "",
+			"comment": "Operacja dzielenia wartości rejestru ax przez wartość rejestru bl. Wynik i reszta zostają zapisane w rejestrach al i ah.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ax"
@@ -380,7 +380,7 @@
 			"lineNumber": 18,
 			"type": "Code",
 			"operation": "add",
-			"comment": "Dodaj 30h do rejestru AL, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
+			"comment": "Dodanie wartości 30h - konwersja na znak ASCII. ",
 			"leftValue": {
 				"type": "Registry",
 				"value": "al"
@@ -411,7 +411,7 @@
 			"lineNumber": 19,
 			"type": "Code",
 			"operation": "add",
-			"comment": "Dodaj 30h do rejestru Ah, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
+			"comment": "Dodanie wartości 30h - konwersja na znak ASCII. ",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ah"
@@ -460,7 +460,7 @@
 			"lineNumber": 21,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "",
+			"comment": "Skopiowanie wartości rejestru ah do rejestru bh. Wywołanie przerwania int 21h wymaga modyfikacji rejestru ah, więc należy jego obecną wartość przechować gdzieś indziej.  ",
 			"leftValue": {
 				"type": "Registry",
 				"value": "bh"
@@ -505,7 +505,7 @@
 			"lineNumber": 23,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś 02 do rejestru ah. Ozncza to, iż będziemy wypisywać znak na ekranie",
+			"comment": "Inicjalizacja przerwania int 21h - instrukcja 02.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ah"
@@ -535,7 +535,7 @@
 			"lineNumber": 24,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "",
+			"comment": "Skopiowanie kodu ASCII wyniku dzielenia do rejestru dl. ",
 			"leftValue": {
 				"type": "Registry",
 				"value": "dl"
@@ -565,7 +565,7 @@
 			"lineNumber": 25,
 			"type": "Interruption",
 			"operation": "int",
-			"comment": "Przerwanie 21h",
+			"comment": "Wykonananie przerwania int 21h i intrukcji 02 - wyświetlenie wartości rejestru dl w konsoli (wynik dzielenia)",
 			"leftValue": {
 				"type": "_ValueHex",
 				"value": "21h"
@@ -612,7 +612,7 @@
 			"lineNumber": 27,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś 02 do rejestru ah. Ozncza to, iż będziemy wypisywać znak na ekranie",
+			"comment": "Inicjalizacja przerwania int 21h - instrukcja 02.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ah"
@@ -644,7 +644,7 @@
 			"lineNumber": 28,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "",
+			"comment": "Skopiowanie kodu ASCII reszty dzielenia do rejestru dl. ",
 			"leftValue": {
 				"type": "Registry",
 				"value": "dl"
@@ -669,7 +669,7 @@
 			"lineNumber": 29,
 			"type": "Interruption",
 			"operation": "int",
-			"comment": "Przerwanie 21h",
+			"comment": "Wykonananie przerwania int 21h i intrukcji 02 - wyświetlenie wartości rejestru dl w konsoli (reszta dzielenia)",
 			"leftValue": {
 				"type": "_ValueHex",
 				"value": "21h"
@@ -725,7 +725,7 @@
 			"lineNumber": 31,
 			"type": "Procedure",
 			"operation": "main endp",
-			"comment": "Zakonczenie procedury",
+			"comment": "Koniec głównej procedury. ",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -740,7 +740,7 @@
 			"lineNumber": 32,
 			"type": "Procedure",
 			"operation": "end main",
-			"comment": "Zakończenie bloku main",
+			"comment": "Koniec pliku kodu.",
 			"leftValue": {
 				"type": null,
 				"value": null

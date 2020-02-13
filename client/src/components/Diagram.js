@@ -49,6 +49,7 @@ export default class Diagram extends Component {
         document.querySelector("#reg_BL").removeAttribute("class");
         document.querySelector("#reg_DH").removeAttribute("class");
         document.querySelector("#reg_DL").removeAttribute("class");
+        document.querySelector("#DataBUS").removeAttribute("class");
         switch (props.activReg.currentLeftRegister) {
           case "ax":
             document
@@ -61,9 +62,17 @@ export default class Diagram extends Component {
               .querySelector("#ALU")
               .setAttribute("class", "reg_active_left");
             break;
-          case "ds":
+          case "al":
             document
-              .querySelector("#reg_DS")
+              .querySelector("#reg_AL")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "ah":
+            document
+              .querySelector("#reg_AH")
               .setAttribute("class", "reg_active_left");
             document
               .querySelector("#ALU")
@@ -80,6 +89,49 @@ export default class Diagram extends Component {
               .querySelector("#ALU")
               .setAttribute("class", "reg_active_left");
             break;
+          case "bl":
+            document
+              .querySelector("#reg_BL")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "bh":
+            document
+              .querySelector("#reg_BH")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "cx":
+            document
+              .querySelector("#reg_CH")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#reg_CL")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "cl":
+            document
+              .querySelector("#reg_CL")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "ch":
+            document
+              .querySelector("#reg_CH")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
           case "dx":
             document
               .querySelector("#reg_DH")
@@ -91,9 +143,49 @@ export default class Diagram extends Component {
               .querySelector("#ALU")
               .setAttribute("class", "reg_active_left");
             break;
-          case "ah":
+          case "dl":
             document
-              .querySelector("#reg_AH")
+              .querySelector("#reg_DL")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "dh":
+            document
+              .querySelector("#reg_DH")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "ds":
+            document
+              .querySelector("#reg_DS")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "cs":
+            document
+              .querySelector("#reg_DS")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "di":
+            document
+              .querySelector("#reg_DI")
+              .setAttribute("class", "reg_active_left");
+            document
+              .querySelector("#ALU")
+              .setAttribute("class", "reg_active_left");
+            break;
+          case "si":
+            document
+              .querySelector("#reg_SI")
               .setAttribute("class", "reg_active_left");
             document
               .querySelector("#ALU")
@@ -109,9 +201,14 @@ export default class Diagram extends Component {
               .querySelector("#reg_AL")
               .setAttribute("class", "reg_active_right");
             break;
-          case "ds":
+          case "al":
             document
-              .querySelector("#reg_DS")
+              .querySelector("#reg_AL")
+              .setAttribute("class", "reg_active_right");
+            break;
+          case "ah":
+            document
+              .querySelector("#reg_AH")
               .setAttribute("class", "reg_active_right");
             break;
           case "bx":
@@ -122,6 +219,34 @@ export default class Diagram extends Component {
               .querySelector("#reg_BL")
               .setAttribute("class", "reg_active_right");
             break;
+          case "bl":
+            document
+              .querySelector("#reg_BL")
+              .setAttribute("class", "reg_active_right");
+            break;
+          case "bh":
+            document
+              .querySelector("#reg_BH")
+              .setAttribute("class", "reg_active_right");
+            break;
+          case "cx":
+            document
+              .querySelector("#reg_CH")
+              .setAttribute("class", "reg_active_right");
+            document
+              .querySelector("#reg_CL")
+              .setAttribute("class", "reg_active_right");
+            break;
+          case "cl":
+            document
+              .querySelector("#reg_CL")
+              .setAttribute("class", "reg_active_right");
+            break;
+          case "ch":
+            document
+              .querySelector("#reg_CH")
+              .setAttribute("class", "reg_active_right");
+            break;
           case "dx":
             document
               .querySelector("#reg_DH")
@@ -130,7 +255,36 @@ export default class Diagram extends Component {
               .querySelector("#reg_DL")
               .setAttribute("class", "reg_active_right");
             break;
+          case "dl":
+            document
+              .querySelector("#reg_DL")
+              .setAttribute("class", "reg_active_right");
+            break;
+          case "dh":
+            document
+              .querySelector("#reg_DH")
+              .setAttribute("class", "reg_active_right");
+            break;
+
+          case "ds":
+            document
+              .querySelector("#reg_DS")
+              .setAttribute("class", "reg_active_right");
+            break;
+          case "cs":
+            document
+              .querySelector("#reg_DS")
+              .setAttribute("class", "reg_active_right");
+            break;
+          case "@data":
+          case "a":
+          case "b":
+            document
+              .querySelector("#DataBUS")
+              .setAttribute("class", "reg_active_right");
+            break;
         }
+
       }
       return {
         activReg: { ...props.activReg }

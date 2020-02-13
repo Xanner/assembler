@@ -597,9 +597,9 @@
             },
             "registers": [
                 {
-                    "AL": "34" //odczytane ASCI
+                    "AL": "34" 
                 }
-            ],
+            ]
         },
         {
             "id": 28,
@@ -794,7 +794,7 @@
             "registers": [
                 {
                     "AH": "01",
-                    "AL": "35" //odczytane ASCI
+                    "AL": "35" 
                 }
             ]
         },
@@ -951,7 +951,7 @@
             ],
             "registers": [
                 {
-                    "AL": "35" //odczytana zmienna b - ASCII
+                    "AL": "35" 
                 }
             ]
         },
@@ -981,7 +981,7 @@
             ],
             "registers": [
                 {
-                    "AH": "34" //odczytana zmienna a - ASCII
+                    "AH": "34" 
                 }
             ]
         },

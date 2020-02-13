@@ -5,7 +5,7 @@
 			"lineNumber": 1,
 			"type": "Segment",
 			"operation": ".Model small",
-			"comment": "Definicja wielkości modelu pamięci, używamy modelu małego - 1 segment kodu, 1 segmentu danych, 1 segmentu stosu.",
+			"comment": "Inicjalizacja wielkości modelu - small.",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -20,7 +20,7 @@
 			"lineNumber": 2,
 			"type": "Segment",
 			"operation": ".stack 100h",
-			"comment": "Definicja rozmiaru stosu",
+			"comment": "Inicjalizacja segmentu stosu.",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -50,7 +50,7 @@
 			"lineNumber": 4,
 			"type": "Segment",
 			"operation": ".data",
-			"comment": "Definicja segmentu danych",
+			"comment": "Inicjalizacja segmentu danych.",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -65,7 +65,7 @@
 			"lineNumber": 5,
 			"type": "DataDefinition",
 			"operation": "db",
-			"comment": "Definicja zmiennej 'a'",
+			"comment": "Definicja zmiennej a typu db, inicjalizacja wartością podaną przez użytkownika (edukacyjne \"podstawienie\" fragmentu kodu).",
 			"leftValue": {
 				"type": "Variable",
 				"value": "a"
@@ -86,7 +86,7 @@
 			"lineNumber": 6,
 			"type": "DataDefinition",
 			"operation": "db",
-			"comment": "Definicja zmiennej 'b'",
+			"comment": "Definicja zmiennej b typu db, inicjalizacja wartością podaną przez użytkownika (edukacyjne \"podstawienie\" fragmentu kodu).",
 			"leftValue": {
 				"type": "Variable",
 				"value": "b"
@@ -122,7 +122,7 @@
 			"lineNumber": 8,
 			"type": "Segment",
 			"operation": ".code",
-			"comment": "Definicja segmentu kodu",
+			"comment": "Inicjalizacja segmentu kodu.",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -137,7 +137,7 @@
 			"lineNumber": 9,
 			"type": "Procedure",
 			"operation": "MAIN PROC",
-			"comment": "Rozpoczęcie głownej procedury",
+			"comment": "Inicjalizacja głównej procedury. ",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -152,7 +152,7 @@
 			"lineNumber": 10,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś dane z @data do rejestru ax",
+			"comment": "Skopiowanie adresu segmentu danych w pamięci (przydzielonym przez procesor w lini .data) do rejestru ax. Rejestr ds (wykorzystany w następnej lini) przyjmuje tylko wartości z innych rejestrów ogólnego przeznaczenia, zatem wykorzytano rejestr AX.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ax"
@@ -187,7 +187,7 @@
 			"lineNumber": 11,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
+			"comment": "Skopiowanie wartości rejestru ax do rejestru ds. Teraz rejestr ds wskazuje na początek segmentu danych w pamięci, co umożliwia i ułatwia programiście wiele operacji na pamięci (wykorzystane w późniejszych częściach kursu).",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ds"
@@ -233,7 +233,7 @@
 			"lineNumber": 13,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś wartość zmienniej a do rejestru ax.",
+			"comment": "Skopiowanie wartości w pamięci, na którą wskazuje zmienna a do rejetru al.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "al"
@@ -267,7 +267,7 @@
 			"lineNumber": 14,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś wartość zmienniej b do rejestru bx.",
+			"comment": "Skopiowanie wartości w pamięci, na którą wskazuje zmienna b do rejetru bl.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "bl"
@@ -320,7 +320,7 @@
 			"lineNumber": 16,
 			"type": "Code",
 			"operation": "add",
-			"comment": "DODAJ zawartość rejestru bx do rejestru ax.",
+			"comment": "Dodanie wartości rejestru bl do wartości rejestru al. Wynik zostaje zapisany w rejestrze al.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "al"
@@ -350,7 +350,7 @@
 			"lineNumber": 17,
 			"type": "Code",
 			"operation": "add",
-			"comment": "Dodaj 30h do rejestru ax, aby zamienić liczbę na wyświetlane znaki w kodzie ASCII ",
+			"comment": "Dodanie wartości 30h do rejestru al, aby poprawnie wyświetlić wynik dodawania w konsoli pod postacią znaku ASCII, czytelnego dla użytkownika. Patrz: Tablica znaków ASCII.  ",
 			"leftValue": {
 				"type": "Registry",
 				"value": "al"
@@ -395,7 +395,7 @@
 			"lineNumber": 19,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś 02 do rejestru ah. Ozncza to, iż będziemy wypisywać znak na ekranie",
+			"comment": "Inicjalizacja przerwania int 21h. Skopiowanie wartości 02 do rejestru ah, co powiadamia procesor o rodzaju instrukcji przerwania - wyświetlenie wyjścia w konsoli. Numery instrukcji zawsze czytane są z rejestru ah.",
 			"leftValue": {
 				"type": "Registry",
 				"value": "ah"
@@ -425,7 +425,7 @@
 			"lineNumber": 20,
 			"type": "Code",
 			"operation": "mov",
-			"comment": "Przenieś zawartość rejestru ax (zawierający wynik dodawania) do rejestru dx. Rejest dx może zostać użyty do wypisywania zawartości na ekranie. ",
+			"comment": "Skopiowanie kodu ASCII wyniku dodawania z rejestru al do dl. Wartość rejestru dl zawsze czytana jest przez instrukcję 02 przerwania int 21h - czyli jego wartość zawsze zostanie wyświetlona w konsoli. ",
 			"leftValue": {
 				"type": "Registry",
 				"value": "dl"
@@ -455,7 +455,7 @@
 			"lineNumber": 21,
 			"type": "Interruption",
 			"operation": "int",
-			"comment": "Przerwanie 21h",
+			"comment": "Wykonananie przerwania int 21h i intrukcji 02 - wyświetlenie wartości rejestru dl w konsoli.   ",
 			"leftValue": {
 				"type": "_ValueHex",
 				"value": "21h"
@@ -513,7 +513,7 @@
 			"lineNumber": 23,
 			"type": "Procedure",
 			"operation": "main endp",
-			"comment": "Zakonczenie procedury",
+			"comment": "Koniec głównej procedury. ",
 			"leftValue": {
 				"type": null,
 				"value": null
@@ -528,7 +528,7 @@
 			"lineNumber": 24,
 			"type": "Procedure",
 			"operation": "end main",
-			"comment": "Zakończenie bloku main",
+			"comment": "Koniec pliku kodu.",
 			"leftValue": {
 				"type": null,
 				"value": null
