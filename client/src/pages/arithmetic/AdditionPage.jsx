@@ -6,16 +6,18 @@ import { Row, InputNumber } from "antd";
 
 const addtionAction = (
   <>
-    <Row>
-      <Row>Rejestry Assemblera</Row>
-      <Row>Budowa pamięci wenetrznej</Row>
-      <Row>Definicja kodu:</Row>
-      <Row>Model, stack, data , zmienne , code , mov , op arytmetyczne</Row>
-      <Row>Przerwanie int 21</Row>
-      <Row>Tablica ASCII </Row>
-      <Row>HEX - system szenastkowy </Row>
-      <Row>Litte Endian </Row>
-    </Row>
+    <b>
+      <Row>
+        <Row>Rejestry Assemblera</Row>
+        <Row>Budowa pamięci wenetrznej</Row>
+        <Row>Definicja kodu:</Row>
+        <Row>Model, stack, data , zmienne , code , mov , op arytmetyczne</Row>
+        <Row>Przerwanie int 21</Row>
+        <Row>Tablica ASCII </Row>
+        <Row>HEX - system szenastkowy </Row>
+        <Row>Litte Endian </Row>
+      </Row>
+    </b>
     <Row style={{ marginTop: 16 }}>
       <InputNumber
         style={{ width: "60px" }}

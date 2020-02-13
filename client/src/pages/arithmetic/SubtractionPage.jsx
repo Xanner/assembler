@@ -6,9 +6,11 @@ import { Row, InputNumber } from "antd";
 
 const subtractionAction = (
   <>
-    <Row>Definicja kodu</Row>
-    <Row>Op arytmetyczne</Row>
-    <Row>Przerwanie int 21</Row>
+    <b>
+      <Row>Definicja kodu</Row>
+      <Row>Op arytmetyczne</Row>
+      <Row>Przerwanie int 21</Row>
+    </b>
     <Row style={{ marginTop: 16 }}>
       <InputNumber
         style={{ width: "60px" }}

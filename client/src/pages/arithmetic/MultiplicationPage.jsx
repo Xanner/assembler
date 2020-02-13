@@ -6,24 +6,26 @@ import { Row, InputNumber } from "antd";
 
 const multiplicationAction = (
   <>
-    <Row>Definicja kodu</Row>
-    <Row>Op arytmetyczne</Row>
-    <Row>Przerwanie int 21</Row>
-    <Row style={{ marginTop: 16 }}>
-      <InputNumber
-        style={{ width: "60px" }}
-        value={3}
-        size="default"
-        disabled
-      />
-      <PlusOutlined rotate={45} />
-      <InputNumber
-        style={{ width: "60px" }}
-        value={3}
-        size="default"
-        disabled
-      />
-    </Row>
+    <b>
+      <Row>Definicja kodu</Row>
+      <Row>Op arytmetyczne</Row>
+      <Row>Przerwanie int 21</Row>
+      <Row style={{ marginTop: 16 }}>
+        <InputNumber
+          style={{ width: "60px" }}
+          value={3}
+          size="default"
+          disabled
+        />
+        <PlusOutlined rotate={45} />
+        <InputNumber
+          style={{ width: "60px" }}
+          value={3}
+          size="default"
+          disabled
+        />
+      </Row>
+    </b>
   </>
 );
 export default class MultiplicationPage extends PureComponent {
