@@ -7,11 +7,10 @@ import {
   QuestionCircleOutlined,
   RetweetOutlined,
   FontSizeOutlined,
-  TableOutlined,
-  AlignCenterOutlined,
-  StockOutlined
+  TableOutlined
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
+import GuideComponents from "../GuideComponents";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -68,6 +67,13 @@ class SiderMenu extends React.Component {
       this.setState({
         currentKey: ["strings"]
       });
+
+    GuideComponents.map(gc => {
+      if (path === gc.route)
+        return this.setState({
+          currentKey: [gc.key]
+        });
+    });
   };
 
   render() {
@@ -182,14 +188,18 @@ class SiderMenu extends React.Component {
             title={
               <span>
                 <BookOutlined />
-                <span>Poradnik</span>
+                <span>Wiedza</span>
               </span>
             }
           >
-            <Menu.Item key="30">
-              <span>Rejestr</span>
-              <Link to="/guide/register" />
-            </Menu.Item>
+            {GuideComponents.map(gc => {
+              return (
+                <Menu.Item key={gc.key}>
+                  <span>{gc.name}</span>
+                  <Link to={gc.route} />
+                </Menu.Item>
+              );
+            })}
           </SubMenu>
         </Menu>
       </Sider>
