@@ -455,7 +455,9 @@
                 {
                     "AH": "0A"
                 }
-            ]
+            ],
+            "consoleAction": "input",
+            "consoleResult": ""
         },
         {
             "id": 19,
@@ -559,7 +561,9 @@
                 {
                     "AH": "09"
                 }
-            ]
+            ],
+            "consoleAction": "output",
+            "consoleResult": "The output string is:"
         },
         {
             "id": 23,
@@ -663,7 +667,9 @@
                     "address": "0721:0019",
                     "content": "21"
                 }
-            ]
+            ],
+            "consoleAction": "output",
+            "consoleResult": "abc"
         },
         {
             "id": 27,
