@@ -63,36 +63,34 @@ export default class Pdf extends Component {
         </Header>
         <Content>
           <Row type="flex" justify={"center"}>
-            <Col xs={7}>
+            <Col xs={12}>
               <canvas className="pdf-window" />
             </Col>
           </Row>
           <Row type="flex" justify={"center"}>
-            <Col xs={7}>
-              <Row type="flex" justify={"center"}>
-                <Col xs={12}>
-                  <Button
-                    disabled={this.state.pageNum === 1}
-                    type="primary"
-                    onClick={() => this.changePage(-1)}
-                    icon="left"
-                  >
-                    Poprzednia
-                  </Button>
-                </Col>
+            <Row type="flex" justify={"center"}>
+              <Col xs={12}>
+                <Button
+                  disabled={this.state.pageNum === 1}
+                  type="primary"
+                  onClick={() => this.changePage(-1)}
+                  icon="left"
+                >
+                  Poprzednia
+                </Button>
+              </Col>
 
-                <Col xs={12}>
-                  <Button
-                    disabled={this.state.endPage === this.state.pageNum}
-                    type="primary"
-                    onClick={() => this.changePage(1)}
-                    icon="right"
-                  >
-                    Następna
-                  </Button>
-                </Col>
-              </Row>
-            </Col>
+              <Col xs={12}>
+                <Button
+                  disabled={this.state.endPage === this.state.pageNum}
+                  type="primary"
+                  onClick={() => this.changePage(1)}
+                  icon="right"
+                >
+                  Następna
+                </Button>
+              </Col>
+            </Row>
           </Row>
         </Content>
       </>
