@@ -1,6 +1,7 @@
 import React from "react";
 import InterruptionPage from "./pages/guide/InterruptionPage";
 import RegisterPage from "./pages/guide/RegisterPage";
+import CodeDefinitionPage from "./pages/guide/CodeDefinitionPage";
 
 const GuideComponents = [
   {
@@ -14,6 +15,12 @@ const GuideComponents = [
     name: "Przerwania",
     route: "/guide/interruption",
     component: InterruptionPage
+  },
+  {
+    key: "code-defiition",
+    name: "Definicja kodu",
+    route: "/guide/code-definition",
+    component: CodeDefinitionPage
   }
 ];
 
