@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Col, Row, Button, Icon } from "antd";
+import { Layout, Col, Row, Button, Avatar } from "antd";
 
 const { Content, Header } = Layout;
 const pdfjsLib = window["pdfjs-dist/build/pdf"];
@@ -34,7 +34,7 @@ export default class Pdf extends Component {
         viewport: viewport
       };
       var renderTask = page.render(renderContext);
-      renderTask.promise.then(function () {
+      renderTask.promise.then(function() {
         console.log("Page rendered");
       });
     });
@@ -45,8 +45,8 @@ export default class Pdf extends Component {
       pageNum + offset < 1
         ? 1
         : pageNum + offset > endPage
-          ? endPage
-          : pageNum + offset;
+        ? endPage
+        : pageNum + offset;
     if (newPage !== pageNum) {
       this.renderPage(newPage);
       this.setState({ pageNum: newPage });
@@ -66,6 +66,13 @@ export default class Pdf extends Component {
           <Row type="flex" justify={"center"}>
             <Col xs={10}>
               <canvas className="pdf-window" />
+            </Col>
+            <Col>
+              {this.props.image && (
+                <>
+                  <Avatar src={this.props.image} size={600} shape="square" />
+                </>
+              )}
             </Col>
           </Row>
           <Row type="flex" justify={"center"}>
