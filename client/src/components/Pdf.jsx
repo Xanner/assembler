@@ -72,6 +72,7 @@ export default class Pdf extends Component {
               <Row type="flex" justify={"center"}>
                 <Col xs={12}>
                   <Button
+                    disabled={this.state.pageNum === 1}
                     type="primary"
                     onClick={() => this.changePage(-1)}
                     icon="left"
@@ -82,6 +83,7 @@ export default class Pdf extends Component {
 
                 <Col xs={12}>
                   <Button
+                    disabled={this.state.endPage === this.state.pageNum}
                     type="primary"
                     onClick={() => this.changePage(1)}
                     icon="right"

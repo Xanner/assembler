@@ -182,13 +182,17 @@ class SiderMenu extends React.Component {
             title={
               <span>
                 <BookOutlined />
-                <span>Poradnik</span>
+                <span>Wiedza</span>
               </span>
             }
           >
-            <Menu.Item key="30">
+            <Menu.Item key="register">
               <span>Rejestr</span>
               <Link to="/guide/register" />
+            </Menu.Item>
+            <Menu.Item key="interruption">
+              <span>Przerwania</span>
+              <Link to="/guide/interruption" />
             </Menu.Item>
           </SubMenu>
         </Menu>
