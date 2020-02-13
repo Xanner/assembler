@@ -413,7 +413,12 @@
             "rightValue": {
                 "type": null,
                 "value": null
-            }
+            },
+            "registers": [
+                {
+                    "AL": "24"
+                }
+            ]
         },
         {
             "id": 22,
@@ -441,7 +446,6 @@
             ],
             "registers": [
                 {
-                    "AL": "07",
                     "DS": "0720",
                     "CS": "0721",
                     "SP": "0100"
@@ -474,6 +478,11 @@
                 {
                     "address": "0721:0010",
                     "content": "00"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "09"
                 }
             ]
         },
@@ -535,7 +544,7 @@
             ],
             "registers": [
                 {
-                    "AL": "07",
+                    "AL": "24",
                     "DS": "0720"
                 }
             ]
@@ -585,7 +594,12 @@
             "rightValue": {
                 "type": null,
                 "value": null
-            }
+            },
+            "registers": [
+                {
+                    "AL": "34" //odczytane ASCI
+                }
+            ],
         },
         {
             "id": 28,
@@ -613,11 +627,6 @@
                 {
                     "address": "0721:0019",
                     "content": "00"
-                }
-            ],
-            "registers": [
-                {
-                    "AH": "02"
                 }
             ]
         },
@@ -753,7 +762,7 @@
             ],
             "registers": [
                 {
-                    "AL": "07",
+                    "AL": "24",
                     "DS": "0720"
                 }
             ]
@@ -784,11 +793,10 @@
             ],
             "registers": [
                 {
-                    "AH": "01"
+                    "AH": "01",
+                    "AL": "35" //odczytane ASCI
                 }
-            ],
-            "consoleResult": "\nThese numbers are NOT equal\n",
-            "consoleAction": "output"
+            ]
         },
         {
             "id": 35,
@@ -943,7 +951,7 @@
             ],
             "registers": [
                 {
-                    "AL": "36"
+                    "AL": "35" //odczytana zmienna b - ASCII
                 }
             ]
         },
@@ -973,7 +981,7 @@
             ],
             "registers": [
                 {
-                    "AH": "35"
+                    "AH": "34" //odczytana zmienna a - ASCII
                 }
             ]
         },
@@ -997,14 +1005,49 @@
                     "content": "74"
                 },
                 {
-                    "address": "0721:0033",
+                    "address": "0721:0034",
                     "content": "0B"
+                }
+            ],
+            "flags": [
+                {
+                    "IF": "1"
                 }
             ]
         },
         {
             "id": 43,
             "lineNumber": 43,
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
+            "leftValue": {
+                "type": null,
+                "value": null
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "id": 44,
+            "lineNumber": 44,
+            "type": "Code",
+            "operation": "",
+            "comment": "",
+            "leftValue": {
+                "type": "Label",
+                "value": "is_not_equal"
+            },
+            "rightValue": {
+                "type": "",
+                "value": ""
+            }
+        },
+        {
+            "id": 45,
+            "lineNumber": 45,
             "type": "Code",
             "operation": "mov",
             "comment": "",
@@ -1014,7 +1057,7 @@
             },
             "rightValue": {
                 "type": "Offset",
-                "value": "offset info_equal"
+                "value": "offset info_not_equal"
             },
             "memory": [
                 {
@@ -1029,16 +1072,11 @@
                     "address": "0721:0037",
                     "content": "00"
                 }
-            ],
-            "registers": [
-                {
-                    "DL": "37"
-                }
             ]
         },
         {
-            "id": 43,
-            "lineNumber": 43,
+            "id": 46,
+            "lineNumber": 46,
             "type": "Code",
             "operation": "mov",
             "comment": "",
@@ -1059,71 +1097,150 @@
                     "address": "0721:0039",
                     "content": "09"
                 }
-            ],
-            "registers": [
-                {
-                    "DL": "6C"
-                }
             ]
         },
         {
-            "id": 44,
-            "lineNumber": 43,
-            "type": "Code",
-            "operation": "",
-            "comment": "",
+            "id": 47,
+            "lineNumber": 47,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
             "leftValue": {
-                "type": "Label",
-                "value": "is_not_equal"
+                "type": "_ValueHex",
+                "value": "21h"
             },
             "rightValue": {
-                "type": "",
-                "value": ""
+                "type": null,
+                "value": null
             },
             "memory": [
                 {
-                    "address": "0721:0033",
-                    "content": "74"
+                    "address": "0721:003A",
+                    "content": "CD"
                 },
                 {
-                    "address": "0721:0033",
-                    "content": "0B"
-                }
-            ]
-        },
-        {
-            "id": 45,
-            "lineNumber": 44,
-            "type": "Code",
-            "operation": "mov",
-            "comment": "",
-            "leftValue": {
-                "type": "Registry",
-                "value": "dx"
-            },
-            "rightValue": {
-                "type": "Offset",
-                "value": "offset info_not_equal"
-            },
-            "memory": [
-                {
-                    "address": "0721:0007",
-                    "content": "BA"
-                },
-                {
-                    "address": "0721:0008",
-                    "content": "00"
-                },
-                {
-                    "address": "0721:0009",
-                    "content": "00"
+                    "address": "0721:003B",
+                    "content": "21"
                 }
             ],
             "registers": [
                 {
                     "AH": "09"
                 }
+            ],
+            "consoleResult": "\nThese numbers are NOT equal\n",
+            "consoleAction": "output"
+        },
+        {
+            "id": 48,
+            "lineNumber": 48,
+            "type": "Code",
+            "operation": "mov",
+            "comment": "",
+            "leftValue": {
+                "type": "Registry",
+                "value": "ah"
+            },
+            "rightValue": {
+                "type": "_ValueHex",
+                "value": "4Ch"
+            },
+            "memory": [
+                {
+                    "address": "0721:003C",
+                    "content": "B4"
+                },
+                {
+                    "address": "0721:003D",
+                    "content": "4C"
+                }
             ]
-        }
+        },
+        {
+            "id": 49,
+            "lineNumber": 49,
+            "type": "Interruption",
+            "operation": "int",
+            "comment": "Przerwanie 21h",
+            "leftValue": {
+                "type": "_ValueHex",
+                "value": "21h"
+            },
+            "rightValue": {
+                "type": null,
+                "value": null
+            },
+            "memory": [
+                {
+                    "address": "0721:003A",
+                    "content": "CD"
+                },
+                {
+                    "address": "0721:003B",
+                    "content": "21"
+                }
+            ],
+            "registers": [
+                {
+                    "AH": "4C"
+                }
+            ]
+        },
+		{
+			"id": 58,
+			"lineNumber": 58,
+			"type": "Whitespace",
+			"operation": null,
+			"comment": null,
+			"leftValue": {
+				"type": null,
+				"value": null
+			},
+			"rightValue": {
+				"type": null,
+				"value": null
+			},
+			"registers": [
+				{
+					"CS": "F400"
+				},
+				{
+					"IP": "0200"
+				},
+				{
+					"SP": "00FA"
+				}
+			]
+		},
+		{
+			"id": 59,
+			"lineNumber": 59,
+			"type": "Procedure",
+			"operation": "main endp",
+			"comment": "Zakonczenie procedury",
+			"leftValue": {
+				"type": null,
+				"value": null
+			},
+			"rightValue": {
+				"type": null,
+				"value": null
+			}
+		},
+		{
+			"id": 60,
+			"lineNumber": 60,
+			"type": "Procedure",
+			"operation": "end main",
+			"comment": "Zakończenie bloku main",
+			"leftValue": {
+				"type": null,
+				"value": null
+			},
+			"rightValue": {
+				"type": null,
+				"value": null
+			}
+		}
     ]
 }
