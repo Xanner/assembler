@@ -5,7 +5,7 @@ import { Row } from "antd";
 
 const userAction = (
   <>
-    <Row>Przerwanie int 21 (4)</Row>
+    <Row>Przerwanie Int 21</Row>
   </>
 );
 

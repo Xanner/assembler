@@ -7,7 +7,7 @@ import { Row, InputNumber } from "antd";
 const subtractionAction = (
   <>
     <Row>Definicja kodu</Row>
-    <Row>op arytmetyczne</Row>
+    <Row>Op arytmetyczne</Row>
     <Row>Przerwanie int 21</Row>
     <Row style={{ marginTop: 16 }}>
       <InputNumber

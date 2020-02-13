@@ -5,11 +5,10 @@ import { Row, InputNumber } from "antd";
 
 const divisionAction = (
   <>
-    <Row>Dodawanie dwóch cyfr</Row>
-    <Row>wynik jednocyfrowy</Row>
-    <Row>Definicja kodu (3):</Row>
-    <Row>operacje arytmetyczne</Row>
-    <Row>operacje logiczne</Row>
+    <Row>Dodawanie dwóch cyfr wynik jednocyfrowy</Row>
+    <Row>Definicja kodu</Row>
+    <Row>Operacje arytmetyczne</Row>
+    <Row>Operacje logiczne</Row>
     <Row>Przerwanie int 21h</Row>
     <Row style={{ marginTop: 16 }}>
       <InputNumber

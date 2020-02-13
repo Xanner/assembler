@@ -10,7 +10,7 @@ const addtionAction = (
       <Row>Rejestry Assemblera</Row>
       <Row>Budowa pamięci wenetrznej</Row>
       <Row>Definicja kodu:</Row>
-      <Row>model, stack, data , zmienne , code , mov , op arytmetyczne</Row>
+      <Row>Model, stack, data , zmienne , code , mov , op arytmetyczne</Row>
       <Row>Przerwanie int 21</Row>
       <Row>Tablica ASCII </Row>
       <Row>HEX - system szenastkowy </Row>

@@ -5,12 +5,12 @@ import { Row } from "antd";
 
 const multiplicationAction = (
   <>
-    <Row>Definicja kodu (3):</Row>
-    <Row>operacje logiczne (i)</Row>
-    <Row>etykiety (n)</Row>
-    <Row>cmp (o)</Row>
-    <Row>skoki warunkowe (p)</Row>
-    <Row>Przerwanie int 21 (4)</Row>
+    <Row>Definicja kodu</Row>
+    <Row>Operacje logiczne</Row>
+    <Row>Etykiety</Row>
+    <Row>Cmp</Row>
+    <Row>Skoki warunkowe</Row>
+    <Row>Przerwanie int 21</Row>
   </>
 );
 
