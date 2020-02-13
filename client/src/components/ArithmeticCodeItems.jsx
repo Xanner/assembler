@@ -11,7 +11,7 @@ export const ArithmeticCodeItems = (codes, currentLineNumber) => {
     codes.map(code => {
       return (
         <Timeline.Item
-          style={{ fontFamily: "Consolas" }}
+          style={{ fontFamily: "Consolas", cursor: "pointer" }}
           key={code.lineNumber + code.comment}
           color={currentLineNumber !== code.lineNumber ? "grey" : "red"}
           dot={`#${code.lineNumber}`}

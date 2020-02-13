@@ -8,7 +8,7 @@ const subtractionAction = (
   <>
     <b>
       <Row>Definicja kodu</Row>
-      <Row>Op arytmetyczne</Row>
+      <Row>Operacje arytmetyczne</Row>
       <Row>Przerwanie int 21</Row>
     </b>
     <Row style={{ marginTop: 16 }}>

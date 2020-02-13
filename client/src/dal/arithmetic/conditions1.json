@@ -862,7 +862,7 @@
             "lineNumber": 38,
             "type": "Code",
             "operation": "xor",
-            "comment": "Wyczyszczenie rejestru ax",
+            "comment": "Zerowanie rejestru ax",
             "leftValue": {
                 "type": "Registry",
                 "value": "ax"

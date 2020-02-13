@@ -8,7 +8,7 @@ const multiplicationAction = (
   <>
     <b>
       <Row>Definicja kodu</Row>
-      <Row>Op arytmetyczne</Row>
+      <Row>Operacje arytmetyczne</Row>
       <Row>Przerwanie int 21</Row>
       <Row style={{ marginTop: 16 }}>
         <InputNumber
