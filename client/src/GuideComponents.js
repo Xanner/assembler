@@ -8,6 +8,7 @@ import CommendsPage from "./pages/guide/CommendsPage";
 import HexPage from "./pages/guide/InternalMemoryPage";
 import SISDPage from "./pages/guide/SISDPage";
 import StackPage from "./pages/guide/StackPage";
+import ProcPage from "./pages/guide/ProcPage";
 
 const GuideComponents = [
   {
@@ -69,6 +70,12 @@ const GuideComponents = [
     name: "Stos",
     route: "/guide/stack",
     component: StackPage
+  },
+  {
+    key: "proc",
+    name: "Procedury",
+    route: "/guide/proc",
+    component: ProcPage
   }
 ];
 
