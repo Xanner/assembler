@@ -24,7 +24,7 @@ export default class Pdf extends Component {
     const { pdf } = this.state;
     pdf.getPage(pageNum).then(page => {
       const canvas = document.querySelector(".pdf-window");
-      var viewport = page.getViewport({ scale: 1.2 });
+      var viewport = page.getViewport({ scale: 1.0 });
       var context = canvas.getContext("2d");
       canvas.height = viewport.height;
       canvas.width = viewport.width;
@@ -63,7 +63,7 @@ export default class Pdf extends Component {
         </Header>
         <Content>
           <Row type="flex" justify={"center"}>
-            <Col xs={12}>
+            <Col xs={10}>
               <canvas className="pdf-window" />
             </Col>
           </Row>

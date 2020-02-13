@@ -7,17 +7,14 @@ import { Row, InputNumber } from "antd";
 const addtionAction = (
   <>
     <Row>
-      <Row>Rejestry Assemblera (1)</Row>
-      <Row>Budowa pamięci wenetrznej (2)</Row>
-      <Row>Definicja kodu(3):</Row>
-      <Row>
-        model (a), stack(b), data (c), zmienne (d), code (f), mov (g), op
-        arytmetyczne (h)
-      </Row>
-      <Row>Przerwanie int 21 (4)</Row>
-      <Row>Tablica ASCII (5)</Row>
-      <Row>HEX - system szenastkowy (6)</Row>
-      <Row>Litte Endian (7)</Row>
+      <Row>Rejestry Assemblera</Row>
+      <Row>Budowa pamięci wenetrznej</Row>
+      <Row>Definicja kodu:</Row>
+      <Row>model, stack, data , zmienne , code , mov , op arytmetyczne</Row>
+      <Row>Przerwanie int 21</Row>
+      <Row>Tablica ASCII </Row>
+      <Row>HEX - system szenastkowy </Row>
+      <Row>Litte Endian </Row>
     </Row>
     <Row style={{ marginTop: 16 }}>
       <InputNumber
