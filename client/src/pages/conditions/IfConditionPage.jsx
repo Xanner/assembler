@@ -6,11 +6,9 @@ import { Row } from "antd";
 const multiplicationAction = (
   <>
     <b>
-      <Row>Definicja kodu</Row>
-      <Row>Operacje logiczne</Row>
-      <Row>Etykiety</Row>
-      <Row>Cmp</Row>
-      <Row>Skoki warunkowe</Row>
+      <Row>
+        Definicja kodu: operacje logiczne, etykiety, cmp, skoki warunkowe
+      </Row>
       <Row>Przerwanie int 21</Row>
     </b>
   </>
