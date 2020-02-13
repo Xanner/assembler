@@ -6,10 +6,7 @@ import { Row } from "antd";
 const userAction = (
   <>
     <b>
-      <Row>Definicja kodu</Row>
-      <Row>Operacje logiczne</Row>
-      <Row>Etykiety</Row>
-      <Row>Loop</Row>
+      <Row>Definicja kodu: operacje logiczne, etykiety, loop</Row>
     </b>
   </>
 );

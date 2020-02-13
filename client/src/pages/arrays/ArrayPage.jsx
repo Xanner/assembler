@@ -6,12 +6,9 @@ import { Row } from "antd";
 const userAction = (
   <>
     <b>
-      <Row>Pętla Loop</Row>
-      <Row>Definicja kodu</Row>
-      <Row>Tnc, dec</Row>
+      <Row>Definicja kodu: pętla loop, inc, dec</Row>
       <Row>Tablice</Row>
-      <Row>Przerwanie</Row>
-      <Row>Int 21</Row>
+      <Row>Przerwanie int 21</Row>
     </b>
   </>
 );

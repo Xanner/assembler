@@ -10,9 +10,9 @@ const addtionAction = (
       <Row>
         <Row>Rejestry Assemblera</Row>
         <Row>Budowa pamięci wenetrznej</Row>
-        <Row>Definicja kodu:</Row>
         <Row>
-          Model, stack, data , zmienne , code , mov , operacje arytmetyczne
+          Definicja kodu: model, stack, data , zmienne , code , mov , operacje
+          arytmetyczne
         </Row>
         <Row>Przerwanie int 21</Row>
         <Row>Tablica ASCII </Row>
