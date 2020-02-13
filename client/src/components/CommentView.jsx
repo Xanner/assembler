@@ -4,7 +4,7 @@ import { Comment } from "antd";
 export default function CommentView(props) {
   return (
     <Comment
-      style={{ fontFamily: "Consolas" }}
+      style={{ fontFamily: "Consolas", maxWidth: 500 }}
       content={props.currentComment || ""}
     />
   );
