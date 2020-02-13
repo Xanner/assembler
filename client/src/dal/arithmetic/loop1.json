@@ -20,7 +20,7 @@
             "lineNumber": 2,
             "type": "Segment",
             "operation": ".stack 100h",
-            "comment": "Definicja rozmiaru stosu",
+            "comment": "Inijcjalizacja rozmiaru stosu",
             "leftValue": {
                 "type": null,
                 "value": null
@@ -50,7 +50,7 @@
             "lineNumber": 4,
             "type": "Segment",
             "operation": ".data",
-            "comment": "Definicja segmentu danych",
+            "comment": "Inicjalizacja segmentu danych.",
             "leftValue": {
                 "type": null,
                 "value": null
@@ -65,7 +65,7 @@
             "lineNumber": 5,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "",
+            "comment": "Definicja zmiennej message typu db. Inicjalizacja wartościami: 13, 10 - > kod nowego znaku, oraz łańcuch znaków zakończony $.",
             "leftValue": {
                 "type": "Variable",
                 "value": "message"
@@ -81,7 +81,7 @@
             "lineNumber": 6,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "",
+            "comment": "Definicja zmiennej inner_message typu db. Inicjalizacja wartościami: 13, 10 - > kod nowego znaku, oraz łańcuch znaków zakończony $.",
             "leftValue": {
                 "type": "Variable",
                 "value": "inner_message"
@@ -97,7 +97,7 @@
             "lineNumber": 7,
             "type": "DataDefinition",
             "operation": "db",
-            "comment": "Definicja zmiennej 'a'",
+            "comment": "Definicja zmiennej val_repeat i inicjalizacja wartością 0. Tutaj przechowana zostanie wartość pobrana od użytkownika.",
             "leftValue": {
                 "type": "Variable",
                 "value": "val_repeat"
@@ -113,26 +113,20 @@
                 }
             ]
         },
-        {
+      {
             "id": 8,
             "lineNumber": 8,
-            "type": "DataDefinition",
-            "operation": "db",
-            "comment": "Definicja zmiennej 'a'",
+            "type": "Whitespace",
+            "operation": null,
+            "comment": null,
             "leftValue": {
-                "type": "Variable",
-                "value": "counter"
+                "type": null,
+                "value": null
             },
             "rightValue": {
-                "type": "ValueHex",
-                "value": "0"
-            },
-            "memory": [
-                {
-                    "address": "0720:0052",
-                    "content": "00"
-                }
-            ]
+                "type": null,
+                "value": null
+            }
         },
         {
             "id": 9,
@@ -154,7 +148,7 @@
             "lineNumber": 10,
             "type": "Segment",
             "operation": ".code",
-            "comment": "Definicja segmentu kodu",
+            "comment": "Inicjalizacja segmentu kodu.",
             "leftValue": {
                 "type": null,
                 "value": null
@@ -169,7 +163,7 @@
             "lineNumber": 11,
             "type": "Procedure",
             "operation": "MAIN PROC",
-            "comment": "Rozpoczęcie głownej procedury",
+            "comment": "Inicjalizacja głównej procedury. ",
             "leftValue": {
                 "type": null,
                 "value": null
@@ -184,7 +178,7 @@
             "lineNumber": 12,
             "type": "Code",
             "operation": "mov",
-            "comment": "Przenieś dane z @data do rejestru ax",
+            "comment": "Skopiowanie adresu segmentu danych w pamięci (przydzielonym przez procesor w lini .data) do rejestru ax. Rejestr ds (wykorzystany w następnej lini) przyjmuje tylko wartości z innych rejestrów ogólnego przeznaczenia, zatem wykorzytano rejestr AX.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ax"
@@ -220,7 +214,7 @@
             "lineNumber": 13,
             "type": "Code",
             "operation": "mov",
-            "comment": "Przenieś dane z rejestru ax do rejestru ds. Zmienne a i b gotowe do użycia.",
+            "comment": "Skopiowanie wartości rejestru ax do rejestru ds. Teraz rejestr ds wskazuje na początek segmentu danych w pamięci, co umożliwia i ułatwia programiście wiele operacji na pamięci.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ds"
@@ -266,7 +260,7 @@
             "lineNumber": 15,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 09 - wypisanie łańcucha znaków z pamięci. ",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -296,7 +290,7 @@
             "lineNumber": 16,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości offsetu zmiennej message do rejestru dx.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dx"
@@ -330,7 +324,7 @@
             "lineNumber": 17,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 09",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -357,7 +351,7 @@
             "lineNumber": 18,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 01",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -388,7 +382,7 @@
             "lineNumber": 19,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 01 - oczekiwanie i pobranie znaku z klawiatury.",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -441,7 +435,7 @@
             "lineNumber": 21,
             "type": "Code",
             "operation": "xor",
-            "comment": "",
+            "comment": "Zerowanie rejestru cx",
             "leftValue": {
                 "type": "Registry",
                 "value": "cx"
@@ -471,7 +465,7 @@
             "lineNumber": 22,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości rejestru al (wartość licznika wpisana przez użytkownika jako kod ASCII) do rejestru cl.",
             "leftValue": {
                 "type": "Registry",
                 "value": "cl"
@@ -502,7 +496,7 @@
             "lineNumber": 23,
             "type": "Code",
             "operation": "sub",
-            "comment": "",
+            "comment": "Odjęcie 30h od wartości rejestru cl - konwersja ASCII na liczbę. ",
             "leftValue": {
                 "type": "Registry",
                 "value": "cl"
@@ -556,7 +550,7 @@
             "lineNumber": 25,
             "type": "Label",
             "operation": "start:",
-            "comment": null,
+            "comment": "Etykieta początku pęli",
             "leftValue": {
                 "type": null,
                 "value": null
@@ -571,7 +565,7 @@
             "lineNumber": 26,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 09 - wypisanie łańcucha znaków z pamięci.",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -596,7 +590,7 @@
             "lineNumber": 27,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości offsetu zmiennej inner_message do rejestru dx.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dx"
@@ -630,7 +624,7 @@
             "lineNumber": 28,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 09",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -662,7 +656,7 @@
             "lineNumber": 29,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 02",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -692,7 +686,7 @@
             "lineNumber": 30,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Skopiowanie wartości rejestru cl do rejestru dl.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dl"
@@ -722,7 +716,7 @@
             "lineNumber": 31,
             "type": "Code",
             "operation": "add",
-            "comment": "",
+            "comment": "Dodanie do wartości rejestru dl liczby 30h - konwersja na kod ASCII.",
             "leftValue": {
                 "type": "Registry",
                 "value": "dl"
@@ -756,7 +750,7 @@
             "lineNumber": 32,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - intrukcji 02 - wyświetlenie wartości rejestru dl w konsoli.",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
@@ -788,7 +782,7 @@
             "lineNumber": 33,
             "type": "endLoop",
             "operation": "loop",
-            "comment": "",
+            "comment": "Jeśli wartość rejestru cx jest większa od 0 - skocz do etykiety start i zmniejsz wartości cx o 1 (dec cx). Jeśli cx równe jest 0, wyonaj program do następnej lini.",
             "leftValue": {
                 "type": "String",
                 "value": "start"
@@ -843,7 +837,7 @@
             "lineNumber": 36,
             "type": "Code",
             "operation": "mov",
-            "comment": "",
+            "comment": "Inicjalizacja przerwania int 21h - instrukcja 4Ch - zakończenie programu",
             "leftValue": {
                 "type": "Registry",
                 "value": "ah"
@@ -873,7 +867,7 @@
             "lineNumber": 37,
             "type": "Interruption",
             "operation": "int",
-            "comment": "Przerwanie 21h",
+            "comment": "Wykonananie przerwania int 21h - instrukcja 4Ch - zakończenie programu",
             "leftValue": {
                 "type": "_ValueHex",
                 "value": "21h"
